@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://qsji0ynvfapf"]
+
+[ext_resource type="Script" uid="uid://b4d8yhleubj6g" path="res://Scenes/NPC/Npc.gd" id="1_g6nij"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b4qop"]
+
+[node name="NPC" type="Node2D" unique_id=1298597885]
+script = ExtResource("1_g6nij")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=517930841]
+
+[node name="hint" type="Label" parent="." unique_id=1596142053]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="InteractZone" type="Area2D" parent="hint" unique_id=862337002]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hint/InteractZone" unique_id=1571928331]
+shape = SubResource("RectangleShape2D_b4qop")

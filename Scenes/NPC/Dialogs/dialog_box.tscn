@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dbmqvyarqpnp8"]
+
+[ext_resource type="Script" uid="uid://6exqb1g1q6rt" path="res://Dialog_box.gd" id="1_4xtjc"]
+
+[node name="DialogBox" type="CanvasLayer" unique_id=1286189821]
+script = ExtResource("1_4xtjc")
+
+[node name="Panel" type="Panel" parent="." unique_id=838406948]
+custom_minimum_size = Vector2(0, 120)
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Speaker" type="Label" parent="Panel" unique_id=1493569306]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="DialogText" type="Label" parent="Panel" unique_id=947570007]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
