@@ -55,8 +55,10 @@ shape = SubResource("CapsuleShape2D_wdocy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=173547773]
 sprite_frames = SubResource("SpriteFrames_nhkjt")
-animation = &"run"
+animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.020237055
+frame = 1
+frame_progress = 0.34367946
 
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D/AnimatedSprite2D" unique_id=1439645780]
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1439645780]
+scale = Vector2(1, 0.99999994)
