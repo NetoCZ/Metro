@@ -1,17 +1,44 @@
 [gd_scene format=3 uid="uid://dgdqadtj7qs5"]
 
+[ext_resource type="Script" uid="uid://caqf8byeicr66" path="res://Scenes/Enemy/Enemy.gd" id="1_nvvbs"]
+[ext_resource type="Texture2D" uid="uid://2nwj1it2wsou" path="res://Scenes/Enemy/Assets/enemy_run1.png" id="2_2t2r4"]
+[ext_resource type="Texture2D" uid="uid://brvrrssjf3ngf" path="res://Scenes/Enemy/Assets/enemy_run2.png" id="3_dmwl5"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b4qop"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2t2r4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_dmwl5")
+}],
+"loop": 1,
+"name": &"Run",
+"speed": 5.0
+}]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b4qop"]
+size = Vector2(95, 118)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rr723"]
+size = Vector2(93, 131)
 
 [node name="Enemy" type="CharacterBody2D" unique_id=1183412405]
+script = ExtResource("1_nvvbs")
 metadata/scene_file_path = "res://scenes/Enemy/enemy.tscn"
 metadata/_tc_uuid = "2163653889164910944"
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1722122791]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=1956266780]
+position = Vector2(31, 41.25)
+scale = Vector2(3.2142856, 2.5566037)
+sprite_frames = SubResource("SpriteFrames_b4qop")
+animation = &"Run"
+autoplay = "Run"
 metadata/_tc_uuid = "3470599458612676361"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1282501712]
+position = Vector2(37.5, 41)
 shape = SubResource("RectangleShape2D_b4qop")
 metadata/_tc_uuid = "1011172106797248639"
 
@@ -27,5 +54,6 @@ metadata/_tc_uuid = "2436970575004411889"
 metadata/_tc_uuid = "1253597086792237826"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1777497221]
+position = Vector2(36.5, 36.5)
 shape = SubResource("RectangleShape2D_rr723")
 metadata/_tc_uuid = "Hitbox/CollisionShape2D"

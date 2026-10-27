@@ -45,7 +45,7 @@ animations = [{
 
 [node name="Player" type="Node" unique_id=362517795 groups=["player"]]
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=777287588 groups=["player"]]
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=777287588 groups=["player", "playerTarget"]]
 position = Vector2(-2, 5)
 scale = Vector2(2.5130706, 2.5905352)
 script = ExtResource("1_uvnfx")
