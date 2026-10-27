@@ -29,7 +29,7 @@ texture = ExtResource("2_1wixh")
 position = Vector2(4, 157)
 
 [node name="Ground" type="CollisionShape2D" parent="Hitboxes" unique_id=1373720599]
-position = Vector2(672.5, 700)
+position = Vector2(671, 693)
 shape = SubResource("RectangleShape2D_tvscu")
 
 [node name="WallBack" type="CollisionShape2D" parent="Hitboxes" unique_id=1446776004]
