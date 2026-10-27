@@ -1,11 +1,20 @@
-[gd_scene format=3 uid="uid://dgdqadtj7qs5"]
+[gd_scene format=3 uid="uid://clmvwcok1pku2"]
 
-[ext_resource type="Script" uid="uid://caqf8byeicr66" path="res://Scenes/Enemy/Enemy.gd" id="1_nvvbs"]
+[ext_resource type="Script" uid="uid://b65s5263c6aoi" path="res://Scenes/Enemy/Enemy.gd" id="1_nvvbs"]
 [ext_resource type="Texture2D" uid="uid://2nwj1it2wsou" path="res://Scenes/Enemy/Assets/enemy_run1.png" id="2_2t2r4"]
+[ext_resource type="Texture2D" uid="uid://dr4x828uvq3rm" path="res://Assets/obchodak.png" id="2_02vxf"]
 [ext_resource type="Texture2D" uid="uid://brvrrssjf3ngf" path="res://Scenes/Enemy/Assets/enemy_run2.png" id="3_dmwl5"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_b4qop"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_02vxf")
+}],
+"loop": 1,
+"name": &"hit",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_2t2r4")
@@ -14,7 +23,7 @@ animations = [{
 "texture": ExtResource("3_dmwl5")
 }],
 "loop": 1,
-"name": &"Run",
+"name": &"run",
 "speed": 5.0
 }]
 
@@ -33,8 +42,8 @@ metadata/_tc_uuid = "2163653889164910944"
 position = Vector2(31, 41.25)
 scale = Vector2(3.2142856, 2.5566037)
 sprite_frames = SubResource("SpriteFrames_b4qop")
-animation = &"Run"
-autoplay = "Run"
+animation = &"hit"
+autoplay = "run"
 metadata/_tc_uuid = "3470599458612676361"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1282501712]

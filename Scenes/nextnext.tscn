@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://blgjjaadcv5mj" path="res://Assets/Battle zoner.webp" id="1_neyy0"]
 [ext_resource type="PackedScene" uid="uid://dnyf0pog4niyr" path="res://Scenes/Player/player.tscn" id="2_fsfas"]
+[ext_resource type="PackedScene" uid="uid://clmvwcok1pku2" path="res://Scenes/Enemy/Enemy.tscn" id="3_fsfas"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0udi0"]
 size = Vector2(3486, 30.75)
@@ -22,3 +23,6 @@ position = Vector2(1439, 699)
 shape = SubResource("RectangleShape2D_0udi0")
 
 [node name="Player" parent="." unique_id=362517795 instance=ExtResource("2_fsfas")]
+
+[node name="Enemy" parent="." unique_id=1183412405 instance=ExtResource("3_fsfas")]
+position = Vector2(772, 4)

@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dsd5elc8h6gjf" path="res://Scenes/Player/assets/standing1.png" id="1_a3d8c"]
 [ext_resource type="Script" uid="uid://b837hjvkk5guk" path="res://Scenes/Player/playerMovement.gd" id="1_uvnfx"]
-[ext_resource type="PackedScene" uid="uid://c7lp0su6sp6j" path="res://Scenes/Weapons/BaseWeapon.tscn" id="2_gk6dx"]
+[ext_resource type="PackedScene" uid="uid://dmg7yfrfwf8de" path="res://Scenes/Weapons/BaseWeapon.tscn" id="2_gk6dx"]
 [ext_resource type="Texture2D" uid="uid://chx02whkmdi8t" path="res://Scenes/Player/assets/standing2.png" id="2_xpcdj"]
 [ext_resource type="Resource" uid="uid://d3w85t206lban" path="res://Scenes/Weapons/Items/Tube.tres" id="3_74mp2"]
 [ext_resource type="Texture2D" uid="uid://e1cm5kx6817x" path="res://Scenes/Player/assets/run1.png" id="3_dd0ac"]
