@@ -15,7 +15,7 @@
 radius = 14.0
 height = 50.0
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_nhkjt"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_wdocy"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -26,7 +26,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"idle",
-"speed": 1.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -49,7 +49,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"run",
-"speed": 6.0
+"speed": 5.0
 }]
 
 [node name="Player" type="Node" unique_id=362517795 groups=["player"]]
@@ -63,16 +63,14 @@ base_weapon_scene = ExtResource("2_gk6dx")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=523690038]
 shape = SubResource("CapsuleShape2D_wdocy")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=173547773]
-position = Vector2(2587.2136, 188.8485)
-sprite_frames = SubResource("SpriteFrames_nhkjt")
-animation = &"run"
-frame_progress = 0.71554077
-
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1439645780]
 scale = Vector2(-1.0987943, -1.0014774)
 zoom = Vector2(1.3, 1.3)
 position_smoothing_enabled = true
 
 [node name="WeaponHolder" type="Node2D" parent="CharacterBody2D" unique_id=280112700]
-position = Vector2(93031.6, 4004.7156)
+position = Vector2(1, 1)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=557623127]
+sprite_frames = SubResource("SpriteFrames_wdocy")
+animation = &"run"

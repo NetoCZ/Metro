@@ -3,8 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://jd144yjvjc4" path="res://Assets/nastupisteBackground.png" id="1_bd45o"]
 [ext_resource type="Texture2D" uid="uid://c7fi6itui6302" path="res://Assets/metroInside.png" id="2_1wixh"]
 [ext_resource type="PackedScene" uid="uid://dnyf0pog4niyr" path="res://Scenes/Player/player.tscn" id="3_3ubiy"]
-[ext_resource type="Script" uid="uid://borcacqeaimby" path="res://Scenes/next_scene.gd" id="4_bd45o"]
-[ext_resource type="PackedScene" uid="uid://m2hlb2cg6nha" path="res://Scenes/Interruct.tscn" id="4_kf76u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tvscu"]
 size = Vector2(2097, 18)
@@ -47,14 +45,9 @@ shape = SubResource("RectangleShape2D_0stwt")
 
 [node name="NextScene" type="Area2D" parent="." unique_id=1358428296]
 position = Vector2(62.999878, -734)
-script = ExtResource("4_bd45o")
-next_scene = "uid://d38rpqad4iwdp"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NextScene" unique_id=2022494447 groups=["player"]]
 position = Vector2(1184.0001, 706)
 shape = SubResource("RectangleShape2D_yea2l")
-
-[node name="Area2D" parent="NextScene" unique_id=324977922 instance=ExtResource("4_kf76u")]
-position = Vector2(1189.0001, 738)
 
 [node name="Player" parent="." unique_id=362517795 instance=ExtResource("3_3ubiy")]
