@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bjtma5cm5d3j1"]
+
+[node name="PlayerUI" type="CanvasLayer" unique_id=955115499]
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=715753999]
+offset_left = 32.0
+offset_top = 19.0
+offset_right = 274.0
+offset_bottom = 46.0
+value = 100.0
+show_percentage = false
