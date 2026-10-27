@@ -8,5 +8,5 @@ script = ExtResource("1_l3re2")
 weapon_name = "oceltyc"
 damage = 8
 weapon_texture = ExtResource("2_8viei")
-weapon_scale = Vector2(0.5, 1)
+weapon_scale = Vector2(0.5, 0.5)
 metadata/_custom_type_script = "uid://bovbt3wgcf5yu"

@@ -1,12 +1,15 @@
 [gd_scene format=3 uid="uid://b7gaq4pasrate"]
 
-[ext_resource type="Texture2D" uid="uid://jd144yjvjc4" path="res://Assets/nastupisteBackground.png" id="1_bd45o"]
+[ext_resource type="Texture2D" uid="uid://cv27rlbwrnsrx" path="res://Assets/FINALNIUVODNISTANICE.png" id="1_bd45o"]
 [ext_resource type="Texture2D" uid="uid://c7fi6itui6302" path="res://Assets/metroInside.png" id="2_1wixh"]
 [ext_resource type="PackedScene" uid="uid://dnyf0pog4niyr" path="res://Scenes/Player/player.tscn" id="3_3ubiy"]
-[ext_resource type="Script" uid="uid://borcacqeaimby" path="res://Scenes/next_scene.gd" id="3_bd45o"]
+[ext_resource type="Script" uid="uid://ca5515pmat1ck" path="res://Scenes/scriptLib/E_sceneChange.tscn.gd" id="3_ua22h"]
+[ext_resource type="Texture2D" uid="uid://ot3mxxnl5a8b" path="res://Assets/ORBULTIMATNI.png" id="6_ua22h"]
+[ext_resource type="Script" uid="uid://4clny5677ppk" path="res://Scenes/proxcheck.gd" id="7_ua22h"]
+[ext_resource type="Texture2D" uid="uid://dxh2t5k0inkqo" path="res://Assets/bublina_interac.png" id="8_3jqe1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tvscu"]
-size = Vector2(2097, 18)
+size = Vector2(2399.5, 18)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_renrx"]
 size = Vector2(16, 897)
@@ -15,13 +18,19 @@ size = Vector2(16, 897)
 size = Vector2(7, 745.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yea2l"]
-size = Vector2(133, 272)
+size = Vector2(183, 272)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tvscu"]
+radius = 58.21512
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_renrx"]
+radius = 127.06297
 
 [node name="metroMain" type="Node2D" unique_id=927188760]
 
-[node name="NastupisteBackground" type="Sprite2D" parent="." unique_id=502686880]
-position = Vector2(598.4999, -198)
-scale = Vector2(6.1924996, 5.78)
+[node name="Finalniuvodnistanice" type="Sprite2D" parent="." unique_id=1325713520]
+position = Vector2(640.49994, -189.50002)
+scale = Vector2(6.3974996, 5.9749994)
 texture = ExtResource("1_bd45o")
 
 [node name="MetroInside" type="Sprite2D" parent="." unique_id=1564545549]
@@ -33,11 +42,11 @@ texture = ExtResource("2_1wixh")
 position = Vector2(66.99988, -577)
 
 [node name="Ground" type="CollisionShape2D" parent="Hitboxes" unique_id=1373720599]
-position = Vector2(671, 693)
+position = Vector2(519.75006, 693)
 shape = SubResource("RectangleShape2D_tvscu")
 
 [node name="WallBack" type="CollisionShape2D" parent="Hitboxes" unique_id=1446776004]
-position = Vector2(-363, 255.5)
+position = Vector2(-673.9999, 253)
 shape = SubResource("RectangleShape2D_renrx")
 
 [node name="WallFront" type="CollisionShape2D" parent="Hitboxes" unique_id=117948488]
@@ -46,11 +55,37 @@ shape = SubResource("RectangleShape2D_0stwt")
 
 [node name="NextScene" type="Area2D" parent="." unique_id=1358428296]
 position = Vector2(62.999878, -734)
-script = ExtResource("3_bd45o")
+script = ExtResource("3_ua22h")
 next_scene = "uid://d38rpqad4iwdp"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NextScene" unique_id=2022494447 groups=["player"]]
-position = Vector2(1184.0001, 706)
+position = Vector2(1182.5001, 706)
 shape = SubResource("RectangleShape2D_yea2l")
 
 [node name="Player" parent="." unique_id=362517795 instance=ExtResource("3_3ubiy")]
+
+[node name="ORB" type="Area2D" parent="." unique_id=52562613]
+position = Vector2(-340, 49)
+script = ExtResource("3_ua22h")
+next_scene = "uid://bullkjyqbi4nn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ORB" unique_id=713729586]
+shape = SubResource("CircleShape2D_tvscu")
+
+[node name="Sprite2D" type="Sprite2D" parent="ORB" unique_id=2120658651]
+position = Vector2(-5.722046e-06, -4.000001)
+scale = Vector2(0.1653846, 0.1782051)
+texture = ExtResource("6_ua22h")
+
+[node name="proxcheck" type="Area2D" parent="." unique_id=238354281]
+position = Vector2(1246, -90)
+script = ExtResource("7_ua22h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="proxcheck" unique_id=297707749]
+position = Vector2(5, 119)
+shape = SubResource("CircleShape2D_renrx")
+
+[node name="Popup" type="Sprite2D" parent="proxcheck" unique_id=1387826336]
+position = Vector2(48, 57)
+scale = Vector2(1.46, 1.6)
+texture = ExtResource("8_3jqe1")
