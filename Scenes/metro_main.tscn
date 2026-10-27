@@ -25,7 +25,7 @@ size = Vector2(183, 272)
 radius = 58.21512
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_renrx"]
-radius = 59.841457
+radius = 61.03278
 
 [node name="metroMain" type="Node2D" unique_id=927188760]
 
@@ -65,8 +65,13 @@ shape = SubResource("RectangleShape2D_yea2l")
 
 [node name="Player" parent="." unique_id=362517795 instance=ExtResource("3_3ubiy")]
 
+<<<<<<< HEAD
 [node name="PlayerUI" parent="." unique_id=955115499 instance=ExtResource("5_3jqe1")]
 player_path = NodePath("../Player")
+=======
+[node name="PlayerUI" parent="Player" unique_id=955115499 instance=ExtResource("5_3jqe1")]
+script = ExtResource("6_q7pmx")
+>>>>>>> 1b6ed12af91b8f4af7feecc7572a378b0ab604f3
 
 [node name="ORB" type="Area2D" parent="." unique_id=52562613]
 position = Vector2(-340, 49)
@@ -99,7 +104,7 @@ position = Vector2(-325, -86)
 script = ExtResource("7_ua22h")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="proxcheck2" unique_id=184102700]
-position = Vector2(-13, 139)
+position = Vector2(-15, 136)
 shape = SubResource("CircleShape2D_renrx")
 
 [node name="Popup" type="Sprite2D" parent="proxcheck2" unique_id=261035454]
