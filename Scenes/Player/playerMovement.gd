@@ -7,24 +7,25 @@ const FRICTION = 2500.0
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
+#Weapon Inicalization
 @export var base_weapon_scene: PackedScene
 @export var starting_weapon: WeaponData
 
+#health
+@export var max_hp: int = 50
+#Weapon Holder
 @onready var weapon_holder: Node2D = $WeaponHolder
 
 var current_weapon: BaseWeapon = null
+var current_hp: int
 
-
+#Movement
 func _physics_process(delta: float) -> void:
-	
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-		
 	
 	if Input.is_action_just_pressed("move_jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
-
-	
 	var direction := Input.get_axis("move_left", "move_right")
 
 	if direction != 0:
@@ -57,7 +58,7 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
-
+#Enquip (Not Done)
 func equip_weapon(data: WeaponData) -> void:
 	if data == null:
 		return
@@ -79,7 +80,9 @@ func equip_weapon(data: WeaponData) -> void:
 
 func _ready() -> void:
 	equip_weapon(starting_weapon)
+	current_hp = max_hp
 
+#Attack
 func attack() -> void:
 	if current_weapon == null:
 		return
@@ -89,6 +92,17 @@ func attack() -> void:
 
 	current_weapon.play_swing()
 	current_weapon.attack()
+
+func die() -> void:
+	print("Игрок погиб!")
+	
+#Take Damage
+func take_damage(amount: int) -> void:
+	current_hp = max(current_hp - amount, 0)
+	print("HP: ", current_hp, "/", max_hp)
+	
+	if current_hp <= 0:
+		die()
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("attack"):
