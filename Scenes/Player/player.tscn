@@ -38,9 +38,9 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("6_gk6dx")
 }],
-"loop": 0,
+"loop": 1,
 "name": &"run",
-"speed": 3.0
+"speed": 10.0
 }]
 
 [node name="Player" type="Node" unique_id=362517795]
@@ -55,5 +55,8 @@ shape = SubResource("CapsuleShape2D_wdocy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=173547773]
 sprite_frames = SubResource("SpriteFrames_nhkjt")
-animation = &"idle"
+animation = &"run"
 autoplay = "idle"
+frame_progress = 0.020237055
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D/AnimatedSprite2D" unique_id=1439645780]
