@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://c18y7eb7qcvym"]
+
+[ext_resource type="Script" uid="uid://d13q10xet3mmd" path="res://Scenes/Weapons/WeaponData.gd" id="1_acw42"]
+
+[resource]
+script = ExtResource("1_acw42")
+weapon_name = "Tube"
+damage = 5
+attack_cooldown = 0.3
+metadata/_custom_type_script = "uid://d13q10xet3mmd"

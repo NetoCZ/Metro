@@ -62,10 +62,4 @@ frame_progress = 0.34367946
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1439645780]
 scale = Vector2(1, 0.99999994)
 
-[node name="WeaponTemplate" type="Node" parent="." unique_id=146412386]
-
-[node name="Sprite2D" type="Sprite2D" parent="WeaponTemplate" unique_id=433118071]
-scale = Vector2(1.1785715, 1.1851852)
-
-[node name="Area2D" type="Area2D" parent="WeaponTemplate" unique_id=29408147]
-scale = Vector2(1.1785715, 1.1851852)
+[node name="weaponHolder" type="Node" parent="CharacterBody2D" unique_id=681804196]
