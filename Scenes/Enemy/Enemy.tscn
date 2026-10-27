@@ -1,15 +1,28 @@
 [gd_scene format=3 uid="uid://dn3eqswatjumi"]
 
 [ext_resource type="Script" uid="uid://b65s5263c6aoi" path="res://Scenes/Enemy/Enemy.gd" id="1_nvvbs"]
-[ext_resource type="Texture2D" uid="uid://2nwj1it2wsou" path="res://Scenes/Enemy/Assets/enemy_run1.png" id="2_2t2r4"]
-[ext_resource type="Texture2D" uid="uid://dr4x828uvq3rm" path="res://Assets/obchodak.png" id="2_02vxf"]
-[ext_resource type="Texture2D" uid="uid://brvrrssjf3ngf" path="res://Scenes/Enemy/Assets/enemy_run2.png" id="3_dmwl5"]
+[ext_resource type="Texture2D" uid="uid://c3fwwpge4u4h1" path="res://Scenes/Enemy/Assets/mrtev_enemy.png" id="2_xqoj7"]
+[ext_resource type="Texture2D" uid="uid://cdbvotgsy7nvb" path="res://Scenes/Enemy/Assets/damige_enemy_0001.png" id="3_3jkxs"]
+[ext_resource type="Texture2D" uid="uid://cr3nye2da8p61" path="res://Scenes/Enemy/Assets/run_enemy_0001.png" id="4_xqoj7"]
+[ext_resource type="Texture2D" uid="uid://clkj2niugmb0x" path="res://Scenes/Enemy/Assets/run_enemy_0002.png" id="5_3jkxs"]
+[ext_resource type="Texture2D" uid="uid://6mfjmwgaylxm" path="res://Scenes/Enemy/Assets/run_enemy_0003.png" id="6_hn56f"]
+[ext_resource type="Texture2D" uid="uid://cyw14empi5r76" path="res://Scenes/Enemy/Assets/run_enemy_0004.png" id="7_jg6oh"]
+[ext_resource type="Texture2D" uid="uid://b841h4arclsqk" path="res://Scenes/Enemy/Assets/run_enemy_0005.png" id="8_huj2y"]
+[ext_resource type="Texture2D" uid="uid://ctiqs4qw78vtq" path="res://Scenes/Enemy/Assets/run_enemy_0006.png" id="9_js6tk"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_b4qop"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_02vxf")
+"texture": ExtResource("2_xqoj7")
+}],
+"loop": 1,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_3jkxs")
 }],
 "loop": 1,
 "name": &"hit",
@@ -17,10 +30,22 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_2t2r4")
+"texture": ExtResource("4_xqoj7")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_dmwl5")
+"texture": ExtResource("5_3jkxs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_hn56f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_jg6oh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_huj2y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_js6tk")
 }],
 "loop": 1,
 "name": &"run",
@@ -42,7 +67,7 @@ metadata/_tc_uuid = "2163653889164910944"
 position = Vector2(31, 41.25)
 scale = Vector2(3.2142856, 2.5566037)
 sprite_frames = SubResource("SpriteFrames_b4qop")
-animation = &"hit"
+animation = &"dead"
 autoplay = "run"
 metadata/_tc_uuid = "3470599458612676361"
 

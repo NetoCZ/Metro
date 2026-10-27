@@ -7,6 +7,8 @@
 [ext_resource type="Resource" uid="uid://d3w85t206lban" path="res://Scenes/Weapons/Items/Tube.tres" id="3_74mp2"]
 [ext_resource type="Texture2D" uid="uid://e1cm5kx6817x" path="res://Scenes/Player/assets/run1.png" id="3_dd0ac"]
 [ext_resource type="Texture2D" uid="uid://cyagoak5scgmr" path="res://Scenes/Player/assets/run2.png" id="4_0u5uq"]
+[ext_resource type="Texture2D" uid="uid://d1vvl62o5gs8q" path="res://Scenes/Player/assets/mrtev_maincharacter.png" id="4_06tpx"]
+[ext_resource type="Texture2D" uid="uid://btxqwtskwx2w4" path="res://Scenes/Player/assets/hit_maincharacter.png" id="4_oikmp"]
 [ext_resource type="Texture2D" uid="uid://idrh2wrpnnf0" path="res://Scenes/Player/assets/run3.png" id="5_jlvik"]
 [ext_resource type="Texture2D" uid="uid://dy4aw2hh0ttat" path="res://Scenes/Player/assets/run4.png" id="6_gk6dx"]
 [ext_resource type="Texture2D" uid="uid://dn7aklfr247xk" path="res://Scenes/Player/assets/run5.png" id="9_jhyir"]
@@ -18,6 +20,22 @@ height = 50.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wdocy"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_06tpx")
+}],
+"loop": 1,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_oikmp")
+}],
+"loop": 1,
+"name": &"hit",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_a3d8c")
@@ -73,7 +91,8 @@ position_smoothing_enabled = true
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=557623127]
 scale = Vector2(1, 0.99999994)
 sprite_frames = SubResource("SpriteFrames_wdocy")
-animation = &"run"
+animation = &"idle"
+autoplay = "idle"
 
 [node name="WeaponHolder" type="Node2D" parent="CharacterBody2D" unique_id=280112700]
 position = Vector2(1, 1)

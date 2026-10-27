@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+signal hp_changed(current_hp: int, max_hp: int)
+
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 const ACCELERATION = 1500.0
@@ -12,16 +14,26 @@ const FRICTION = 2500.0
 @export var starting_weapon: WeaponData
 
 #health
-signal hp_changed(current_hp: int, max_hp: int)
 @export var max_hp: int = 50
-var current_hp: int
+@export var hit_duration: float = 0.4
 #Weapon Holder
 @onready var weapon_holder: Node2D = $WeaponHolder
 
 var current_weapon: BaseWeapon = null
+var current_hp: int
+var is_dead: bool = false
+var is_hit: bool = false
+var last_hit_time: int = 0
 
 #Movement
 func _physics_process(delta: float) -> void:
+	if is_dead:
+		if not is_on_floor():
+			velocity += get_gravity() * delta
+		velocity.x = 0.0
+		move_and_slide()
+		return
+
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 	
@@ -49,13 +61,15 @@ func _physics_process(delta: float) -> void:
 		if current_weapon != null:
 			current_weapon.set_facing_left(facing_left)
 
-	if not is_on_floor():
-		animated_sprite.stop()
-	elif direction != 0:
-		if animated_sprite.animation != "run":
-			animated_sprite.play("run")
-	else:
-		animated_sprite.play("idle")
+	# během animace hit se nepřepínají ostatní animace
+	if not is_hit:
+		if not is_on_floor():
+			animated_sprite.stop()
+		elif direction != 0:
+			if animated_sprite.animation != "run":
+				animated_sprite.play("run")
+		else:
+			animated_sprite.play("idle")
 
 	move_and_slide()
 
@@ -80,12 +94,16 @@ func equip_weapon(data: WeaponData) -> void:
 	current_weapon = weapon
 
 func _ready() -> void:
-	current_hp = max_hp
+	add_to_group("playerTarget")
 	equip_weapon(starting_weapon)
+	current_hp = max_hp
 	hp_changed.emit(current_hp, max_hp)
 
 #Attack
 func attack() -> void:
+	if is_dead:
+		return
+
 	if current_weapon == null:
 		return
 
@@ -96,18 +114,41 @@ func attack() -> void:
 	current_weapon.attack()
 
 func die() -> void:
-	print("Player Die!")
+	is_dead = true
+	is_hit = false
+	velocity = Vector2.ZERO
+	animated_sprite.play("dead")
+	if current_weapon != null:
+		current_weapon.hide()
 	
 #Take Damage
 func take_damage(amount: int) -> void:
-	current_hp = clampi(current_hp - amount, 0, max_hp)
+	if is_dead:
+		return
 
+	current_hp = max(current_hp - amount, 0)
 	hp_changed.emit(current_hp, max_hp)
-	print("HP: ", current_hp, "/", max_hp)
-
+	
 	if current_hp <= 0:
 		die()
+		return
+
+	is_hit = true
+	animated_sprite.play("hit")
+
+	var my_hit_time := Time.get_ticks_msec()
+	last_hit_time = my_hit_time
+
+	await get_tree().create_timer(hit_duration).timeout
+
+	# pokud mezitím přišel další zásah, ten se postará o návrat
+	if is_dead or last_hit_time != my_hit_time:
+		return
+	is_hit = false
 
 func _input(event: InputEvent) -> void:
+	if is_dead:
+		return
+
 	if event.is_action_pressed("attack"):
 		attack()
