@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://d3w85t206lban"]
+
+[ext_resource type="Script" uid="uid://bovbt3wgcf5yu" path="res://Scenes/Weapons/WeaponData.gd" id="1_l3re2"]
+[ext_resource type="Texture2D" uid="uid://cej2y6hxnh4j4" path="res://Assets/item_oceltyc.png" id="2_8viei"]
+
+[resource]
+script = ExtResource("1_l3re2")
+weapon_name = "oceltyc"
+damage = 8
+weapon_texture = ExtResource("2_8viei")
+weapon_scale = Vector2(0.5, 1)
+metadata/_custom_type_script = "uid://bovbt3wgcf5yu"
