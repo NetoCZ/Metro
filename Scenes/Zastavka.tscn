@@ -4,12 +4,24 @@
 [ext_resource type="PackedScene" uid="uid://dnyf0pog4niyr" path="res://Scenes/Player/player.tscn" id="2_w7nrg"]
 [ext_resource type="Texture2D" uid="uid://bjxwxx13jisb6" path="res://Assets/namestiRepubliky.png" id="3_h16o0"]
 [ext_resource type="Texture2D" uid="uid://od5ve3uq0nqc" path="res://Assets/MetroOutside.png" id="3_qgfyo"]
+[ext_resource type="Script" uid="uid://4clny5677ppk" path="res://Scenes/proxcheck.gd" id="5_kt5ld"]
+[ext_resource type="Texture2D" uid="uid://dxh2t5k0inkqo" path="res://Assets/bublina_interac.png" id="6_vmmyc"]
+[ext_resource type="Script" uid="uid://ca5515pmat1ck" path="res://Scenes/scriptLib/E_sceneChange.tscn.gd" id="7_vmmyc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tvscu"]
 size = Vector2(3486, 30.75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_renrx"]
 size = Vector2(199, 33.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0stwt"]
+size = Vector2(25, 824)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_unrny"]
+radius = 184.1331
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4aany"]
+radius = 181.0
 
 [node name="Zastavka" type="Node2D" unique_id=1909788951]
 position = Vector2(-256, -612)
@@ -35,6 +47,14 @@ shape = SubResource("RectangleShape2D_tvscu")
 position = Vector2(466, 651)
 shape = SubResource("RectangleShape2D_renrx")
 
+[node name="wall1" type="CollisionShape2D" parent="StaticBody2D" unique_id=2036725466]
+position = Vector2(171.5, 402)
+shape = SubResource("RectangleShape2D_0stwt")
+
+[node name="wall2" type="CollisionShape2D" parent="StaticBody2D" unique_id=445868682]
+position = Vector2(1920, 608)
+shape = SubResource("RectangleShape2D_0stwt")
+
 [node name="Player" parent="." unique_id=362517795 instance=ExtResource("2_w7nrg")]
 
 [node name="NamestiRepublikyNoMetro" type="Sprite2D" parent="." unique_id=246228808]
@@ -46,3 +66,25 @@ texture = ExtResource("3_h16o0")
 position = Vector2(-844.99994, 665)
 scale = Vector2(2.150641, 2.7660098)
 texture = ExtResource("3_qgfyo")
+
+[node name="proxcheck" type="Area2D" parent="." unique_id=516777576]
+position = Vector2(1267, 357)
+script = ExtResource("5_kt5ld")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="proxcheck" unique_id=1062681183]
+position = Vector2(5, 119)
+shape = SubResource("CircleShape2D_unrny")
+
+[node name="Popup" type="Sprite2D" parent="proxcheck" unique_id=1522567310]
+position = Vector2(62, 139)
+scale = Vector2(1.46, 1.6)
+texture = ExtResource("6_vmmyc")
+
+[node name="duengeonTP" type="Area2D" parent="." unique_id=1970239409]
+position = Vector2(1232, -49)
+script = ExtResource("7_vmmyc")
+next_scene = "uid://bullkjyqbi4nn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="duengeonTP" unique_id=796397856]
+position = Vector2(37, 527)
+shape = SubResource("CircleShape2D_4aany")

@@ -24,7 +24,7 @@ size = Vector2(183, 272)
 radius = 58.21512
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_renrx"]
-radius = 127.06297
+radius = 59.841457
 
 [node name="metroMain" type="Node2D" unique_id=927188760]
 
@@ -67,7 +67,7 @@ shape = SubResource("RectangleShape2D_yea2l")
 [node name="ORB" type="Area2D" parent="." unique_id=52562613]
 position = Vector2(-340, 49)
 script = ExtResource("3_ua22h")
-next_scene = "uid://bullkjyqbi4nn"
+next_scene = "uid://c3humjnevy1jw"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ORB" unique_id=713729586]
 shape = SubResource("CircleShape2D_tvscu")
@@ -87,5 +87,18 @@ shape = SubResource("CircleShape2D_renrx")
 
 [node name="Popup" type="Sprite2D" parent="proxcheck" unique_id=1387826336]
 position = Vector2(48, 57)
+scale = Vector2(1.46, 1.6)
+texture = ExtResource("8_3jqe1")
+
+[node name="proxcheck2" type="Area2D" parent="." unique_id=1813967944]
+position = Vector2(-325, -86)
+script = ExtResource("7_ua22h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="proxcheck2" unique_id=184102700]
+position = Vector2(-13, 139)
+shape = SubResource("CircleShape2D_renrx")
+
+[node name="Popup" type="Sprite2D" parent="proxcheck2" unique_id=261035454]
+position = Vector2(34, 128)
 scale = Vector2(1.46, 1.6)
 texture = ExtResource("8_3jqe1")
