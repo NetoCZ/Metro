@@ -102,8 +102,9 @@ func die() -> void:
 func take_damage(amount: int) -> void:
 	current_hp = clampi(current_hp - amount, 0, max_hp)
 
+	print("HP игрока: ", current_hp, "/", max_hp)
+
 	hp_changed.emit(current_hp, max_hp)
-	print("HP: ", current_hp, "/", max_hp)
 
 	if current_hp <= 0:
 		die()
@@ -111,3 +112,5 @@ func take_damage(amount: int) -> void:
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("attack"):
 		attack()
+	if event.is_action_pressed("hurt"):
+		take_damage(10)
