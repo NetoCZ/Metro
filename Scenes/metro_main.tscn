@@ -1,7 +1,40 @@
 [gd_scene format=3 uid="uid://b7gaq4pasrate"]
 
-[ext_resource type="PackedScene" uid="uid://dnyf0pog4niyr" path="res://Scenes/Player/player.tscn" id="1_juqtr"]
+[ext_resource type="Texture2D" uid="uid://bjxwxx13jisb6" path="res://Assets/namestiRepubliky.png" id="1_juqtr"]
+[ext_resource type="Texture2D" uid="uid://c7fi6itui6302" path="res://Assets/metroInside.png" id="2_1wixh"]
 
-[node name="MetroMain" type="Node2D" unique_id=1779458889]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tvscu"]
+size = Vector2(2097, 18)
 
-[node name="Player" parent="." unique_id=362517795 instance=ExtResource("1_juqtr")]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_renrx"]
+size = Vector2(12, 306)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0stwt"]
+size = Vector2(10, 281)
+
+[node name="metroMain" type="Node2D" unique_id=927188760]
+
+[node name="NamestiRepubliky" type="Sprite2D" parent="." unique_id=1467283312]
+position = Vector2(712.0001, 542.4844)
+scale = Vector2(5.7800007, 5.8148437)
+texture = ExtResource("1_juqtr")
+
+[node name="MetroInside" type="Sprite2D" parent="." unique_id=1564545549]
+position = Vector2(691.0002, 708.4843)
+scale = Vector2(2.351704, 3.2542732)
+texture = ExtResource("2_1wixh")
+
+[node name="Hitboxes" type="StaticBody2D" parent="." unique_id=1904785347]
+position = Vector2(4, 157)
+
+[node name="Ground" type="CollisionShape2D" parent="Hitboxes" unique_id=1373720599]
+position = Vector2(672.5, 700)
+shape = SubResource("RectangleShape2D_tvscu")
+
+[node name="WallBack" type="CollisionShape2D" parent="Hitboxes" unique_id=1446776004]
+position = Vector2(-361, 551)
+shape = SubResource("RectangleShape2D_renrx")
+
+[node name="WallFront" type="CollisionShape2D" parent="Hitboxes" unique_id=117948488]
+position = Vector2(1530, 556)
+shape = SubResource("RectangleShape2D_0stwt")
