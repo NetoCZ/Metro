@@ -1,25 +1,40 @@
 [gd_scene format=3 uid="uid://b7gaq4pasrate"]
 
-[ext_resource type="PackedScene" uid="uid://dnyf0pog4niyr" path="res://Scenes/Player/player.tscn" id="1_juqtr"]
-[ext_resource type="Texture2D" uid="uid://chx02whkmdi8t" path="res://Scenes/Player/assets/standing2.png" id="2_1wixh"]
+[ext_resource type="Texture2D" uid="uid://bjxwxx13jisb6" path="res://Assets/namestiRepubliky.png" id="1_juqtr"]
+[ext_resource type="Texture2D" uid="uid://c7fi6itui6302" path="res://Assets/metroInside.png" id="2_1wixh"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wdocy"]
-size = Vector2(19.687458, 20)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tvscu"]
+size = Vector2(2097, 18)
 
-[node name="MetroMain" type="Node2D" unique_id=1779458889]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_renrx"]
+size = Vector2(12, 306)
 
-[node name="Player" parent="." unique_id=362517795 instance=ExtResource("1_juqtr")]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0stwt"]
+size = Vector2(10, 281)
 
-[node name="Standing2" type="Sprite2D" parent="." unique_id=351234736]
-position = Vector2(-275, 600)
-scale = Vector2(237.82674, 0.9466687)
+[node name="metroMain" type="Node2D" unique_id=927188760]
+
+[node name="NamestiRepubliky" type="Sprite2D" parent="." unique_id=1467283312]
+position = Vector2(712.0001, 542.4844)
+scale = Vector2(5.7800007, 5.8148437)
+texture = ExtResource("1_juqtr")
+
+[node name="MetroInside" type="Sprite2D" parent="." unique_id=1564545549]
+position = Vector2(691.0002, 708.4843)
+scale = Vector2(2.351704, 3.2542732)
 texture = ExtResource("2_1wixh")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=276189091]
-position = Vector2(0, 584)
-scale = Vector2(43.87116, 0.62246466)
+[node name="Hitboxes" type="StaticBody2D" parent="." unique_id=1904785347]
+position = Vector2(4, 157)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=302941761]
-position = Vector2(-0.15627095, 0)
-scale = Vector2(0.9999999, 0.9999999)
-shape = SubResource("RectangleShape2D_wdocy")
+[node name="Ground" type="CollisionShape2D" parent="Hitboxes" unique_id=1373720599]
+position = Vector2(672.5, 700)
+shape = SubResource("RectangleShape2D_tvscu")
+
+[node name="WallBack" type="CollisionShape2D" parent="Hitboxes" unique_id=1446776004]
+position = Vector2(-361, 551)
+shape = SubResource("RectangleShape2D_renrx")
+
+[node name="WallFront" type="CollisionShape2D" parent="Hitboxes" unique_id=117948488]
+position = Vector2(1530, 556)
+shape = SubResource("RectangleShape2D_0stwt")
