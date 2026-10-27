@@ -1,11 +1,31 @@
-extends Node
+extends CharacterBody2D
 
+@export var starting_weapon: WeaponData
 
-# Called when the node enters the scene tree for the first time.
+@onready var weapon_holder: Node2D = $WeaponHolder
+
+var current_weapon: BaseWeapon
+
 func _ready() -> void:
-	pass # Replace with function body.
+	if starting_weapon != null:
+		equip_weapon(starting_weapon)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func equip_weapon(data: WeaponData) -> void:
+	if current_weapon != null:
+		current_weapon.queue_free()
+
+	var weapon_scene = preload(
+        "res://Scenes/Weapons/BaseWeapon.tscn"
+	)
+
+	current_weapon = weapon_scene.instantiate() as BaseWeapon
+
+	weapon_holder.add_child(current_weapon)
+	current_weapon.setup(data)
+
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("attack"):
+		if current_weapon != null:
+			current_weapon.attack()

@@ -1,9 +1,13 @@
 [gd_scene format=3 uid="uid://dmg7yfrfwf8de"]
 
+[ext_resource type="Script" uid="uid://de2ppq45dql2h" path="res://Scenes/Weapons/BaseWeapon.gd" id="1_q4fon"]
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_wdocy"]
 radius = 44.00455
 
 [node name="BaseWeapon" type="Node2D" unique_id=1070785524]
+scale = Vector2(1, 1.4000002)
+script = ExtResource("1_q4fon")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1629493186]
 
