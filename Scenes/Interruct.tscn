@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://m2hlb2cg6nha"]
+
+[ext_resource type="Texture2D" uid="uid://dxh2t5k0inkqo" path="res://Assets/bublina_interac.png" id="1_gx0pk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uvj1n"]
+radius = 20.396078
+
+[node name="Area2D" type="Area2D" unique_id=324977922]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1718184503]
+shape = SubResource("CircleShape2D_uvj1n")
+
+[node name="Prompt" type="Sprite2D" parent="." unique_id=339929447]
+position = Vector2(39, -9)
+texture = ExtResource("1_gx0pk")

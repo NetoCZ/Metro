@@ -1,41 +1,37 @@
-[gd_scene format=3 uid="uid://bxrdnd6n7prk3"]
+[gd_scene format=3 uid="uid://c1vj4bds4xroo"]
 
 [ext_resource type="Script" uid="uid://bs6pfkx0yh0bk" path="res://Scenes/NPC/Npc.gd" id="1_ri8vb"]
 [ext_resource type="Texture2D" uid="uid://iuhbiyhmrpli" path="res://Scenes/NPC/assets/idle_1.png" id="2_u75bn"]
-[ext_resource type="Texture2D" uid="uid://vue12vg1tpe8" path="res://Scenes/NPC/assets/idle_2.png" id="3_u4vjm"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_b4qop"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_37ake"]
+radius = 11.0
+height = 50.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wdocy"]
 animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_u75bn")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_u4vjm")
 }],
 "loop": 1,
-"name": &"Idle",
-"speed": 2.0
+"name": &"default",
+"speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_b4qop"]
-size = Vector2(23.740005, 63.166664)
+[node name="Muller" type="Node2D" unique_id=1482394427]
 
-[node name="NPC" type="CharacterBody2D" unique_id=506730978]
+[node name="Label" type="Label" parent="." unique_id=1710367906]
+offset_left = 9.0
+offset_top = -33.0
+offset_right = 49.0
+offset_bottom = -10.0
+text = "123"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1643121429]
+shape = SubResource("CapsuleShape2D_37ake")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=49593997]
+sprite_frames = SubResource("SpriteFrames_wdocy")
+autoplay = "default"
+frame_progress = 0.5727599
 script = ExtResource("1_ri8vb")
-
-[node name="Area2D" type="AnimatedSprite2D" parent="." unique_id=437239132]
-position = Vector2(39.000004, 57.750004)
-scale = Vector2(4.5454545, 3.2647061)
-sprite_frames = SubResource("SpriteFrames_b4qop")
-animation = &"Idle"
-autoplay = "Idle"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=975039865]
-position = Vector2(0.22999573, -3.020275)
-scale = Vector2(1, 1.0000001)
-shape = SubResource("RectangleShape2D_b4qop")
-
-[node name="Label" type="Label" parent="." unique_id=184890836]
-offset_right = 40.0
-offset_bottom = 23.0

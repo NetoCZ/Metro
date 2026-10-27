@@ -3,7 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://jd144yjvjc4" path="res://Assets/nastupisteBackground.png" id="1_bd45o"]
 [ext_resource type="Texture2D" uid="uid://c7fi6itui6302" path="res://Assets/metroInside.png" id="2_1wixh"]
 [ext_resource type="PackedScene" uid="uid://dnyf0pog4niyr" path="res://Scenes/Player/player.tscn" id="3_3ubiy"]
-[ext_resource type="Script" uid="uid://borcacqeaimby" path="res://Scenes/next_scene.gd" id="4_bd45o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tvscu"]
 size = Vector2(2097, 18)
@@ -20,17 +19,17 @@ size = Vector2(133, 272)
 [node name="metroMain" type="Node2D" unique_id=927188760]
 
 [node name="NastupisteBackground" type="Sprite2D" parent="." unique_id=502686880]
-position = Vector2(535.5, 536)
+position = Vector2(598.4999, -198)
 scale = Vector2(6.1924996, 5.78)
 texture = ExtResource("1_bd45o")
 
 [node name="MetroInside" type="Sprite2D" parent="." unique_id=1564545549]
-position = Vector2(691.0002, 708.4843)
-scale = Vector2(2.351704, 3.2542732)
+position = Vector2(619.9999, -18.999878)
+scale = Vector2(1.8308792, 2.4021351)
 texture = ExtResource("2_1wixh")
 
 [node name="Hitboxes" type="StaticBody2D" parent="." unique_id=1904785347]
-position = Vector2(4, 157)
+position = Vector2(66.99988, -577)
 
 [node name="Ground" type="CollisionShape2D" parent="Hitboxes" unique_id=1373720599]
 position = Vector2(671, 693)
@@ -44,12 +43,11 @@ shape = SubResource("RectangleShape2D_renrx")
 position = Vector2(1531.5, 323.75)
 shape = SubResource("RectangleShape2D_0stwt")
 
-[node name="Player" parent="." unique_id=362517795 instance=ExtResource("3_3ubiy")]
-
 [node name="NextScene" type="Area2D" parent="." unique_id=1358428296]
-script = ExtResource("4_bd45o")
-next_scene = "uid://d38rpqad4iwdp"
+position = Vector2(62.999878, -734)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NextScene" unique_id=2022494447]
-position = Vector2(1227.5, 704)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NextScene" unique_id=2022494447 groups=["player"]]
+position = Vector2(1184.0001, 706)
 shape = SubResource("RectangleShape2D_yea2l")
+
+[node name="Player" parent="." unique_id=362517795 instance=ExtResource("3_3ubiy")]

@@ -2,17 +2,20 @@
 
 [ext_resource type="Texture2D" uid="uid://dsd5elc8h6gjf" path="res://Scenes/Player/assets/standing1.png" id="1_a3d8c"]
 [ext_resource type="Script" uid="uid://b837hjvkk5guk" path="res://Scenes/Player/playerMovement.gd" id="1_uvnfx"]
+[ext_resource type="PackedScene" uid="uid://c7lp0su6sp6j" path="res://Scenes/Weapons/BaseWeapon.tscn" id="2_gk6dx"]
 [ext_resource type="Texture2D" uid="uid://chx02whkmdi8t" path="res://Scenes/Player/assets/standing2.png" id="2_xpcdj"]
 [ext_resource type="Texture2D" uid="uid://e1cm5kx6817x" path="res://Scenes/Player/assets/run1.png" id="3_dd0ac"]
 [ext_resource type="Texture2D" uid="uid://cyagoak5scgmr" path="res://Scenes/Player/assets/run2.png" id="4_0u5uq"]
 [ext_resource type="Texture2D" uid="uid://idrh2wrpnnf0" path="res://Scenes/Player/assets/run3.png" id="5_jlvik"]
 [ext_resource type="Texture2D" uid="uid://dy4aw2hh0ttat" path="res://Scenes/Player/assets/run4.png" id="6_gk6dx"]
+[ext_resource type="Texture2D" uid="uid://dn7aklfr247xk" path="res://Scenes/Player/assets/run5.png" id="9_jhyir"]
+[ext_resource type="Texture2D" uid="uid://dm1ek5bj63hsm" path="res://Scenes/Player/assets/run6.png" id="10_74mp2"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wdocy"]
 radius = 14.0
 height = 50.0
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_nhkjt"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_wdocy"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -37,29 +40,37 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("6_gk6dx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_jhyir")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_74mp2")
 }],
 "loop": 1,
 "name": &"run",
-"speed": 10.0
+"speed": 5.0
 }]
 
 [node name="Player" type="Node" unique_id=362517795 groups=["player"]]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=777287588 groups=["player", "playerTarget"]]
 position = Vector2(-2, 5)
-scale = Vector2(2.5130706, 2.5905352)
+scale = Vector2(3.4415402, 3.5478175)
 script = ExtResource("1_uvnfx")
+base_weapon_scene = ExtResource("2_gk6dx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=523690038]
 shape = SubResource("CapsuleShape2D_wdocy")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=173547773]
-sprite_frames = SubResource("SpriteFrames_nhkjt")
-animation = &"idle"
-frame = 1
-frame_progress = 0.34367946
-
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1439645780]
-scale = Vector2(1, 0.99999994)
+scale = Vector2(-1.0987943, -1.0014774)
+zoom = Vector2(1.3, 1.3)
+position_smoothing_enabled = true
 
-[node name="weaponHolder" type="Node" parent="CharacterBody2D" unique_id=681804196]
+[node name="WeaponHolder" type="Node2D" parent="CharacterBody2D" unique_id=280112700]
+position = Vector2(1, 1)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=557623127]
+sprite_frames = SubResource("SpriteFrames_wdocy")
+animation = &"run"

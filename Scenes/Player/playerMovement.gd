@@ -7,12 +7,19 @@ const FRICTION = 2500.0
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
+@export var base_weapon_scene: PackedScene
+@export var starting_weapon: WeaponData
+
+@onready var weapon_holder: Node2D = $WeaponHolder
+
+var current_weapon: BaseWeapon = null
+
 
 func _physics_process(delta: float) -> void:
 	
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-
+		
 	
 	if Input.is_action_just_pressed("move_jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
@@ -34,7 +41,11 @@ func _physics_process(delta: float) -> void:
 		)
 	
 	if direction != 0:
-		animated_sprite.flip_h = direction < 0
+		var facing_left := direction < 0
+		animated_sprite.flip_h = facing_left
+		$WeaponHolder.position.x = -12.0 if facing_left else 12.0
+		if current_weapon != null:
+			current_weapon.set_facing_left(facing_left)
 
 	if not is_on_floor():
 		animated_sprite.stop()
@@ -45,3 +56,40 @@ func _physics_process(delta: float) -> void:
 		animated_sprite.play("idle")
 
 	move_and_slide()
+
+
+func equip_weapon(data: WeaponData) -> void:
+	if data == null:
+		return
+
+	if base_weapon_scene == null:
+		return
+
+	if current_weapon != null:
+		current_weapon.queue_free()
+
+	var weapon := base_weapon_scene.instantiate() as BaseWeapon
+
+	if weapon == null:
+		return
+
+	weapon_holder.add_child(weapon)
+	weapon.setup(data)
+	current_weapon = weapon
+
+func _ready() -> void:
+	equip_weapon(starting_weapon)
+
+func attack() -> void:
+	if current_weapon == null:
+		return
+
+	if not current_weapon.can_attack:
+		return
+
+	current_weapon.play_swing()
+	current_weapon.attack()
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("attack"):
+		attack()

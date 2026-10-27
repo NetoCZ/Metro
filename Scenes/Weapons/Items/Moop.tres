@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://2cgov2nn4baf"]
+
+[ext_resource type="Script" uid="uid://bovbt3wgcf5yu" path="res://Scenes/Weapons/WeaponData.gd" id="1_x715b"]
+[ext_resource type="Texture2D" uid="uid://dnvdp2lfaboyu" path="res://Assets/item_stick.png" id="2_t367w"]
+
+[resource]
+script = ExtResource("1_x715b")
+damage = 5
+attack_cooldown = 0.3
+attack_duration = 0.3
+weapon_texture = ExtResource("2_t367w")
+weapon_scale = Vector2(0.8, 0.8)
+metadata/_custom_type_script = "uid://bovbt3wgcf5yu"

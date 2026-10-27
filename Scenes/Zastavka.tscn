@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://d38rpqad4iwdp"]
 
 [ext_resource type="Texture2D" uid="uid://jd144yjvjc4" path="res://Assets/nastupisteBackground.png" id="2_h16o0"]
-[ext_resource type="Texture2D" uid="uid://cks8umuvgjmx5" path="res://Assets/NamestiRepublikyNoMetro.png" id="2_qgfyo"]
 [ext_resource type="PackedScene" uid="uid://dnyf0pog4niyr" path="res://Scenes/Player/player.tscn" id="2_w7nrg"]
+[ext_resource type="Texture2D" uid="uid://bjxwxx13jisb6" path="res://Assets/namestiRepubliky.png" id="3_h16o0"]
 [ext_resource type="Texture2D" uid="uid://od5ve3uq0nqc" path="res://Assets/MetroOutside.png" id="3_qgfyo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tvscu"]
@@ -11,26 +11,19 @@ size = Vector2(3486, 30.75)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_renrx"]
 size = Vector2(199, 33.5)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0stwt"]
-size = Vector2(9, 632)
-
 [node name="Zastavka" type="Node2D" unique_id=1909788951]
 position = Vector2(-256, -612)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=793741867]
-position = Vector2(-2, 0)
+position = Vector2(-6, 2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=2031262948]
-position = Vector2(1442, 686.625)
+position = Vector2(1439, 699)
 shape = SubResource("RectangleShape2D_tvscu")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=484680951]
 position = Vector2(466, 651)
 shape = SubResource("RectangleShape2D_renrx")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=207333387]
-position = Vector2(198, 459)
-shape = SubResource("RectangleShape2D_0stwt")
 
 [node name="Player" parent="." unique_id=362517795 instance=ExtResource("2_w7nrg")]
 
@@ -47,7 +40,7 @@ texture = ExtResource("2_h16o0")
 [node name="NamestiRepublikyNoMetro" type="Sprite2D" parent="." unique_id=246228808]
 position = Vector2(910, 550.00006)
 scale = Vector2(5.28, 5.67)
-texture = ExtResource("2_qgfyo")
+texture = ExtResource("3_h16o0")
 
 [node name="MetroOutside" type="Sprite2D" parent="." unique_id=188154565]
 position = Vector2(-844.99994, 665)
