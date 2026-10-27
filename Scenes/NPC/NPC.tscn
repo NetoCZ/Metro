@@ -1,40 +1,10 @@
-[gd_scene format=3 uid="uid://c1vj4bds4xroo"]
+[gd_scene format=3 uid="uid://bxrdnd6n7prk3"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_b4qop"]
+[ext_resource type="Script" uid="uid://bs6pfkx0yh0bk" path="res://Scenes/NPC/Npc.gd" id="1_ri8vb"]
 
-[node name="NPC" type="Node2D" unique_id=1397483727]
-metadata/_tc_uuid = "2667541292778680809"
-metadata/scene_file_path = "res://scenes/NPC/NPC.tscn"
+[node name="NPC" type="CharacterBody2D" unique_id=506730978]
+script = ExtResource("1_ri8vb")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1681116076]
-metadata/_tc_uuid = "2645523172067034627"
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1820072955]
 
-[node name="Label" type="Label" parent="." unique_id=1066779802]
-offset_right = 40.0
-offset_bottom = 23.0
-metadata/_tc_uuid = "8071839239646796903"
-
-[node name="Area2D" type="Area2D" parent="." unique_id=782294413]
-metadata/_tc_uuid = "4820328998354253550"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1730511532]
-shape = SubResource("RectangleShape2D_b4qop")
-metadata/_tc_uuid = "6921298105060100062"
-
-[node name="DialogLayer" type="CanvasLayer" parent="." unique_id=1804873808]
-metadata/_tc_uuid = "7350305834575265931"
-
-[node name="Panel" type="Panel" parent="DialogLayer" unique_id=145712724]
-anchors_preset = -1
-anchor_right = 0.035
-anchor_bottom = 0.031000001
-offset_right = -0.3199997
-offset_bottom = 19.911999
-metadata/_tc_uuid = "3201560383104703023"
-
-[node name="DialogText" type="Label" parent="DialogLayer/Panel" unique_id=1706883593]
-layout_mode = 0
-offset_right = 42.0
-offset_bottom = 23.0
-text = "Nejaky text"
-metadata/_tc_uuid = "2014903714094036638"
+[node name="Area2D" type="Area2D" parent="." unique_id=1807738075]
