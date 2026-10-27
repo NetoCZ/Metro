@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://jd144yjvjc4" path="res://Assets/nastupisteBackground.png" id="1_bd45o"]
 [ext_resource type="Texture2D" uid="uid://c7fi6itui6302" path="res://Assets/metroInside.png" id="2_1wixh"]
-[ext_resource type="PackedScene" uid="uid://dnyf0pog4niyr" path="res://Scenes/Player/player.tscn" id="3_3ubiy"]
+[ext_resource type="PackedScene" uid="uid://dnyf0pog4niyr" path="res://Scenes/Weapons/WeaponHolder.tscn" id="3_3ubiy"]
 [ext_resource type="Script" uid="uid://borcacqeaimby" path="res://Scenes/next_scene.gd" id="4_bd45o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tvscu"]
