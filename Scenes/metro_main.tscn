@@ -24,7 +24,7 @@ size = Vector2(183, 272)
 radius = 58.21512
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_renrx"]
-radius = 59.841457
+radius = 61.03278
 
 [node name="metroMain" type="Node2D" unique_id=927188760]
 
@@ -95,7 +95,7 @@ position = Vector2(-325, -86)
 script = ExtResource("7_ua22h")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="proxcheck2" unique_id=184102700]
-position = Vector2(-13, 139)
+position = Vector2(-15, 136)
 shape = SubResource("CircleShape2D_renrx")
 
 [node name="Popup" type="Sprite2D" parent="proxcheck2" unique_id=261035454]
