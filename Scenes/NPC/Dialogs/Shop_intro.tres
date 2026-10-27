@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DialogData" format=3 uid="uid://cyxa2q5gssxrj"]
+
+[ext_resource type="Script" uid="uid://dih3ucgvkuj76" path="res://Scenes/NPC/Dialogs/Dialog_data.gd" id="1_27n4m"]
+
+[resource]
+script = ExtResource("1_27n4m")
+speaker = "Narrator"
+lines = Array[String](["ahoj"])
+metadata/_custom_type_script = "uid://dih3ucgvkuj76"
