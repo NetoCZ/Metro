@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://ctknop1brmsvu"]
+
+[ext_resource type="Script" uid="uid://d13q10xet3mmd" path="res://Scenes/Weapons/WeaponData.gd" id="1_3xbkr"]
+
+[resource]
+script = ExtResource("1_3xbkr")
+weapon_name = "Stick"
+damage = 2
+attack_cooldown = 0.6
+attack_range = 20.0
+metadata/_custom_type_script = "uid://d13q10xet3mmd"

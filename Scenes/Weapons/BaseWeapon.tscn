@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://dmg7yfrfwf8de"]
+
+[node name="BaseWeapon" type="Node2D" unique_id=1070785524]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1629493186]
