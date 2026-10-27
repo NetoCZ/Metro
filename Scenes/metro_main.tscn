@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bjxwxx13jisb6" path="res://Assets/namestiRepubliky.png" id="1_juqtr"]
 [ext_resource type="Texture2D" uid="uid://c7fi6itui6302" path="res://Assets/metroInside.png" id="2_1wixh"]
+[ext_resource type="PackedScene" uid="uid://dnyf0pog4niyr" path="res://Scenes/Player/player.tscn" id="3_3ubiy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tvscu"]
 size = Vector2(2097, 18)
@@ -28,7 +29,7 @@ texture = ExtResource("2_1wixh")
 position = Vector2(4, 157)
 
 [node name="Ground" type="CollisionShape2D" parent="Hitboxes" unique_id=1373720599]
-position = Vector2(672.5, 700)
+position = Vector2(671, 693)
 shape = SubResource("RectangleShape2D_tvscu")
 
 [node name="WallBack" type="CollisionShape2D" parent="Hitboxes" unique_id=1446776004]
@@ -38,3 +39,5 @@ shape = SubResource("RectangleShape2D_renrx")
 [node name="WallFront" type="CollisionShape2D" parent="Hitboxes" unique_id=117948488]
 position = Vector2(1530, 556)
 shape = SubResource("RectangleShape2D_0stwt")
+
+[node name="Player" parent="." unique_id=362517795 instance=ExtResource("3_3ubiy")]
