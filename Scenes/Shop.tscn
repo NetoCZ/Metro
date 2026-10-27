@@ -4,6 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://dnyf0pog4niyr" path="res://Scenes/Player/player.tscn" id="2_lagin"]
 [ext_resource type="Texture2D" uid="uid://cuijsbo64d12f" path="res://Assets/normal_obchodnik_0001.png" id="3_i4qx4"]
 [ext_resource type="Texture2D" uid="uid://vapg6ku75cyr" path="res://Assets/normal_obchodnik_0002.png" id="4_e5ji4"]
+[ext_resource type="Texture2D" uid="uid://dxh2t5k0inkqo" path="res://Assets/bublina_interac.png" id="5_e5ji4"]
+[ext_resource type="Script" uid="uid://4clny5677ppk" path="res://Scenes/proxcheck.gd" id="5_wndna"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tvscu"]
 size = Vector2(1101, 8.139187)
@@ -24,6 +26,9 @@ animations = [{
 "name": &"idle",
 "speed": 5.0
 }]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0stwt"]
+size = Vector2(18, 124.5)
 
 [node name="Shop" type="Node2D" unique_id=1731616093]
 
@@ -59,4 +64,16 @@ scale = Vector2(3.8152654, 4.0383058)
 sprite_frames = SubResource("SpriteFrames_renrx")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.5126726
+frame_progress = 0.9723778
+
+[node name="buyOption" type="Area2D" parent="." unique_id=1860158669]
+position = Vector2(168, -127)
+script = ExtResource("5_wndna")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="buyOption" unique_id=887157002]
+position = Vector2(-2.5, 159.75)
+shape = SubResource("RectangleShape2D_0stwt")
+
+[node name="Popup" type="Sprite2D" parent="buyOption" unique_id=613493896]
+position = Vector2(50, 110)
+texture = ExtResource("5_e5ji4")

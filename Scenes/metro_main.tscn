@@ -68,7 +68,6 @@ shape = SubResource("RectangleShape2D_yea2l")
 
 [node name="PlayerUI" parent="Player" unique_id=955115499 instance=ExtResource("5_3jqe1")]
 script = ExtResource("6_q7pmx")
-player_path = NodePath("..")
 
 [node name="ORB" type="Area2D" parent="." unique_id=52562613]
 position = Vector2(-340, 49)
