@@ -9,10 +9,10 @@
 size = Vector2(2097, 18)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_renrx"]
-size = Vector2(12, 306)
+size = Vector2(16, 897)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0stwt"]
-size = Vector2(10, 281)
+size = Vector2(7, 745.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yea2l"]
 size = Vector2(133, 272)
@@ -38,11 +38,11 @@ position = Vector2(671, 693)
 shape = SubResource("RectangleShape2D_tvscu")
 
 [node name="WallBack" type="CollisionShape2D" parent="Hitboxes" unique_id=1446776004]
-position = Vector2(-361, 551)
+position = Vector2(-363, 255.5)
 shape = SubResource("RectangleShape2D_renrx")
 
 [node name="WallFront" type="CollisionShape2D" parent="Hitboxes" unique_id=117948488]
-position = Vector2(1530, 556)
+position = Vector2(1531.5, 323.75)
 shape = SubResource("RectangleShape2D_0stwt")
 
 [node name="Player" parent="." unique_id=362517795 instance=ExtResource("3_3ubiy")]

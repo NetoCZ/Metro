@@ -6,10 +6,13 @@
 [ext_resource type="Texture2D" uid="uid://od5ve3uq0nqc" path="res://Assets/MetroOutside.png" id="3_qgfyo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tvscu"]
-size = Vector2(2716, 29.5)
+size = Vector2(3486, 30.75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_renrx"]
 size = Vector2(199, 33.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0stwt"]
+size = Vector2(9, 632)
 
 [node name="Zastavka" type="Node2D" unique_id=1909788951]
 position = Vector2(-256, -612)
@@ -18,12 +21,16 @@ position = Vector2(-256, -612)
 position = Vector2(-2, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=2031262948]
-position = Vector2(1103, 686)
+position = Vector2(1442, 686.625)
 shape = SubResource("RectangleShape2D_tvscu")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=484680951]
 position = Vector2(466, 651)
 shape = SubResource("RectangleShape2D_renrx")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=207333387]
+position = Vector2(198, 459)
+shape = SubResource("RectangleShape2D_0stwt")
 
 [node name="Player" parent="." unique_id=362517795 instance=ExtResource("2_w7nrg")]
 
