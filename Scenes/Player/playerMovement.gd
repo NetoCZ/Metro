@@ -12,12 +12,13 @@ const FRICTION = 2500.0
 @export var starting_weapon: WeaponData
 
 #health
+signal hp_changed(current_hp: int, max_hp: int)
 @export var max_hp: int = 50
+var current_hp: int
 #Weapon Holder
 @onready var weapon_holder: Node2D = $WeaponHolder
 
 var current_weapon: BaseWeapon = null
-var current_hp: int
 
 #Movement
 func _physics_process(delta: float) -> void:
@@ -79,8 +80,9 @@ func equip_weapon(data: WeaponData) -> void:
 	current_weapon = weapon
 
 func _ready() -> void:
-	equip_weapon(starting_weapon)
 	current_hp = max_hp
+	equip_weapon(starting_weapon)
+	hp_changed.emit(current_hp, max_hp)
 
 #Attack
 func attack() -> void:
@@ -98,9 +100,11 @@ func die() -> void:
 	
 #Take Damage
 func take_damage(amount: int) -> void:
-	current_hp = max(current_hp - amount, 0)
+	current_hp = clampi(current_hp - amount, 0, max_hp)
+
+	hp_changed.emit(current_hp, max_hp)
 	print("HP: ", current_hp, "/", max_hp)
-	
+
 	if current_hp <= 0:
 		die()
 

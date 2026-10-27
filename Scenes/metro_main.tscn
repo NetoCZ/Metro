@@ -5,7 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://dnyf0pog4niyr" path="res://Scenes/Player/player.tscn" id="3_3ubiy"]
 [ext_resource type="Script" uid="uid://ca5515pmat1ck" path="res://Scenes/scriptLib/E_sceneChange.tscn.gd" id="3_ua22h"]
 [ext_resource type="PackedScene" uid="uid://bjtma5cm5d3j1" path="res://Scenes/Player/playerUI.tscn" id="5_3jqe1"]
-[ext_resource type="Script" uid="uid://c1u632wel55f8" path="res://Scenes/Player/progress_bar_hp.gd" id="6_q7pmx"]
 [ext_resource type="Texture2D" uid="uid://ot3mxxnl5a8b" path="res://Assets/ORBULTIMATNI.png" id="6_ua22h"]
 [ext_resource type="Script" uid="uid://4clny5677ppk" path="res://Scenes/proxcheck.gd" id="7_ua22h"]
 [ext_resource type="Texture2D" uid="uid://dxh2t5k0inkqo" path="res://Assets/bublina_interac.png" id="8_3jqe1"]
@@ -36,7 +35,7 @@ scale = Vector2(6.3974996, 5.9749994)
 texture = ExtResource("1_bd45o")
 
 [node name="MetroInside" type="Sprite2D" parent="." unique_id=1564545549]
-position = Vector2(619.9999, -18.999878)
+position = Vector2(619, -19)
 scale = Vector2(1.8308792, 2.4021351)
 texture = ExtResource("2_1wixh")
 
@@ -66,9 +65,8 @@ shape = SubResource("RectangleShape2D_yea2l")
 
 [node name="Player" parent="." unique_id=362517795 instance=ExtResource("3_3ubiy")]
 
-[node name="PlayerUI" parent="Player" unique_id=955115499 instance=ExtResource("5_3jqe1")]
-script = ExtResource("6_q7pmx")
-player_path = NodePath("..")
+[node name="PlayerUI" parent="." unique_id=955115499 instance=ExtResource("5_3jqe1")]
+player_path = NodePath("../Player")
 
 [node name="ORB" type="Area2D" parent="." unique_id=52562613]
 position = Vector2(-340, 49)

@@ -1,14 +1,17 @@
 extends CanvasLayer
 
 @export var player_path: NodePath
-
 @onready var hp_bar: ProgressBar = $HPBar
 
-var player: Node
+var player: CharacterBody2D
 
 
 func _ready() -> void:
-	player = get_node(player_path)
+	player = get_node_or_null(player_path) as CharacterBody2D
+
+	if player == null:
+		push_error("Игрок не найден! Проверь Player Path в Inspector.")
+		return
 
 	hp_bar.max_value = player.max_hp
 	hp_bar.value = player.current_hp
