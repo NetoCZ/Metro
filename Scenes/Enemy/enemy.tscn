@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://dgdqadtj7qs5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b4qop"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rr723"]
+
+[node name="Enemy" type="CharacterBody2D" unique_id=1183412405]
+metadata/scene_file_path = "res://scenes/Enemy/enemy.tscn"
+metadata/_tc_uuid = "2163653889164910944"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1722122791]
+metadata/_tc_uuid = "3470599458612676361"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1282501712]
+shape = SubResource("RectangleShape2D_b4qop")
+metadata/_tc_uuid = "1011172106797248639"
+
+[node name="WallCheck" type="RayCast2D" parent="." unique_id=506760530]
+target_position = Vector2(16, 0)
+metadata/_tc_uuid = "8972563468473646982"
+
+[node name="LedgeCheck" type="RayCast2D" parent="." unique_id=964921613]
+target_position = Vector2(0, 20)
+metadata/_tc_uuid = "2436970575004411889"
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=1328641123]
+metadata/_tc_uuid = "1253597086792237826"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1777497221]
+shape = SubResource("RectangleShape2D_rr723")
+metadata/_tc_uuid = "Hitbox/CollisionShape2D"
