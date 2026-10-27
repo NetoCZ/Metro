@@ -47,7 +47,7 @@ animations = [{
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=777287588]
 position = Vector2(-2, 5)
-scale = Vector2(2.1323023, 2.185764)
+scale = Vector2(2.5130706, 2.5905352)
 script = ExtResource("1_uvnfx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=523690038]
@@ -65,5 +65,7 @@ scale = Vector2(1, 0.99999994)
 [node name="WeaponTemplate" type="Node" parent="." unique_id=146412386]
 
 [node name="Sprite2D" type="Sprite2D" parent="WeaponTemplate" unique_id=433118071]
+scale = Vector2(1.1785715, 1.1851852)
 
 [node name="Area2D" type="Area2D" parent="WeaponTemplate" unique_id=29408147]
+scale = Vector2(1.1785715, 1.1851852)
