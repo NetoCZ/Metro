@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dgdqadtj7qs5"]
+[gd_scene format=3 uid="uid://dn3eqswatjumi"]
 
 [ext_resource type="Script" uid="uid://caqf8byeicr66" path="res://Scenes/Enemy/Enemy.gd" id="1_nvvbs"]
 [ext_resource type="Texture2D" uid="uid://2nwj1it2wsou" path="res://Scenes/Enemy/Assets/enemy_run1.png" id="2_2t2r4"]
