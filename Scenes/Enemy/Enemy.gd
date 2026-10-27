@@ -1,39 +1,47 @@
 extends CharacterBody2D
 
 @export var speed: float = 40.0
-@export var gravity: float = 900.0
+@export var chase_speed: float = 250.0
+@export var detect_range: float = 500.0
+@export var patrol_distance: float = 10.0
 
 var direction: int = 1
-
-@onready var sprite = $Sprite2D
-@onready var wall_check: RayCast2D = $WallCheck
-@onready var ledge_check: RayCast2D = $LedgeChesudo
-@onready var hitbox: Area2D = $Hitbox
+var start_x: float
 
 
 func _ready() -> void:
-	hitbox.body_entered.connect(_on_hitbox_body_entered)
+	start_x = global_position.x
+	motion_mode = CharacterBody2D.MOTION_MODE_FLOATING
 
 
-func _physics_process(delta: float) -> void:
-	if not is_on_floor():
-		velocity.y += gravity * delta
+func _physics_process(_delta: float) -> void:
+	var player = get_tree().get_first_node_in_group("playerTarget")
 
-	if is_on_floor():
-		if wall_check.is_colliding() or not ledge_check.is_colliding():
-			turn_around()
+	if player == null:
+		print("Hráč není ve skupině 'player'")
+	elif player is Node2D:
+		var dist_x = player.global_position.x - global_position.x
+		if abs(dist_x) < detect_range:
+			if abs(dist_x) > 2.0:
+				direction = int(sign(dist_x))
+			velocity.x = direction * chase_speed
+			velocity.y = 0
+			var s = get_node_or_null("Sprite2D")
+			if s:
+				s.flip_h = direction < 0
+			move_and_slide()
+			return
 
+	# hlídkování
+	if global_position.x > start_x + patrol_distance:
+		direction = -1
+	elif global_position.x < start_x - patrol_distance:
+		direction = 1
 	velocity.x = direction * speed
+	velocity.y = 0
+
+	var sprite = get_node_or_null("Sprite2D")
+	if sprite:
+		sprite.flip_h = direction < 0
+
 	move_and_slide()
-
-
-func turn_around() -> void:
-	direction *= -1
-	sprite.flip_h = direction < 0
-	wall_check.target_position.x *= -1
-	ledge_check.position.x *= -1
-
-
-func _on_hitbox_body_entered(body: Node2D) -> void:
-	if body.is_in_group("player") and body.has_method("take_damage"):
-		body.take_damage()
