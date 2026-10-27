@@ -94,7 +94,7 @@ func attack() -> void:
 	current_weapon.attack()
 
 func die() -> void:
-	print("Игрок погиб!")
+	print("Player Die!")
 	
 #Take Damage
 func take_damage(amount: int) -> void:

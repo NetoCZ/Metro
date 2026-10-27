@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://c3humjnevy1jw"]
+
+[ext_resource type="Texture2D" uid="uid://df0ieaxg8grpa" path="res://Assets/OBCHOD.png" id="1_kjfcx"]
+[ext_resource type="PackedScene" uid="uid://dnyf0pog4niyr" path="res://Scenes/Player/player.tscn" id="2_lagin"]
+[ext_resource type="Texture2D" uid="uid://cuijsbo64d12f" path="res://Assets/normal_obchodnik_0001.png" id="3_i4qx4"]
+[ext_resource type="Texture2D" uid="uid://vapg6ku75cyr" path="res://Assets/normal_obchodnik_0002.png" id="4_e5ji4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tvscu"]
+size = Vector2(1101, 8.139187)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_renrx"]
+size = Vector2(22, 399)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_renrx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_i4qx4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_e5ji4")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="Shop" type="Node2D" unique_id=1731616093]
+
+[node name="Obchod" type="Sprite2D" parent="." unique_id=1945630043]
+position = Vector2(145, -113)
+scale = Vector2(4.59, 4.95)
+texture = ExtResource("1_kjfcx")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1479166668]
+offset = Vector2(143.515, -110)
+zoom = Vector2(1.48, 1.48)
+
+[node name="Player" parent="." unique_id=362517795 instance=ExtResource("2_lagin")]
+
+[node name="bounds" type="StaticBody2D" parent="." unique_id=693317625]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bounds" unique_id=1925590457]
+position = Vector2(134, 125.26636)
+scale = Vector2(1.007148, 3.1289716)
+shape = SubResource("RectangleShape2D_tvscu")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bounds" unique_id=1855364423]
+position = Vector2(-308, -75)
+shape = SubResource("RectangleShape2D_renrx")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="bounds" unique_id=1275580735]
+position = Vector2(493, -82)
+shape = SubResource("RectangleShape2D_renrx")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1294287093]
+position = Vector2(531.00006, -11)
+scale = Vector2(3.8152654, 4.0383058)
+sprite_frames = SubResource("SpriteFrames_renrx")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.5126726
