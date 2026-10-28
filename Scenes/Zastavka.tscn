@@ -16,7 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://1kmefnqw8b3u" path="res://Scenes/Nene/Nene.tscn" id="14_qa7tr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tvscu"]
-size = Vector2(3486, 30.75)
+size = Vector2(4708.5845, 30.75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_renrx"]
 size = Vector2(199, 33.5)
@@ -45,7 +45,7 @@ texture = ExtResource("1_h16o0")
 position = Vector2(-6, 2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=2031262948]
-position = Vector2(1439, 699)
+position = Vector2(2342.4624, 699)
 scale = Vector2(1.4779549, 1)
 shape = SubResource("RectangleShape2D_tvscu")
 
@@ -58,7 +58,7 @@ position = Vector2(171.5, 402)
 shape = SubResource("RectangleShape2D_0stwt")
 
 [node name="wall2" type="CollisionShape2D" parent="StaticBody2D" unique_id=617660183]
-position = Vector2(1979, -492)
+position = Vector2(3773, 361)
 shape = SubResource("RectangleShape2D_0stwt")
 
 [node name="Player" parent="." unique_id=362517795 groups=["player"] instance=ExtResource("2_w7nrg")]
@@ -131,10 +131,10 @@ stream = ExtResource("11_dfw68")
 volume_db = 4.917
 
 [node name="Nene" parent="." unique_id=675162552 instance=ExtResource("14_qa7tr")]
-position = Vector2(2607, 628)
+position = Vector2(3685, 636)
 
 [node name="proxcheck2" type="Area2D" parent="." unique_id=830046645]
-position = Vector2(1533, 344)
+position = Vector2(2611, 352)
 script = ExtResource("5_kt5ld")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="proxcheck2" unique_id=334787456]
@@ -142,6 +142,6 @@ position = Vector2(1104, 266)
 shape = SubResource("CircleShape2D_unrny")
 
 [node name="Popup" type="Sprite2D" parent="proxcheck2" unique_id=422120589]
-position = Vector2(1203.9999, 288)
+position = Vector2(1170.0001, 287)
 scale = Vector2(1.46, 1.6)
 texture = ExtResource("6_vmmyc")
