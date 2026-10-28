@@ -113,6 +113,7 @@ position = Vector2(-2, 5)
 scale = Vector2(3.4415402, 3.5478175)
 script = ExtResource("1_uvnfx")
 base_weapon_scene = ExtResource("2_gk6dx")
+next_scene = "uid://b6w7e68ar5t6l"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=523690038 groups=["player", "playerTarget"]]
 shape = SubResource("CapsuleShape2D_wdocy")

@@ -9,10 +9,11 @@ const FRICTION = 2500.0
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var damage = $damage
-
 #Weapon Inicalization
 @export var base_weapon_scene: PackedScene
 @export var starting_weapon: WeaponData
+
+@export_file("*.tscn") var next_scene: String
 
 #health
 @export var max_hp: int = 50
@@ -186,3 +187,6 @@ func _input(event: InputEvent) -> void:
 		attack()
 	if event.is_action_pressed("hurt"):
 		take_damage(10)
+	if event.is_action_pressed("restart"):
+		get_tree().change_scene_to_file("res://Scenes/Intro/intro.tscn")
+	
