@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://1kmefnqw8b3u"]
+
+[ext_resource type="Script" uid="uid://k3jnvrwukduw" path="res://Scenes/Nene/Nene.gd" id="1_6hc06"]
+[ext_resource type="Texture2D" uid="uid://c3oc6k08840ov" path="res://Scenes/Nene/item_kouzelnebonbony.png" id="2_3yr4m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6cy5s"]
+size = Vector2(64, 50)
+
+[node name="Nene" type="Area2D" unique_id=675162552]
+script = ExtResource("1_6hc06")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=374828665]
+position = Vector2(31, 23)
+texture = ExtResource("2_3yr4m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=954155314]
+position = Vector2(32, 30)
+shape = SubResource("RectangleShape2D_6cy5s")

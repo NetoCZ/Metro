@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://db5fqomegk5gg"
-path="res://.godot/imported/DobrejTypekRypos.png-f8bc8298304d5dec8e6cf39b0487000a.ctex"
+uid="uid://635ejy0555p5"
+path="res://.godot/imported/RAPOS3.png-2642b116615ba66fb97f8411eee2a1aa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/Player/assets/DobrejTypekRypos.png"
-dest_files=["res://.godot/imported/DobrejTypekRypos.png-f8bc8298304d5dec8e6cf39b0487000a.ctex"]
+source_file="res://Scenes/Player/RAPOS3.png"
+dest_files=["res://.godot/imported/RAPOS3.png-2642b116615ba66fb97f8411eee2a1aa.ctex"]
 
 [params]
 

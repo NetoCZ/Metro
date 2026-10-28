@@ -9,7 +9,6 @@ const FRICTION = 2500.0
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var damage = $damage
-@onready var kroky = $kroky
 
 #Weapon Inicalization
 @export var base_weapon_scene: PackedScene
@@ -41,7 +40,6 @@ func _physics_process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed("move_jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
-		animated_sprite.play("jump")
 	var direction := Input.get_axis("move_left", "move_right")
 
 	if direction != 0:
@@ -66,9 +64,10 @@ func _physics_process(delta: float) -> void:
 
 	# během animace hit se nepřepínají ostatní animace
 	if not is_hit:
-		if not is_on_floor():
+		if GameState.is_rapos:
+			animated_sprite.play("rapos")
+		elif not is_on_floor():
 			animated_sprite.stop()
-			animated_sprite.play("jump")
 		elif direction != 0:
 			if animated_sprite.animation != "run":
 				animated_sprite.play("run")
@@ -79,13 +78,14 @@ func _physics_process(delta: float) -> void:
 
 #Enquip (Not Done)
 func equip_weapon(data: WeaponData) -> void:
-	if data == null or base_weapon_scene == null:
+	if data == null:
 		return
 
-	# Удаляем старое оружие
+	if base_weapon_scene == null:
+		return
+
 	if is_instance_valid(current_weapon):
 		current_weapon.queue_free()
-		current_weapon = null
 
 	var weapon := base_weapon_scene.instantiate() as BaseWeapon
 
@@ -93,8 +93,8 @@ func equip_weapon(data: WeaponData) -> void:
 		return
 
 	weapon_holder.add_child(weapon)
-	current_weapon = weapon
 	weapon.setup(data)
+	current_weapon = weapon
 	
 	GameState.saved_weapon = data
 
@@ -115,6 +115,18 @@ func _ready() -> void:
 
 	hp_changed.emit(current_hp, max_hp)
 
+#Rapos
+func make_rapos() -> void:
+	GameState.is_rapos = true
+
+#Heal
+func heal(amount: int) -> void:
+	if is_dead:
+		return
+	current_hp = min(current_hp + amount, max_hp)
+	hp_changed.emit(current_hp, max_hp)
+	GameState.set_hp(current_hp, max_hp)
+
 #Attack
 func attack() -> void:
 	if is_dead:
@@ -128,6 +140,7 @@ func attack() -> void:
 
 	current_weapon.play_swing()
 	current_weapon.attack()
+
 func die() -> void:
 	is_dead = true
 	is_hit = false
@@ -141,7 +154,7 @@ func die() -> void:
 func take_damage(amount: int) -> void:
 	if is_dead:
 		return
-		
+
 	damage.play()
 
 	current_hp = max(current_hp - amount, 0)
@@ -154,7 +167,6 @@ func take_damage(amount: int) -> void:
 
 	is_hit = true
 	animated_sprite.play("hit")
-	print("e")
 
 	var my_hit_time := Time.get_ticks_msec()
 	last_hit_time = my_hit_time
@@ -174,11 +186,3 @@ func _input(event: InputEvent) -> void:
 		attack()
 	if event.is_action_pressed("hurt"):
 		take_damage(10)
-
-func heal(amount: int) -> void:
-	if is_dead:
-		return
-	current_hp = min(current_hp + amount, max_hp)
-	hp_changed.emit(current_hp, max_hp)
-	GameState.set_hp(current_hp, max_hp)
-	

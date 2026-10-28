@@ -13,6 +13,7 @@
 [ext_resource type="Script" uid="uid://by7amjys6pcn" path="res://Scenes/Bezdak_zona.gd" id="10_7rsvt"]
 [ext_resource type="AudioStream" uid="uid://nrqb56aiygct" path="res://Assets/freesound_community-cough-46034.mp3" id="10_dfw68"]
 [ext_resource type="AudioStream" uid="uid://b42xcqtxroq20" path="res://Assets/goofy-ahh-weird-sounds-meme-mp3.mp3" id="11_dfw68"]
+[ext_resource type="PackedScene" uid="uid://1kmefnqw8b3u" path="res://Scenes/Nene/Nene.tscn" id="14_qa7tr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tvscu"]
 size = Vector2(3486, 30.75)
@@ -24,7 +25,7 @@ size = Vector2(199, 33.5)
 size = Vector2(25, 824)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_unrny"]
-radius = 184.1331
+radius = 93.193344
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4aany"]
 radius = 181.0
@@ -128,3 +129,19 @@ shape = SubResource("RectangleShape2D_b4qop")
 [node name="bezdak" type="AudioStreamPlayer" parent="BezdakZona" unique_id=862283387]
 stream = ExtResource("11_dfw68")
 volume_db = 4.917
+
+[node name="Nene" parent="." unique_id=675162552 instance=ExtResource("14_qa7tr")]
+position = Vector2(2607, 628)
+
+[node name="proxcheck2" type="Area2D" parent="." unique_id=830046645]
+position = Vector2(1533, 344)
+script = ExtResource("5_kt5ld")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="proxcheck2" unique_id=334787456]
+position = Vector2(1104, 266)
+shape = SubResource("CircleShape2D_unrny")
+
+[node name="Popup" type="Sprite2D" parent="proxcheck2" unique_id=422120589]
+position = Vector2(1203.9999, 288)
+scale = Vector2(1.46, 1.6)
+texture = ExtResource("6_vmmyc")
