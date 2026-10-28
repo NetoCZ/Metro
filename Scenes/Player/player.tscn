@@ -4,11 +4,7 @@
 [ext_resource type="Script" uid="uid://b837hjvkk5guk" path="res://Scenes/Player/playerMovement.gd" id="1_uvnfx"]
 [ext_resource type="PackedScene" uid="uid://dmg7yfrfwf8de" path="res://Scenes/Weapons/BaseWeapon.tscn" id="2_gk6dx"]
 [ext_resource type="Texture2D" uid="uid://chx02whkmdi8t" path="res://Scenes/Player/assets/standing2.png" id="2_xpcdj"]
-<<<<<<< HEAD
-[ext_resource type="Resource" uid="uid://2cgov2nn4baf" path="res://Scenes/Weapons/Items/Moop.tres" id="3_74mp2"]
-=======
 [ext_resource type="Resource" uid="uid://2cgov2nn4baf" path="res://Scenes/Weapons/Items/Moop.tres" id="3_7g0yx"]
->>>>>>> 00539dc5b85af9dfbfc11247bae6ef9b0cb09fdd
 [ext_resource type="Texture2D" uid="uid://e1cm5kx6817x" path="res://Scenes/Player/assets/run1.png" id="3_dd0ac"]
 [ext_resource type="Texture2D" uid="uid://cyagoak5scgmr" path="res://Scenes/Player/assets/run2.png" id="4_0u5uq"]
 [ext_resource type="Texture2D" uid="uid://d1vvl62o5gs8q" path="res://Scenes/Player/assets/mrtev_maincharacter.png" id="4_06tpx"]
