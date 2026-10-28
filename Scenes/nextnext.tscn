@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://vk622vu7m7kp" path="res://Assets/J_KARA_2.png" id="6_kq4sa"]
 [ext_resource type="Texture2D" uid="uid://re6w173u3rms" path="res://Assets/J_KARA_3.png" id="7_w41r0"]
 [ext_resource type="Script" uid="uid://cuxanorjm0p6b" path="res://Scenes/karaSentBackToHell.gd" id="8_y5f17"]
+[ext_resource type="AudioStream" uid="uid://nrqb56aiygct" path="res://Assets/freesound_community-cough-46034.mp3" id="10_kq4sa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0udi0"]
 size = Vector2(3486, 30.75)
@@ -84,3 +85,6 @@ next_scene = "uid://b7gaq4pasrate"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy/Kara/Area2D" unique_id=1080795656]
 position = Vector2(-5.75, 99)
 shape = SubResource("RectangleShape2D_6cy5s")
+
+[node name="kasel" type="AudioStreamPlayer" parent="." unique_id=352488275]
+stream = ExtResource("10_kq4sa")

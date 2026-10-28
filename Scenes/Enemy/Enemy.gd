@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @onready var kara = $Kara
 @onready var delej = $delej
+@onready var hit = $hit
 
 @export var speed: float = 40.0
 @export var chase_speed: float = 250.0
@@ -50,6 +51,7 @@ func take_damage(amount: int) -> void:
 
 	is_hit = true
 	sprite.play("hit")
+	hit.play()
 
 	var my_hit_time := Time.get_ticks_msec()
 	last_hit_time = my_hit_time
