@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://ctiqs4qw78vtq" path="res://Scenes/Enemy/Assets/run_enemy_0006.png" id="9_js6tk"]
 [ext_resource type="AudioStream" uid="uid://bsvnhba7cdx2i" path="res://Scenes/delej-uz-ste-tady-meli-bejt-4-minuty-ty-magore-jiri-kara-made-with-voic_sqYdF6jG.mp3" id="10_3jkxs"]
 [ext_resource type="AudioStream" uid="uid://c8b1necv0kkat" path="res://Scenes/Enemy/Assets/slap-sound-effect-no-copyright.mp3" id="11_hn56f"]
+[ext_resource type="PackedScene" uid="uid://bj4qu52snn3mr" path="res://Scenes/RAM/ram.tscn" id="12_jg6oh"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_b4qop"]
 animations = [{
@@ -62,6 +63,8 @@ size = Vector2(93, 131)
 
 [node name="Enemy" type="CharacterBody2D" unique_id=1183412405]
 script = ExtResource("1_nvvbs")
+ram_scene = ExtResource("12_jg6oh")
+ram_value = 2
 metadata/scene_file_path = "res://scenes/Enemy/enemy.tscn"
 metadata/_tc_uuid = "2163653889164910944"
 
@@ -99,3 +102,6 @@ stream = ExtResource("10_3jkxs")
 
 [node name="hit" type="AudioStreamPlayer2D" parent="." unique_id=1874427629]
 stream = ExtResource("11_hn56f")
+
+[node name="DropPoint" type="Marker2D" parent="." unique_id=1469205439]
+position = Vector2(116, 85)

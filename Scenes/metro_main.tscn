@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://b8k1grji6n3vu" path="res://Assets/mull1.png" id="9_y5s03"]
 [ext_resource type="Texture2D" uid="uid://dadxha13xfyod" path="res://Assets/mull2.png" id="10_18qhk"]
 [ext_resource type="Texture2D" uid="uid://cybv1kioftaw5" path="res://Assets/talkButton.png" id="10_y5s03"]
+[ext_resource type="Script" uid="uid://dpple05dleisc" path="res://Scenes/questgiver.gd" id="11_7mde6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tvscu"]
 size = Vector2(2399.5, 11)
@@ -153,6 +154,7 @@ texture = ExtResource("8_3jqe1")
 
 [node name="Questgiver" type="Area2D" parent="." unique_id=1448186379]
 position = Vector2(455, -849)
+script = ExtResource("11_7mde6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Questgiver" unique_id=674685434]
 position = Vector2(-10.249987, 859.4375)
@@ -160,6 +162,17 @@ scale = Vector2(4.204546, 4.303571)
 sprite_frames = SubResource("SpriteFrames_tvscu")
 autoplay = "default"
 frame_progress = 0.9732648
+
+[node name="DialogLabel" type="Label" parent="Questgiver/AnimatedSprite2D" unique_id=2099508714]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -24.735138
+offset_top = -60.51245
+offset_right = 2.8540497
+offset_bottom = -37.51245
+grow_horizontal = 2
+horizontal_alignment = 1
 
 [node name="questProx" type="Area2D" parent="Questgiver" unique_id=1582427340]
 position = Vector2(-455, 849)
