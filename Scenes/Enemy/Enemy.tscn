@@ -104,4 +104,4 @@ stream = ExtResource("10_3jkxs")
 stream = ExtResource("11_hn56f")
 
 [node name="DropPoint" type="Marker2D" parent="." unique_id=1469205439]
-position = Vector2(116, 85)
+position = Vector2(29, 71)

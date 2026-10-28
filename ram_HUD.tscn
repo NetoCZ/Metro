@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cryse0qrwa8is"]
+
+[ext_resource type="Script" uid="uid://bhb1xbh5k2i81" path="res://RamHUD.gd" id="1_om8ua"]
+
+[node name="RamHUD" type="CanvasLayer" unique_id=394416792]
+script = ExtResource("1_om8ua")
+
+[node name="Label" type="Label" parent="." unique_id=1547878295]
+anchors_preset = -1
+anchor_left = 0.002
+anchor_right = 0.002
+offset_left = -0.84000015
+offset_right = 103.16
+offset_bottom = 55.999992
+
+[node name="HPLabel" type="Label" parent="." unique_id=148410502]
+anchors_preset = -1
+anchor_top = 0.028
+anchor_bottom = 0.028
+offset_top = -0.24000168
+offset_right = 94.0
+offset_bottom = 33.76

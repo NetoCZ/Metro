@@ -1,10 +1,11 @@
 extends CharacterBody2D
 
 @onready var sprite: AnimatedSprite2D = $Sprite2D
+@onready var kara = $Kara
 @onready var delej = $delej
 @onready var hit = $hit
 @onready var drop_point: Marker2D = get_node_or_null("DropPoint")
-@onready var kara = get_node_or_null("Kara")
+@onready var karaKounter: int = 2
 
 @export var speed: float = 40.0
 @export var chase_speed: float = 250.0
@@ -14,14 +15,15 @@ extends CharacterBody2D
 @export var max_health: int = 30
 @export var hit_duration: float = 0.5
 
+
+
 # --- DROP ---
 @export var ram_scene: PackedScene
 @export var ram_value: int = 1
 
 # --- ÚTOK ---
 @export var attack_damage: int = 10
-@export var attack_range_x: float = 80.0
-@export var attack_range_y: float = 150.0
+@export var attack_range_x: float = 150.0
 @export var attack_cooldown: float = 1.0
 
 var direction: int = 1
@@ -38,8 +40,12 @@ func _ready() -> void:
 	health = max_health
 	motion_mode = CharacterBody2D.MOTION_MODE_FLOATING
 	sprite.play("run")
-	if kara:
-		kara.hide()
+		
+func karaShow() -> void:
+	if karaKounter == 0:
+		print("oba mrtvi")
+		kara.show()
+		delej.play()
 
 
 func take_damage(amount: int) -> void:
@@ -50,10 +56,9 @@ func take_damage(amount: int) -> void:
 
 	if health <= 0:
 		die()
-		if kara:
-			kara.show()
-		delej.play()
+		queue_free()
 		return
+		
 
 	is_hit = true
 	sprite.play("hit")
@@ -71,11 +76,11 @@ func take_damage(amount: int) -> void:
 
 
 func die() -> void:
-	print("dead")
 	is_dead = true
 	velocity = Vector2.ZERO
 	set_physics_process(false)
 	sprite.play("dead")
+	karaKounter = karaKounter - 1
 	for child in get_children():
 		if child is CollisionShape2D:
 			child.set_deferred("disabled", true)
@@ -87,6 +92,7 @@ func die() -> void:
 
 
 func _drop_ram() -> void:
+	karaShow()
 	if ram_scene == null:
 		return
 	var ram := ram_scene.instantiate()
@@ -103,9 +109,8 @@ func try_attack(player: Node2D) -> void:
 		return
 
 	var dx: float = abs(player.global_position.x - global_position.x)
-	var dy: float = abs(player.global_position.y - global_position.y)
 
-	if dx > attack_range_x or dy > attack_range_y:
+	if dx > attack_range_x:
 		return
 
 	if player.has_method("take_damage"):

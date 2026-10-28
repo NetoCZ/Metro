@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cdwmpe5nvo6hh" path="res://Scenes/RAM/Mena-RAM.png" id="2_gfej1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jg6oh"]
-size = Vector2(98, 58)
+size = Vector2(9, 51)
 
 [node name="Ram" type="Area2D" unique_id=474318306]
 script = ExtResource("1_qyweu")
@@ -13,5 +13,5 @@ script = ExtResource("1_qyweu")
 texture = ExtResource("2_gfej1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1377432566]
-position = Vector2(-1, 0)
+position = Vector2(6.5, -3.5)
 shape = SubResource("RectangleShape2D_jg6oh")

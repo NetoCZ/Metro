@@ -1,11 +1,12 @@
 [gd_scene format=3 uid="uid://bullkjyqbi4nn"]
 
-[ext_resource type="Texture2D" uid="uid://blgjjaadcv5mj" path="res://Assets/Battle zoner.webp" id="1_neyy0"]
+[ext_resource type="Texture2D" uid="uid://c1db8g7msn1p3" path="res://Assets/dungen.png" id="1_kq4sa"]
 [ext_resource type="PackedScene" uid="uid://dnyf0pog4niyr" path="res://Scenes/Player/player.tscn" id="2_fsfas"]
 [ext_resource type="PackedScene" uid="uid://dn3eqswatjumi" path="res://Scenes/Enemy/Enemy.tscn" id="3_fsfas"]
 [ext_resource type="Texture2D" uid="uid://dxh2t5k0inkqo" path="res://Assets/bublina_interac.png" id="4_0udi0"]
 [ext_resource type="Script" uid="uid://b6653mo2td2oj" path="res://Scenes/karaProxyCheck.gd" id="4_t5oyf"]
 [ext_resource type="Texture2D" uid="uid://bd505j4ap03c1" path="res://Assets/J_KARA_1.png" id="5_kpfu5"]
+[ext_resource type="Script" uid="uid://beop7q4e2a2cp" path="res://Scenes/kara_show.gd" id="5_w41r0"]
 [ext_resource type="Texture2D" uid="uid://vk622vu7m7kp" path="res://Assets/J_KARA_2.png" id="6_kq4sa"]
 [ext_resource type="Texture2D" uid="uid://re6w173u3rms" path="res://Assets/J_KARA_3.png" id="7_w41r0"]
 [ext_resource type="Script" uid="uid://cuxanorjm0p6b" path="res://Scenes/karaSentBackToHell.gd" id="8_y5f17"]
@@ -43,9 +44,9 @@ size = Vector2(147.5, 266)
 [node name="Nextnext" type="Node2D" unique_id=787677190]
 
 [node name="BattleZoner" type="Sprite2D" parent="." unique_id=1174333424]
-position = Vector2(51.000004, -173)
-scale = Vector2(1.0418794, 0.8722571)
-texture = ExtResource("1_neyy0")
+position = Vector2(182.99998, -64.00002)
+scale = Vector2(5, 5)
+texture = ExtResource("1_kq4sa")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1114423034]
 position = Vector2(-822, -213.24142)
@@ -70,37 +71,44 @@ shape = SubResource("RectangleShape2D_tvscu")
 [node name="Enemy" parent="." unique_id=1183412405 instance=ExtResource("3_fsfas")]
 position = Vector2(772, 4)
 
-[node name="Kara" type="Area2D" parent="Enemy" unique_id=1772509377]
-position = Vector2(37, -165)
+[node name="kasel" type="AudioStreamPlayer" parent="." unique_id=352488275]
+stream = ExtResource("10_kq4sa")
+
+[node name="Enemy2" parent="." unique_id=884738086 instance=ExtResource("3_fsfas")]
+position = Vector2(-602, 4)
+attack_damage = 5
+
+[node name="karaShow" type="Node2D" parent="." unique_id=1108665059 node_paths=PackedStringArray("enemy1", "enemy2")]
+position = Vector2(540, -15)
+script = ExtResource("5_w41r0")
+enemy1 = NodePath("../Enemy")
+enemy2 = NodePath("../Enemy2")
+
+[node name="Kara" type="Area2D" parent="karaShow" unique_id=1772509377]
+position = Vector2(144, -172)
 script = ExtResource("4_t5oyf")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy/Kara" unique_id=1020523580]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="karaShow/Kara" unique_id=1020523580]
 position = Vector2(-8.931335, 108.68187)
 shape = SubResource("RectangleShape2D_b4qop")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy/Kara" unique_id=1637819360]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="karaShow/Kara" unique_id=1637819360]
 position = Vector2(-14.223389, 107.84085)
 scale = Vector2(6.177666, 4.856581)
 sprite_frames = SubResource("SpriteFrames_t5oyf")
 autoplay = "default"
 frame_progress = 0.38343653
 
-[node name="Popus" type="Sprite2D" parent="Enemy/Kara" unique_id=1700727363]
+[node name="Popus" type="Sprite2D" parent="karaShow/Kara" unique_id=1700727363]
 position = Vector2(126.068665, 43.68187)
 scale = Vector2(1.8650002, 2.1099997)
 texture = ExtResource("4_0udi0")
 
-[node name="Area2D" type="Area2D" parent="Enemy/Kara" unique_id=1201621589]
+[node name="Area2D" type="Area2D" parent="karaShow/Kara" unique_id=1201621589]
 position = Vector2(-3.931366, 33.68187)
 script = ExtResource("8_y5f17")
 next_scene = "uid://b7gaq4pasrate"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy/Kara/Area2D" unique_id=1080795656]
-position = Vector2(-5.75, 99)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="karaShow/Kara/Area2D" unique_id=1080795656]
+position = Vector2(-4.0686035, 96.31813)
 shape = SubResource("RectangleShape2D_6cy5s")
-
-[node name="kasel" type="AudioStreamPlayer" parent="." unique_id=352488275]
-stream = ExtResource("10_kq4sa")
-
-[node name="Enemy2" parent="." unique_id=884738086 instance=ExtResource("3_fsfas")]
-position = Vector2(-602, 4)
