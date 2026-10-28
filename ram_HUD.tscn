@@ -12,3 +12,11 @@ anchor_right = 0.002
 offset_left = -0.84000015
 offset_right = 103.16
 offset_bottom = 55.999992
+
+[node name="HPLabel" type="Label" parent="." unique_id=148410502]
+anchors_preset = -1
+anchor_top = 0.028
+anchor_bottom = 0.028
+offset_top = -0.24000168
+offset_right = 94.0
+offset_bottom = 33.76

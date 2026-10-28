@@ -97,7 +97,14 @@ func equip_weapon(data: WeaponData) -> void:
 
 func _ready() -> void:
 	add_to_group("playerTarget")
-	current_hp = max_hp
+
+	# HP se přenáší mezi scénami přes GameState
+	if GameState.current_hp < 0:
+		current_hp = max_hp
+	else:
+		current_hp = GameState.current_hp
+	GameState.set_hp(current_hp, max_hp)
+
 	if GameState.saved_weapon != null:
 		equip_weapon(GameState.saved_weapon)
 	else:
@@ -126,6 +133,7 @@ func die() -> void:
 	animated_sprite.play("dead")
 	if current_weapon != null:
 		current_weapon.hide()
+	GameState.current_hp = -1   # po smrti začne další život s plným HP
 	
 #Take Damage
 func take_damage(amount: int) -> void:
@@ -134,6 +142,7 @@ func take_damage(amount: int) -> void:
 
 	current_hp = max(current_hp - amount, 0)
 	hp_changed.emit(current_hp, max_hp)
+	GameState.set_hp(current_hp, max_hp)
 	
 	if current_hp <= 0:
 		die()

@@ -18,3 +18,14 @@ var ram: int = 0
 func add_ram(amount: int) -> void:
 	ram += amount
 	ram_changed.emit(ram)
+
+signal hp_changed(current_hp: int, max_hp: int)
+
+var current_hp: int = -1 
+var max_hp: int = 50
+
+
+func set_hp(current: int, maximum: int) -> void:
+	current_hp = current
+	max_hp = maximum
+	hp_changed.emit(current_hp, max_hp)
