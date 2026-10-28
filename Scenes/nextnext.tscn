@@ -57,28 +57,30 @@ shape = SubResource("RectangleShape2D_0udi0")
 position = Vector2(772, 4)
 
 [node name="Kara" type="Area2D" parent="Enemy" unique_id=1772509377]
+position = Vector2(37, -165)
 script = ExtResource("4_t5oyf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy/Kara" unique_id=1020523580]
-position = Vector2(-592, -36)
+position = Vector2(-8.931335, 108.68187)
 shape = SubResource("RectangleShape2D_b4qop")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy/Kara" unique_id=1637819360]
-position = Vector2(-597.292, -36.841)
+position = Vector2(-14.223389, 107.84085)
 scale = Vector2(6.177666, 4.856581)
 sprite_frames = SubResource("SpriteFrames_t5oyf")
 autoplay = "default"
 frame_progress = 0.38343653
 
 [node name="Popus" type="Sprite2D" parent="Enemy/Kara" unique_id=1700727363]
-position = Vector2(-457, -101)
+position = Vector2(126.068665, 43.68187)
 scale = Vector2(1.8650002, 2.1099997)
 texture = ExtResource("4_0udi0")
 
 [node name="Area2D" type="Area2D" parent="Enemy/Kara" unique_id=1201621589]
+position = Vector2(-3.931366, 33.68187)
 script = ExtResource("8_y5f17")
 next_scene = "uid://b7gaq4pasrate"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy/Kara/Area2D" unique_id=1080795656]
-position = Vector2(-592.75, -37)
+position = Vector2(-5.75, 99)
 shape = SubResource("RectangleShape2D_6cy5s")
