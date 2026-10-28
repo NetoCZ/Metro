@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cv27rlbwrnsrx" path="res://Assets/FINALNIUVODNISTANICE.png" id="1_bd45o"]
 [ext_resource type="Texture2D" uid="uid://c7fi6itui6302" path="res://Assets/metroInside.png" id="2_1wixh"]
 [ext_resource type="PackedScene" uid="uid://dnyf0pog4niyr" path="res://Scenes/Player/player.tscn" id="3_3ubiy"]
+[ext_resource type="Texture2D" uid="uid://di6xh5tmxbctp" path="res://Assets/metroBest.webp" id="3_4fvor"]
 [ext_resource type="Script" uid="uid://ca5515pmat1ck" path="res://Scenes/scriptLib/E_sceneChange.tscn.gd" id="3_ua22h"]
 [ext_resource type="Texture2D" uid="uid://ky4c88wuoa5" path="res://Assets/hub.webp" id="6_6qt00"]
 [ext_resource type="PackedScene" uid="uid://em7ovnjjleka" path="res://Scenes/Weapons/DroppedItems/Moop.tscn" id="6_18qhk"]
@@ -27,13 +28,13 @@ size = Vector2(16, 897)
 size = Vector2(7, 745.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yea2l"]
-size = Vector2(183, 272)
+size = Vector2(134, 249)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tvscu"]
-radius = 58.21512
+radius = 64.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_renrx"]
-radius = 61.03278
+radius = 74.06078
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wdocy"]
 size = Vector2(47.14827, 16.844124)
@@ -73,8 +74,13 @@ position = Vector2(640.49994, -189.50002)
 scale = Vector2(6.3974996, 5.9749994)
 texture = ExtResource("1_bd45o")
 
+[node name="MetroBest" type="Sprite2D" parent="Finalniuvodnistanice" unique_id=549043626]
+position = Vector2(-37.28018, -11.631799)
+scale = Vector2(0.57994485, 0.7259415)
+texture = ExtResource("3_4fvor")
+
 [node name="MetroInside" type="Sprite2D" parent="." unique_id=1564545549]
-position = Vector2(603.3688, -27.120155)
+position = Vector2(125, 766)
 scale = Vector2(1.8328125, 2.2486346)
 texture = ExtResource("2_1wixh")
 
@@ -82,7 +88,7 @@ texture = ExtResource("2_1wixh")
 position = Vector2(66.99988, -577)
 
 [node name="Ground" type="CollisionShape2D" parent="Hitboxes" unique_id=1373720599]
-position = Vector2(519.75006, 710.5)
+position = Vector2(496.00012, 708)
 shape = SubResource("RectangleShape2D_tvscu")
 
 [node name="WallBack" type="CollisionShape2D" parent="Hitboxes" unique_id=1446776004]
@@ -99,17 +105,18 @@ script = ExtResource("3_ua22h")
 next_scene = "uid://d38rpqad4iwdp"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NextScene" unique_id=2022494447 groups=["player"]]
-position = Vector2(1182.5001, 706)
+position = Vector2(1381.0001, 735.5)
 shape = SubResource("RectangleShape2D_yea2l")
 
 [node name="Player" parent="." unique_id=362517795 groups=["player"] instance=ExtResource("3_3ubiy")]
 
 [node name="ORB" type="Area2D" parent="." unique_id=52562613]
-position = Vector2(-340, 49)
+position = Vector2(-520, 57)
 script = ExtResource("3_ua22h")
 next_scene = "uid://c3humjnevy1jw"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ORB" unique_id=713729586]
+position = Vector2(-12, -15)
 shape = SubResource("CircleShape2D_tvscu")
 
 [node name="Sprite2D" type="Sprite2D" parent="ORB" unique_id=2120658651]
@@ -118,12 +125,12 @@ scale = Vector2(0.9108175, 0.94847757)
 texture = ExtResource("6_6qt00")
 
 [node name="DroppedMoop" parent="." unique_id=782327210 instance=ExtResource("6_18qhk")]
-position = Vector2(484, 63)
+position = Vector2(608.5, 75.99994)
 scale = Vector2(2.0569654, 1.9515327)
 weapon_data = ExtResource("7_dgydp")
 
 [node name="proxcheck3" type="Area2D" parent="." unique_id=857480725]
-position = Vector2(496, -61)
+position = Vector2(620.5, -48.00006)
 script = ExtResource("7_l06sm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="proxcheck3" unique_id=309463081]
@@ -136,11 +143,11 @@ scale = Vector2(1.46, 1.6)
 texture = ExtResource("8_3jqe1")
 
 [node name="proxcheck" type="Area2D" parent="." unique_id=238354281]
-position = Vector2(1246, -90)
+position = Vector2(1453, -82)
 script = ExtResource("7_ua22h")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="proxcheck" unique_id=297707749]
-position = Vector2(5, 119)
+position = Vector2(-12, 118)
 shape = SubResource("CircleShape2D_renrx")
 
 [node name="Popup" type="Sprite2D" parent="proxcheck" unique_id=1387826336]
@@ -153,11 +160,11 @@ position = Vector2(-325, -86)
 script = ExtResource("7_ua22h")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="proxcheck2" unique_id=184102700]
-position = Vector2(-16, 134)
+position = Vector2(-208, 125)
 shape = SubResource("CircleShape2D_renrx")
 
 [node name="Popup" type="Sprite2D" parent="proxcheck2" unique_id=261035454]
-position = Vector2(45, 107)
+position = Vector2(-108, 81)
 scale = Vector2(1.5, 1.6)
 texture = ExtResource("8_3jqe1")
 
@@ -166,12 +173,12 @@ position = Vector2(455, -849)
 script = ExtResource("11_7mde6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Questgiver" unique_id=727360454]
-position = Vector2(-6, 719.00006)
+position = Vector2(118.5, 732)
 scale = Vector2(3.945, 3.945)
 shape = SubResource("RectangleShape2D_wdocy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Questgiver" unique_id=674685434]
-position = Vector2(-10.25, 859.4375)
+position = Vector2(114.25, 872.43744)
 scale = Vector2(4.2045465, 4.3035717)
 sprite_frames = SubResource("SpriteFrames_tvscu")
 autoplay = "default"
@@ -191,19 +198,20 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 text = "123"
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="questProx" type="Area2D" parent="Questgiver" unique_id=1582427340]
 position = Vector2(-455, 849)
 script = ExtResource("7_ua22h")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Questgiver/questProx" unique_id=2059382955]
-position = Vector2(423.5, 14)
+position = Vector2(548, 26.999939)
 shape = SubResource("RectangleShape2D_v4kdb")
 
 [node name="Popup" type="Sprite2D" parent="Questgiver/questProx" unique_id=412270069]
-position = Vector2(554, -70.00001)
+position = Vector2(674, -66.00001)
 scale = Vector2(1.63, 1.78)
 texture = ExtResource("10_y5s03")
 
 [node name="Jogurt" parent="." unique_id=1176843348 instance=ExtResource("16_6qt00")]
-position = Vector2(1442, 54)
+position = Vector2(1528, -145)
