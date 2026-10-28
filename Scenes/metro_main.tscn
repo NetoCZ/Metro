@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://dadxha13xfyod" path="res://Assets/mull2.png" id="10_18qhk"]
 [ext_resource type="Texture2D" uid="uid://cybv1kioftaw5" path="res://Assets/talkButton.png" id="10_y5s03"]
 [ext_resource type="Script" uid="uid://dpple05dleisc" path="res://Scenes/questgiver.gd" id="11_7mde6"]
+[ext_resource type="PackedScene" uid="uid://ch0edeqi5o4vm" path="res://Scenes/Jogurt/Jogurt.tscn" id="16_6qt00"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tvscu"]
 size = Vector2(2399.5, 11)
@@ -192,3 +193,6 @@ shape = SubResource("RectangleShape2D_v4kdb")
 position = Vector2(554, -70.00001)
 scale = Vector2(1.63, 1.78)
 texture = ExtResource("10_y5s03")
+
+[node name="Jogurt" parent="." unique_id=1176843348 instance=ExtResource("16_6qt00")]
+position = Vector2(1442, 54)

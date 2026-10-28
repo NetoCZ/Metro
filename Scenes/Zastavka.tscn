@@ -2,9 +2,11 @@
 
 [ext_resource type="Texture2D" uid="uid://cl8riu5xxfs8l" path="res://Assets/stanicePrazdna.png" id="1_h16o0"]
 [ext_resource type="PackedScene" uid="uid://dnyf0pog4niyr" path="res://Scenes/Player/player.tscn" id="2_w7nrg"]
+[ext_resource type="Texture2D" uid="uid://c1db8g7msn1p3" path="res://Assets/dungen.png" id="3_7rsvt"]
 [ext_resource type="Texture2D" uid="uid://bjxwxx13jisb6" path="res://Assets/namestiRepubliky.png" id="3_h16o0"]
 [ext_resource type="Texture2D" uid="uid://od5ve3uq0nqc" path="res://Assets/MetroOutside.png" id="3_qgfyo"]
 [ext_resource type="Script" uid="uid://4clny5677ppk" path="res://Scenes/proxcheck.gd" id="5_kt5ld"]
+[ext_resource type="Texture2D" uid="uid://dak4f4bxfdbug" path="res://Assets/stanice0.png" id="5_sklv0"]
 [ext_resource type="Texture2D" uid="uid://dxh2t5k0inkqo" path="res://Assets/bublina_interac.png" id="6_vmmyc"]
 [ext_resource type="Script" uid="uid://ca5515pmat1ck" path="res://Scenes/scriptLib/E_sceneChange.tscn.gd" id="7_vmmyc"]
 [ext_resource type="Texture2D" uid="uid://cn4qav8vq65gi" path="res://Assets/lahvos.webp" id="8_unrny"]
@@ -38,16 +40,12 @@ position = Vector2(-966, 548)
 scale = Vector2(5.0925, 5.67)
 texture = ExtResource("1_h16o0")
 
-[node name="StanicePrazdna" type="Sprite2D" parent="." unique_id=528121494]
-position = Vector2(2564, 550)
-scale = Vector2(4.765, 5.67)
-texture = ExtResource("1_h16o0")
-
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=793741867]
 position = Vector2(-6, 2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=2031262948]
 position = Vector2(1439, 699)
+scale = Vector2(1.4779549, 1)
 shape = SubResource("RectangleShape2D_tvscu")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=484680951]
@@ -58,16 +56,31 @@ shape = SubResource("RectangleShape2D_renrx")
 position = Vector2(171.5, 402)
 shape = SubResource("RectangleShape2D_0stwt")
 
-[node name="wall2" type="CollisionShape2D" parent="StaticBody2D" unique_id=445868682]
-position = Vector2(1920, 608)
+[node name="wall2" type="CollisionShape2D" parent="StaticBody2D" unique_id=617660183]
+position = Vector2(1979, -492)
 shape = SubResource("RectangleShape2D_0stwt")
 
 [node name="Player" parent="." unique_id=362517795 instance=ExtResource("2_w7nrg")]
+
+[node name="NamestiRepublikyNoMetro2" type="Sprite2D" parent="." unique_id=1130381095]
+position = Vector2(2041.0001, 550)
+scale = Vector2(5.2799997, 5.6699996)
+texture = ExtResource("3_7rsvt")
 
 [node name="NamestiRepublikyNoMetro" type="Sprite2D" parent="." unique_id=246228808]
 position = Vector2(909.99994, 550.00006)
 scale = Vector2(5.28, 5.67)
 texture = ExtResource("3_h16o0")
+
+[node name="NamestiRepublikyNoMetro3" type="Sprite2D" parent="." unique_id=1541430364]
+position = Vector2(3934, 550)
+scale = Vector2(5.2799997, 5.6699996)
+texture = ExtResource("3_7rsvt")
+
+[node name="NamestiRepublikyNoMetro4" type="Sprite2D" parent="." unique_id=1034937497]
+position = Vector2(4768, 550)
+scale = Vector2(5.2799997, 5.6699996)
+texture = ExtResource("5_sklv0")
 
 [node name="MetroOutside" type="Sprite2D" parent="." unique_id=188154565]
 position = Vector2(-844.99994, 665)
