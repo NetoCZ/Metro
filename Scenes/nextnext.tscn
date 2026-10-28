@@ -124,5 +124,6 @@ next_scene = "uid://b7gaq4pasrate"
 position = Vector2(-4.0686035, 96.31813)
 shape = SubResource("RectangleShape2D_6cy5s")
 
-[node name="delej" type="AudioStreamPlayer" parent="karaShow" unique_id=289089035]
+[node name="delej" type="AudioStreamPlayer2D" parent="karaShow" unique_id=1095011063]
 stream = ExtResource("12_d3xkn")
+volume_db = 7.471

@@ -9,6 +9,7 @@ const FRICTION = 2500.0
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var damage = $damage
+@onready var kroky = $kroky
 
 #Weapon Inicalization
 @export var base_weapon_scene: PackedScene
