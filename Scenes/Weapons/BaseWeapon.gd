@@ -93,7 +93,6 @@ func _on_hitbox_body_entered(body: Node2D) -> void:
 	if body.has_method("take_damage"):
 		hit_targets.append(body)
 		body.take_damage(damage)
-		print("Оружие наносит урон: ", damage)
 
 
 func set_facing_left(left: bool) -> void:
