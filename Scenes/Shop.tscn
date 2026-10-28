@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c3humjnevy1jw"]
 
 [ext_resource type="Texture2D" uid="uid://v2lhqwtcmorv" path="res://Assets/OBCHODFINALNI.png" id="1_2aaoe"]
+[ext_resource type="AudioStream" uid="uid://bswi3inh50738" path="res://Assets/turbo pilník.mp3" id="1_m1c0q"]
 [ext_resource type="PackedScene" uid="uid://dnyf0pog4niyr" path="res://Scenes/Player/player.tscn" id="2_lagin"]
 [ext_resource type="Texture2D" uid="uid://cuijsbo64d12f" path="res://Assets/normal_obchodnik_0001.png" id="3_i4qx4"]
 [ext_resource type="Texture2D" uid="uid://vapg6ku75cyr" path="res://Assets/normal_obchodnik_0002.png" id="4_e5ji4"]
@@ -44,6 +45,13 @@ size = Vector2(110, 215)
 
 [node name="Shop" type="Node2D" unique_id=1731616093]
 position = Vector2(117, -9)
+
+[node name="reprak" type="Node2D" parent="." unique_id=632115945]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="reprak" unique_id=31517765]
+stream = ExtResource("1_m1c0q")
+volume_db = 5.08
+autoplay = true
 
 [node name="Obchod" type="Sprite2D" parent="." unique_id=1945630043]
 position = Vector2(145, -113)

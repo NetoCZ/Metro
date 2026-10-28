@@ -108,16 +108,15 @@ position_smoothing_enabled = true
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=557623127]
 scale = Vector2(1, 0.99999994)
 sprite_frames = SubResource("SpriteFrames_wdocy")
-animation = &"run"
+animation = &"idle"
 autoplay = "idle"
-frame = 1
-frame_progress = 0.6132708
 
 [node name="WeaponHolder" type="Node2D" parent="CharacterBody2D" unique_id=280112700]
 position = Vector2(1, 1)
 
 [node name="damage" type="AudioStreamPlayer2D" parent="CharacterBody2D" unique_id=1170445444]
 stream = ExtResource("16_r5xpd")
+volume_db = 8.157
 
 [node name="kroky" type="AudioStreamPlayer2D" parent="CharacterBody2D" unique_id=400314580]
 position = Vector2(0.58113515, -1.4093171)
