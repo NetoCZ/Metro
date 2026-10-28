@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://bullkjyqbi4nn"]
 
+[ext_resource type="Texture2D" uid="uid://c7k6emgm4ck2u" path="res://Assets/bg_venku.png" id="1_d3xkn"]
 [ext_resource type="PackedScene" uid="uid://dnyf0pog4niyr" path="res://Scenes/Player/player.tscn" id="2_fsfas"]
+[ext_resource type="Texture2D" uid="uid://bcsmsyj7folmm" path="res://Assets/Pent.webp" id="3_cvkye"]
 [ext_resource type="PackedScene" uid="uid://dn3eqswatjumi" path="res://Scenes/Enemy/Enemy.tscn" id="3_fsfas"]
 [ext_resource type="Texture2D" uid="uid://dxh2t5k0inkqo" path="res://Assets/bublina_interac.png" id="4_0udi0"]
 [ext_resource type="Script" uid="uid://b6653mo2td2oj" path="res://Scenes/karaProxyCheck.gd" id="4_t5oyf"]
@@ -10,8 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://re6w173u3rms" path="res://Assets/J_KARA_3.png" id="7_w41r0"]
 [ext_resource type="Script" uid="uid://cuxanorjm0p6b" path="res://Scenes/karaSentBackToHell.gd" id="8_y5f17"]
 [ext_resource type="AudioStream" uid="uid://nrqb56aiygct" path="res://Assets/freesound_community-cough-46034.mp3" id="10_kq4sa"]
+[ext_resource type="AudioStream" uid="uid://dx88k7mhk8x42" path="res://Assets/bell.mp3" id="12_721ma"]
 [ext_resource type="AudioStream" uid="uid://bsvnhba7cdx2i" path="res://Assets/delej-uz-ste-tady-meli-bejt-4-minuty-ty-magore-jiri-kara-made-with-voic_sqYdF6jG.mp3" id="12_d3xkn"]
-[ext_resource type="Texture2D" uid="uid://blgjjaadcv5mj" path="res://Assets/Battle zoner.webp" id="13_721ma"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0udi0"]
 size = Vector2(3486, 30.75)
@@ -40,14 +42,15 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6cy5s"]
-size = Vector2(147.5, 266)
+size = Vector2(591, 266)
 
 [node name="Nextnext" type="Node2D" unique_id=787677190]
 
-[node name="BattleZoner4" type="Sprite2D" parent="." unique_id=1451309174]
-position = Vector2(186, -177.00002)
-scale = Vector2(1.2175, 1.1411709)
-texture = ExtResource("13_721ma")
+[node name="BgVenku" type="Sprite2D" parent="." unique_id=432666819]
+z_index = -2
+position = Vector2(169, -166.00002)
+scale = Vector2(2.619507, 2.151)
+texture = ExtResource("1_d3xkn")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1114423034]
 position = Vector2(-822, -213.24142)
@@ -68,6 +71,12 @@ scale = Vector2(0.9999998, 0.9999998)
 shape = SubResource("RectangleShape2D_tvscu")
 
 [node name="Player" parent="." unique_id=362517795 instance=ExtResource("2_fsfas")]
+
+[node name="Pent" type="Sprite2D" parent="Player" unique_id=630311611]
+show_behind_parent = true
+z_index = -1
+position = Vector2(0, -67)
+texture = ExtResource("3_cvkye")
 
 [node name="Enemy" parent="." unique_id=1183412405 instance=ExtResource("3_fsfas")]
 position = Vector2(772, 4)
@@ -111,8 +120,11 @@ script = ExtResource("8_y5f17")
 next_scene = "uid://b7gaq4pasrate"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="karaShow/Kara/Area2D" unique_id=1080795656]
-position = Vector2(-4.0686035, 96.31813)
+position = Vector2(3.431366, 96.31813)
 shape = SubResource("RectangleShape2D_6cy5s")
+
+[node name="Bell" type="AudioStreamPlayer" parent="karaShow/Kara/Area2D" unique_id=1317815721]
+stream = ExtResource("12_721ma")
 
 [node name="delej" type="AudioStreamPlayer2D" parent="karaShow" unique_id=1095011063]
 stream = ExtResource("12_d3xkn")
