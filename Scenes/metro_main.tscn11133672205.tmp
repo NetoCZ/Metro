@@ -1,0 +1,169 @@
+[gd_scene format=3 uid="uid://b7gaq4pasrate"]
+
+[ext_resource type="Texture2D" uid="uid://cv27rlbwrnsrx" path="res://Assets/FINALNIUVODNISTANICE.png" id="1_bd45o"]
+[ext_resource type="Texture2D" uid="uid://c7fi6itui6302" path="res://Assets/metroInside.png" id="2_1wixh"]
+[ext_resource type="PackedScene" uid="uid://dnyf0pog4niyr" path="res://Scenes/Player/player.tscn" id="3_3ubiy"]
+[ext_resource type="Script" uid="uid://ca5515pmat1ck" path="res://Scenes/scriptLib/E_sceneChange.tscn.gd" id="3_ua22h"]
+[ext_resource type="PackedScene" uid="uid://em7ovnjjleka" path="res://Scenes/Weapons/DroppedItems/Moop.tscn" id="6_18qhk"]
+[ext_resource type="Texture2D" uid="uid://ot3mxxnl5a8b" path="res://Assets/ORBULTIMATNI.png" id="6_ua22h"]
+[ext_resource type="Resource" uid="uid://2cgov2nn4baf" path="res://Scenes/Weapons/Items/Moop.tres" id="7_dgydp"]
+[ext_resource type="Script" uid="uid://tnaela6xt7vk" path="res://Scenes/Weapons/DroppedItems/checkMoop.gd" id="7_l06sm"]
+[ext_resource type="Script" uid="uid://4clny5677ppk" path="res://Scenes/proxcheck.gd" id="7_ua22h"]
+[ext_resource type="Texture2D" uid="uid://dxh2t5k0inkqo" path="res://Assets/bublina_interac.png" id="8_3jqe1"]
+[ext_resource type="Texture2D" uid="uid://b8k1grji6n3vu" path="res://Assets/mull1.png" id="9_y5s03"]
+[ext_resource type="Texture2D" uid="uid://dadxha13xfyod" path="res://Assets/mull2.png" id="10_18qhk"]
+[ext_resource type="Texture2D" uid="uid://cybv1kioftaw5" path="res://Assets/talkButton.png" id="10_y5s03"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tvscu"]
+size = Vector2(2399.5, 11)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_renrx"]
+size = Vector2(16, 897)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0stwt"]
+size = Vector2(7, 745.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yea2l"]
+size = Vector2(183, 272)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tvscu"]
+radius = 58.21512
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_renrx"]
+radius = 61.03278
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tvscu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_y5s03")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_18qhk")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v4kdb"]
+size = Vector2(121, 278)
+
+[node name="metroMain" type="Node2D" unique_id=927188760]
+position = Vector2(191, -25)
+
+[node name="Finalniuvodnistanice" type="Sprite2D" parent="." unique_id=1325713520]
+position = Vector2(640.49994, -189.50002)
+scale = Vector2(6.3974996, 5.9749994)
+texture = ExtResource("1_bd45o")
+
+[node name="MetroInside" type="Sprite2D" parent="." unique_id=1564545549]
+position = Vector2(619, -19)
+scale = Vector2(1.8308792, 2.4021351)
+texture = ExtResource("2_1wixh")
+
+[node name="Hitboxes" type="StaticBody2D" parent="." unique_id=1904785347]
+position = Vector2(66.99988, -577)
+
+[node name="Ground" type="CollisionShape2D" parent="Hitboxes" unique_id=1373720599]
+position = Vector2(519.75006, 710.5)
+shape = SubResource("RectangleShape2D_tvscu")
+
+[node name="WallBack" type="CollisionShape2D" parent="Hitboxes" unique_id=1446776004]
+position = Vector2(-673.9999, 253)
+shape = SubResource("RectangleShape2D_renrx")
+
+[node name="WallFront" type="CollisionShape2D" parent="Hitboxes" unique_id=117948488]
+position = Vector2(1531.5, 323.75)
+shape = SubResource("RectangleShape2D_0stwt")
+
+[node name="NextScene" type="Area2D" parent="." unique_id=1358428296]
+position = Vector2(62.999878, -734)
+script = ExtResource("3_ua22h")
+next_scene = "uid://d38rpqad4iwdp"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NextScene" unique_id=2022494447 groups=["player"]]
+position = Vector2(1182.5001, 706)
+shape = SubResource("RectangleShape2D_yea2l")
+
+[node name="Player" parent="." unique_id=362517795 instance=ExtResource("3_3ubiy")]
+
+[node name="ORB" type="Area2D" parent="." unique_id=52562613]
+position = Vector2(-340, 49)
+script = ExtResource("3_ua22h")
+next_scene = "uid://c3humjnevy1jw"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ORB" unique_id=713729586]
+shape = SubResource("CircleShape2D_tvscu")
+
+[node name="Sprite2D" type="Sprite2D" parent="ORB" unique_id=2120658651]
+position = Vector2(-5.722046e-06, -4.000001)
+scale = Vector2(0.1653846, 0.1782051)
+texture = ExtResource("6_ua22h")
+
+[node name="DroppedMoop" parent="." unique_id=782327210 instance=ExtResource("6_18qhk")]
+position = Vector2(484, 63)
+scale = Vector2(2.0569654, 1.9515327)
+weapon_data = ExtResource("7_dgydp")
+
+[node name="proxcheck3" type="Area2D" parent="." unique_id=857480725]
+position = Vector2(496, -61)
+script = ExtResource("7_l06sm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="proxcheck3" unique_id=309463081]
+position = Vector2(5, 119)
+shape = SubResource("CircleShape2D_renrx")
+
+[node name="Popup" type="Sprite2D" parent="proxcheck3" unique_id=105544246]
+position = Vector2(61, 113)
+scale = Vector2(1.46, 1.6)
+texture = ExtResource("8_3jqe1")
+
+[node name="proxcheck" type="Area2D" parent="." unique_id=238354281]
+position = Vector2(1246, -90)
+script = ExtResource("7_ua22h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="proxcheck" unique_id=297707749]
+position = Vector2(5, 119)
+shape = SubResource("CircleShape2D_renrx")
+
+[node name="Popup" type="Sprite2D" parent="proxcheck" unique_id=1387826336]
+position = Vector2(48, 57)
+scale = Vector2(1.46, 1.6)
+texture = ExtResource("8_3jqe1")
+
+[node name="proxcheck2" type="Area2D" parent="." unique_id=1813967944]
+position = Vector2(-325, -86)
+script = ExtResource("7_ua22h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="proxcheck2" unique_id=184102700]
+position = Vector2(-16, 134)
+shape = SubResource("CircleShape2D_renrx")
+
+[node name="Popup" type="Sprite2D" parent="proxcheck2" unique_id=261035454]
+position = Vector2(34, 128)
+scale = Vector2(1.5, 1.6)
+texture = ExtResource("8_3jqe1")
+
+[node name="Questgiver" type="Area2D" parent="." unique_id=1448186379]
+position = Vector2(455, -849)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Questgiver" unique_id=674685434]
+position = Vector2(-10.249987, 859.4375)
+scale = Vector2(4.204546, 4.303571)
+sprite_frames = SubResource("SpriteFrames_tvscu")
+autoplay = "default"
+frame_progress = 0.9732648
+
+[node name="questProx" type="Area2D" parent="Questgiver" unique_id=1582427340]
+position = Vector2(-455, 849)
+script = ExtResource("7_ua22h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Questgiver/questProx" unique_id=2059382955]
+position = Vector2(446, -14)
+shape = SubResource("RectangleShape2D_v4kdb")
+
+[node name="Popup" type="Sprite2D" parent="Questgiver/questProx" unique_id=412270069]
+position = Vector2(554, -70.00001)
+scale = Vector2(1.63, 1.78)
+texture = ExtResource("10_y5s03")
