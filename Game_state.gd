@@ -2,6 +2,8 @@ extends Node
 
 var flags: Dictionary = {}
 
+var saved_weapon: WeaponData = null
+
 func set_flag(flag_name: String) -> void:
 	flags[flag_name] = true
 
