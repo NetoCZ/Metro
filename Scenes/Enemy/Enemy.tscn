@@ -56,10 +56,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b4qop"]
-size = Vector2(144, 190)
+size = Vector2(95, 143)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rr723"]
-size = Vector2(141, 203)
+size = Vector2(93, 146)
 
 [node name="Enemy" type="CharacterBody2D" unique_id=1183412405]
 script = ExtResource("1_nvvbs")
@@ -69,31 +69,31 @@ metadata/scene_file_path = "res://scenes/Enemy/enemy.tscn"
 metadata/_tc_uuid = "2163653889164910944"
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=1956266780]
-position = Vector2(58.500004, 71.25)
-scale = Vector2(5.1785717, 3.6886792)
+position = Vector2(31, 41.25)
+scale = Vector2(3.2142856, 2.5566037)
 sprite_frames = SubResource("SpriteFrames_b4qop")
 animation = &"hit"
 autoplay = "run"
 metadata/_tc_uuid = "3470599458612676361"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1282501712]
-position = Vector2(62, 77)
+position = Vector2(37.5, 28.5)
 shape = SubResource("RectangleShape2D_b4qop")
 metadata/_tc_uuid = "1011172106797248639"
 
 [node name="WallCheck" type="RayCast2D" parent="." unique_id=506760530]
-target_position = Vector2(4, 3)
+target_position = Vector2(16, 0)
 metadata/_tc_uuid = "8972563468473646982"
 
 [node name="LedgeCheck" type="RayCast2D" parent="." unique_id=964921613]
-target_position = Vector2(86, 137)
+target_position = Vector2(0, 20)
 metadata/_tc_uuid = "2436970575004411889"
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=1328641123]
 metadata/_tc_uuid = "1253597086792237826"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1777497221]
-position = Vector2(60.5, 72.5)
+position = Vector2(36.5, 29)
 shape = SubResource("RectangleShape2D_rr723")
 metadata/_tc_uuid = "Hitbox/CollisionShape2D"
 
