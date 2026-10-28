@@ -1,6 +1,7 @@
 extends CharacterBody2D 
 
 @onready var kara = $Kara
+@onready var delej = $delej
 
 @export var speed: float = 40.0
 @export var chase_speed: float = 250.0
@@ -44,6 +45,7 @@ func take_damage(amount: int) -> void:
 	if health <= 0:
 		die()
 		kara.show()
+		delej.play()
 		return
 
 	is_hit = true

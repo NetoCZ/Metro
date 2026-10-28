@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cyw14empi5r76" path="res://Scenes/Enemy/Assets/run_enemy_0004.png" id="7_jg6oh"]
 [ext_resource type="Texture2D" uid="uid://b841h4arclsqk" path="res://Scenes/Enemy/Assets/run_enemy_0005.png" id="8_huj2y"]
 [ext_resource type="Texture2D" uid="uid://ctiqs4qw78vtq" path="res://Scenes/Enemy/Assets/run_enemy_0006.png" id="9_js6tk"]
+[ext_resource type="AudioStream" uid="uid://bsvnhba7cdx2i" path="res://Scenes/delej-uz-ste-tady-meli-bejt-4-minuty-ty-magore-jiri-kara-made-with-voic_sqYdF6jG.mp3" id="10_3jkxs"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_b4qop"]
 animations = [{
@@ -91,3 +92,6 @@ metadata/_tc_uuid = "1253597086792237826"
 position = Vector2(36.5, 36.5)
 shape = SubResource("RectangleShape2D_rr723")
 metadata/_tc_uuid = "Hitbox/CollisionShape2D"
+
+[node name="delej" type="AudioStreamPlayer2D" parent="." unique_id=1429383257]
+stream = ExtResource("10_3jkxs")
