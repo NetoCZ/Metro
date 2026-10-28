@@ -63,9 +63,9 @@ func _physics_process(delta: float) -> void:
 
 	# během animace hit se nepřepínají ostatní animace
 	if not is_hit:
-		animated_sprite.play("jump")
 		if not is_on_floor():
 			animated_sprite.stop()
+			animated_sprite.play("jump")
 		elif direction != 0:
 			if animated_sprite.animation != "run":
 				animated_sprite.play("run")
