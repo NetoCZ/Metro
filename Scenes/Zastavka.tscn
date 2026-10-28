@@ -59,7 +59,7 @@ shape = SubResource("RectangleShape2D_0stwt")
 [node name="Player" parent="." unique_id=362517795 instance=ExtResource("2_w7nrg")]
 
 [node name="NamestiRepublikyNoMetro" type="Sprite2D" parent="." unique_id=246228808]
-position = Vector2(910, 550.00006)
+position = Vector2(909.99994, 550.00006)
 scale = Vector2(5.28, 5.67)
 texture = ExtResource("3_h16o0")
 
