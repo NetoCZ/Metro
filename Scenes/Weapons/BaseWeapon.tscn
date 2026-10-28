@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dmg7yfrfwf8de"]
 
-[ext_resource type="Script" uid="uid://de2ppq45dql2h" path="res://Scenes/Weapons/BaseWeapon.gd" id="1_q4fon"]
+[ext_resource type="Script" uid="uid://c2iqii1bsmc3c" path="res://Scenes/Weapons/BaseWeapon.gd" id="1_q4fon"]
 [ext_resource type="Texture2D" uid="uid://cej2y6hxnh4j4" path="res://Assets/item_oceltyc.png" id="2_uwnyl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_h16o0"]

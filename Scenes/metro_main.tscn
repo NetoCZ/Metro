@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://b7gaq4pasrate"]
 
+[ext_resource type="Texture2D" uid="uid://luamcvnwpc64" path="res://Assets/tunel.png" id="1_7mde6"]
 [ext_resource type="Texture2D" uid="uid://cv27rlbwrnsrx" path="res://Assets/FINALNIUVODNISTANICE.png" id="1_bd45o"]
 [ext_resource type="Texture2D" uid="uid://c7fi6itui6302" path="res://Assets/metroInside.png" id="2_1wixh"]
 [ext_resource type="PackedScene" uid="uid://dnyf0pog4niyr" path="res://Scenes/Player/player.tscn" id="3_3ubiy"]
@@ -51,6 +52,11 @@ size = Vector2(121, 278)
 
 [node name="metroMain" type="Node2D" unique_id=927188760]
 position = Vector2(191, -25)
+
+[node name="Tunel" type="Sprite2D" parent="." unique_id=1256232714]
+position = Vector2(-1128, -184)
+scale = Vector2(6.0224996, 5.91)
+texture = ExtResource("1_7mde6")
 
 [node name="Finalniuvodnistanice" type="Sprite2D" parent="." unique_id=1325713520]
 position = Vector2(640.49994, -189.50002)
