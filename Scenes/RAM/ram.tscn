@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bj4qu52snn3mr"]
+
+[ext_resource type="Script" uid="uid://bm0eecrw4p07" path="res://Scenes/RAM/Ram.gd" id="1_qyweu"]
+[ext_resource type="Texture2D" uid="uid://cdwmpe5nvo6hh" path="res://Scenes/RAM/Mena-RAM.png" id="2_gfej1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jg6oh"]
+size = Vector2(98, 58)
+
+[node name="Ram" type="Area2D" unique_id=474318306]
+script = ExtResource("1_qyweu")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1639627977]
+texture = ExtResource("2_gfej1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1377432566]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_jg6oh")

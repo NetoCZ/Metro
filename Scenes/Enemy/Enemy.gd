@@ -1,8 +1,10 @@
-extends CharacterBody2D 
+extends CharacterBody2D
 
-@onready var kara = $Kara
+@onready var sprite: AnimatedSprite2D = $Sprite2D
 @onready var delej = $delej
 @onready var hit = $hit
+@onready var drop_point: Marker2D = get_node_or_null("DropPoint")
+@onready var kara = get_node_or_null("Kara")
 
 @export var speed: float = 40.0
 @export var chase_speed: float = 250.0
@@ -11,6 +13,10 @@ extends CharacterBody2D
 @export var stop_distance: float = 12.0
 @export var max_health: int = 30
 @export var hit_duration: float = 0.5
+
+# --- DROP ---
+@export var ram_scene: PackedScene
+@export var ram_value: int = 1
 
 # --- ÚTOK ---
 @export var attack_damage: int = 10
@@ -26,15 +32,14 @@ var is_hit: bool = false
 var last_hit_time: int = 0
 var can_attack: bool = true
 
-@onready var sprite: AnimatedSprite2D = $Sprite2D
-
 
 func _ready() -> void:
 	start_x = global_position.x
 	health = max_health
 	motion_mode = CharacterBody2D.MOTION_MODE_FLOATING
 	sprite.play("run")
-	kara.hide()
+	if kara:
+		kara.hide()
 
 
 func take_damage(amount: int) -> void:
@@ -45,7 +50,8 @@ func take_damage(amount: int) -> void:
 
 	if health <= 0:
 		die()
-		kara.show()
+		if kara:
+			kara.show()
 		delej.play()
 		return
 
@@ -58,7 +64,7 @@ func take_damage(amount: int) -> void:
 
 	await get_tree().create_timer(hit_duration).timeout
 
-	if is_dead or last_hit_time != my_hit_time:
+	if not is_instance_valid(self) or is_dead or last_hit_time != my_hit_time:
 		return
 	is_hit = false
 	sprite.play("run")
@@ -77,8 +83,19 @@ func die() -> void:
 	if hitbox:
 		hitbox.set_deferred("monitoring", false)
 		hitbox.set_deferred("monitorable", false)
-	
-		
+	_drop_ram.call_deferred()
+
+
+func _drop_ram() -> void:
+	if ram_scene == null:
+		return
+	var ram := ram_scene.instantiate()
+	ram.value = ram_value
+	get_parent().add_child(ram)
+	if drop_point:
+		ram.global_position = drop_point.global_position
+	else:
+		ram.global_position = global_position
 
 
 func try_attack(player: Node2D) -> void:
@@ -106,7 +123,7 @@ func _physics_process(_delta: float) -> void:
 
 	var player = get_tree().get_first_node_in_group("playerTarget")
 
-	if player is Node2D:
+	if player is Node2D and is_instance_valid(player):
 		var dist_x: float = player.global_position.x - global_position.x
 		if abs(dist_x) < detect_range:
 			if abs(dist_x) > stop_distance:

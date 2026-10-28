@@ -10,3 +10,11 @@ func set_flag(flag_name: String) -> void:
 
 func has_flag(flag_name: String) -> bool:
 	return flags.get(flag_name, false)
+
+signal ram_changed(amount: int)
+
+var ram: int = 0
+
+func add_ram(amount: int) -> void:
+	ram += amount
+	ram_changed.emit(ram)
