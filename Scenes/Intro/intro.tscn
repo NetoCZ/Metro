@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b6w7e68ar5t6l"]
 
 [ext_resource type="Script" uid="uid://to04i3n1hkvh" path="res://Scenes/Intro/Intro.gd" id="1_theht"]
+[ext_resource type="Texture2D" uid="uid://duw6qe7037ws6" path="res://Scenes/Intro/stena.png" id="2_kloxg"]
 [ext_resource type="Texture2D" uid="uid://y0uu78xtrgp6" path="res://Scenes/Intro/tutorialXXL.png" id="2_theht"]
 
 [node name="Intro" type="Control" unique_id=1482085850]
@@ -10,14 +11,6 @@ offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_theht")
 
-[node name="Navod" type="TextureRect" parent="." unique_id=1444582584]
-layout_mode = 0
-offset_left = 183.0
-offset_top = -13.0
-offset_right = 1448.0
-offset_bottom = 1089.0
-texture = ExtResource("2_theht")
-
 [node name="Label" type="Label" parent="." unique_id=811897816]
 layout_mode = 0
 offset_left = 1462.0
@@ -26,3 +19,18 @@ offset_right = 1894.0
 offset_bottom = 1122.0
 theme_override_font_sizes/font_size = 27
 text = "Stiskněte ENTER pro pokračování"
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1698886860]
+layout_mode = 0
+offset_left = 1.0
+offset_top = -54.0
+offset_right = 2064.0
+offset_bottom = 1133.0
+texture = ExtResource("2_kloxg")
+
+[node name="Navod" type="TextureRect" parent="." unique_id=1444582584]
+layout_mode = 0
+offset_left = 259.0
+offset_right = 1464.0
+offset_bottom = 1068.0
+texture = ExtResource("2_theht")
