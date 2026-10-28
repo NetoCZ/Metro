@@ -5,15 +5,16 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wdocy"]
 size = Vector2(24.558445, 88.26362)
 
-[node name="Moop" type="Node2D" unique_id=865202687]
+[node name="DroppedMoop" type="Area2D" unique_id=782327210]
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=327325532]
-rotation = 2.4462793
-scale = Vector2(1.2592868, 1.2891908)
-texture = ExtResource("1_t3wp4")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1743016899]
-position = Vector2(3.5, -15.944123)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=143174078]
+position = Vector2(3.5, -15.944124)
 rotation = -3.1415925
-scale = Vector2(1.6694869, -0.89286214)
+scale = Vector2(1.6694868, -0.89286214)
 shape = SubResource("RectangleShape2D_wdocy")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=609000942]
+position = Vector2(4.7683716e-07, -9.536743e-07)
+rotation = 2.4462793
+scale = Vector2(1.2592866, 1.2891906)
+texture = ExtResource("1_t3wp4")
