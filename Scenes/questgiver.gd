@@ -6,7 +6,7 @@ extends Area2D
 var texty = [
 	"Dobrej",
 	"Dneska se mi na chatě rozbil solární panel.",
-	"Opravoval jsem to pět minut, ale nakonec jsem to vyřešil.",
+	"Opravoval jsem to pět minut, ale nakonec jsem to ne vyřešil.",
 	"Kdo mi s to opravi, dostane jedničku!"
 ]
 var index = 0
