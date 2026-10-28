@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_x715b")
-damage = 5
+damage = 2
 attack_cooldown = 0.3
 attack_duration = 0.3
 weapon_texture = ExtResource("2_t367w")

@@ -1,11 +1,12 @@
 [gd_scene format=3 uid="uid://c3humjnevy1jw"]
 
-[ext_resource type="Texture2D" uid="uid://df0ieaxg8grpa" path="res://Assets/OBCHOD.png" id="1_kjfcx"]
+[ext_resource type="Texture2D" uid="uid://v2lhqwtcmorv" path="res://Assets/OBCHODFINALNI.png" id="1_2aaoe"]
 [ext_resource type="PackedScene" uid="uid://dnyf0pog4niyr" path="res://Scenes/Player/player.tscn" id="2_lagin"]
 [ext_resource type="Texture2D" uid="uid://cuijsbo64d12f" path="res://Assets/normal_obchodnik_0001.png" id="3_i4qx4"]
 [ext_resource type="Texture2D" uid="uid://vapg6ku75cyr" path="res://Assets/normal_obchodnik_0002.png" id="4_e5ji4"]
 [ext_resource type="Texture2D" uid="uid://dxh2t5k0inkqo" path="res://Assets/bublina_interac.png" id="5_e5ji4"]
 [ext_resource type="Script" uid="uid://4clny5677ppk" path="res://Scenes/proxcheck.gd" id="5_wndna"]
+[ext_resource type="Script" uid="uid://cvlksrxvxgsax" path="res://Scenes/shopLogiic.gd" id="6_ct2yw"]
 [ext_resource type="Texture2D" uid="uid://c16rdlh03u2ii" path="res://Assets/buySprite.png" id="6_wndna"]
 [ext_resource type="Script" uid="uid://ca5515pmat1ck" path="res://Scenes/scriptLib/E_sceneChange.tscn.gd" id="8_2aaoe"]
 
@@ -44,7 +45,7 @@ position = Vector2(117, -9)
 [node name="Obchod" type="Sprite2D" parent="." unique_id=1945630043]
 position = Vector2(145, -113)
 scale = Vector2(4.59, 4.95)
-texture = ExtResource("1_kjfcx")
+texture = ExtResource("1_2aaoe")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1479166668]
 offset = Vector2(143.515, -110)
@@ -82,6 +83,7 @@ script = ExtResource("5_wndna")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="buyOption" unique_id=887157002]
 position = Vector2(-2.5, 159.75)
 shape = SubResource("RectangleShape2D_0stwt")
+script = ExtResource("6_ct2yw")
 
 [node name="Popup" type="Sprite2D" parent="buyOption" unique_id=613493896]
 position = Vector2(50, 110)

@@ -172,11 +172,12 @@ frame_progress = 0.9732648
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -24.735138
-offset_top = -60.51245
-offset_right = 2.8540497
-offset_bottom = -37.51245
+offset_left = -25.686481
+offset_top = -51.221996
+offset_right = 58.696457
+offset_bottom = -14.645153
 grow_horizontal = 2
+scale = Vector2(0.38614175, 0.44469544)
 horizontal_alignment = 1
 
 [node name="questProx" type="Area2D" parent="Questgiver" unique_id=1582427340]
