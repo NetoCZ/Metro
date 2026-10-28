@@ -12,8 +12,10 @@ script = ExtResource("1_theht")
 
 [node name="Navod" type="TextureRect" parent="." unique_id=1444582584]
 layout_mode = 0
-offset_right = 1938.0
-offset_bottom = 1047.0
+offset_left = 183.0
+offset_top = -13.0
+offset_right = 1448.0
+offset_bottom = 1089.0
 texture = ExtResource("2_theht")
 
 [node name="Label" type="Label" parent="." unique_id=811897816]
