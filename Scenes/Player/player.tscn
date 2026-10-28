@@ -109,7 +109,7 @@ scale = Vector2(1, 0.99999994)
 sprite_frames = SubResource("SpriteFrames_wdocy")
 animation = &"jump"
 autoplay = "idle"
-frame_progress = 0.82139516
+frame_progress = 0.60171986
 
 [node name="WeaponHolder" type="Node2D" parent="CharacterBody2D" unique_id=280112700]
 position = Vector2(1, 1)

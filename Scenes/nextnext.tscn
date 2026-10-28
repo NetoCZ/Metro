@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dxh2t5k0inkqo" path="res://Assets/bublina_interac.png" id="4_0udi0"]
 [ext_resource type="Script" uid="uid://b6653mo2td2oj" path="res://Scenes/karaProxyCheck.gd" id="4_t5oyf"]
 [ext_resource type="Texture2D" uid="uid://bd505j4ap03c1" path="res://Assets/J_KARA_1.png" id="5_kpfu5"]
+[ext_resource type="Script" uid="uid://beop7q4e2a2cp" path="res://Scenes/kara_show.gd" id="5_w41r0"]
 [ext_resource type="Texture2D" uid="uid://vk622vu7m7kp" path="res://Assets/J_KARA_2.png" id="6_kq4sa"]
 [ext_resource type="Texture2D" uid="uid://re6w173u3rms" path="res://Assets/J_KARA_3.png" id="7_w41r0"]
 [ext_resource type="Script" uid="uid://cuxanorjm0p6b" path="res://Scenes/karaSentBackToHell.gd" id="8_y5f17"]
@@ -13,6 +14,9 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0udi0"]
 size = Vector2(3486, 30.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tvscu"]
+size = Vector2(52.986755, 704.66064)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b4qop"]
 size = Vector2(149.5, 267)
@@ -62,49 +66,20 @@ scale = Vector2(0.9537812, 0.47108102)
 position = Vector2(1439, 699)
 shape = SubResource("RectangleShape2D_0udi0")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=565886903]
-position = Vector2(-8.387634, -165.06412)
-scale = Vector2(0.03365664, 69.01378)
-shape = SubResource("RectangleShape2D_0udi0")
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=16193042]
+position = Vector2(16.493286, 342.3303)
+scale = Vector2(0.9999998, 0.9999998)
+shape = SubResource("RectangleShape2D_tvscu")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=106253447]
-position = Vector2(2093.7715, -137.46802)
-scale = Vector2(0.03365664, 69.01378)
-shape = SubResource("RectangleShape2D_0udi0")
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=853315947]
+position = Vector2(1816.9784, 344.40237)
+scale = Vector2(0.9999998, 0.9999998)
+shape = SubResource("RectangleShape2D_tvscu")
 
 [node name="Player" parent="." unique_id=362517795 instance=ExtResource("2_fsfas")]
 
 [node name="Enemy" parent="." unique_id=1183412405 instance=ExtResource("3_fsfas")]
 position = Vector2(772, 4)
-
-[node name="Kara" type="Area2D" parent="Enemy" unique_id=1772509377]
-position = Vector2(37, -165)
-script = ExtResource("4_t5oyf")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy/Kara" unique_id=1020523580]
-position = Vector2(-8.931335, 108.68187)
-shape = SubResource("RectangleShape2D_b4qop")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy/Kara" unique_id=1637819360]
-position = Vector2(-14.223389, 107.84085)
-scale = Vector2(6.177666, 4.856581)
-sprite_frames = SubResource("SpriteFrames_t5oyf")
-autoplay = "default"
-frame_progress = 0.38343653
-
-[node name="Popus" type="Sprite2D" parent="Enemy/Kara" unique_id=1700727363]
-position = Vector2(126.068665, 43.68187)
-scale = Vector2(1.8650002, 2.1099997)
-texture = ExtResource("4_0udi0")
-
-[node name="Area2D" type="Area2D" parent="Enemy/Kara" unique_id=1201621589]
-position = Vector2(-3.931366, 33.68187)
-script = ExtResource("8_y5f17")
-next_scene = "uid://b7gaq4pasrate"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy/Kara/Area2D" unique_id=1080795656]
-position = Vector2(-5.75, 99)
-shape = SubResource("RectangleShape2D_6cy5s")
 
 [node name="kasel" type="AudioStreamPlayer" parent="." unique_id=352488275]
 stream = ExtResource("10_kq4sa")
@@ -112,3 +87,38 @@ stream = ExtResource("10_kq4sa")
 [node name="Enemy2" parent="." unique_id=884738086 instance=ExtResource("3_fsfas")]
 position = Vector2(-602, 4)
 attack_damage = 5
+
+[node name="karaShow" type="Node2D" parent="." unique_id=1108665059 node_paths=PackedStringArray("enemy1", "enemy2")]
+position = Vector2(540, -15)
+script = ExtResource("5_w41r0")
+enemy1 = NodePath("../Enemy")
+enemy2 = NodePath("../Enemy2")
+
+[node name="Kara" type="Area2D" parent="karaShow" unique_id=1772509377]
+position = Vector2(144, -172)
+script = ExtResource("4_t5oyf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="karaShow/Kara" unique_id=1020523580]
+position = Vector2(-8.931335, 108.68187)
+shape = SubResource("RectangleShape2D_b4qop")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="karaShow/Kara" unique_id=1637819360]
+position = Vector2(-14.223389, 107.84085)
+scale = Vector2(6.177666, 4.856581)
+sprite_frames = SubResource("SpriteFrames_t5oyf")
+autoplay = "default"
+frame_progress = 0.38343653
+
+[node name="Popus" type="Sprite2D" parent="karaShow/Kara" unique_id=1700727363]
+position = Vector2(126.068665, 43.68187)
+scale = Vector2(1.8650002, 2.1099997)
+texture = ExtResource("4_0udi0")
+
+[node name="Area2D" type="Area2D" parent="karaShow/Kara" unique_id=1201621589]
+position = Vector2(-3.931366, 33.68187)
+script = ExtResource("8_y5f17")
+next_scene = "uid://b7gaq4pasrate"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="karaShow/Kara/Area2D" unique_id=1080795656]
+position = Vector2(-4.0686035, 96.31813)
+shape = SubResource("RectangleShape2D_6cy5s")
