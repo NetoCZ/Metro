@@ -6,6 +6,8 @@ signal hp_changed(current_hp: int, max_hp: int)
 var flags: Dictionary = {}
 var saved_weapon: WeaponData = null
 var moop_picked: bool = false
+var nene_picked: bool = false
+var rj45_picked: bool = false
 
 var ram: int = 0
 var current_hp: int = -1   # -1 = ještě nenastaveno
