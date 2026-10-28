@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://epoljmq5l1be" path="res://Scenes/Player/assets/jumping2.png" id="9_ks1b7"]
 [ext_resource type="Texture2D" uid="uid://dm1ek5bj63hsm" path="res://Scenes/Player/assets/run6.png" id="10_74mp2"]
 [ext_resource type="Texture2D" uid="uid://cr6aw6kc5jcc8" path="res://Scenes/Player/assets/jumping3.png" id="10_hnuln"]
+[ext_resource type="AudioStream" uid="uid://bm24devykudbu" path="res://Scenes/Enemy/Assets/classic_hurt.mp3" id="16_r5xpd"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wdocy"]
 radius = 14.0
@@ -112,3 +113,6 @@ frame_progress = 0.82139516
 
 [node name="WeaponHolder" type="Node2D" parent="CharacterBody2D" unique_id=280112700]
 position = Vector2(1, 1)
+
+[node name="damage" type="AudioStreamPlayer2D" parent="CharacterBody2D" unique_id=1170445444]
+stream = ExtResource("16_r5xpd")

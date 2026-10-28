@@ -6,6 +6,7 @@ extends CharacterBody2D
 @onready var drop_point: Marker2D = get_node_or_null("DropPoint")
 @onready var kara = get_node_or_null("Kara")
 
+
 @export var speed: float = 40.0
 @export var chase_speed: float = 250.0
 @export var detect_range: float = 500.0
