@@ -47,8 +47,8 @@ scale = Vector2(4.59, 4.95)
 texture = ExtResource("1_kjfcx")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1479166668]
-offset = Vector2(143.515, -110)
-zoom = Vector2(1.48, 1.48)
+offset = Vector2(141.44, -110)
+zoom = Vector2(2.14, 2.14)
 
 [node name="Player" parent="." unique_id=362517795 instance=ExtResource("2_lagin")]
 
@@ -73,7 +73,7 @@ scale = Vector2(3.8152654, 4.0383058)
 sprite_frames = SubResource("SpriteFrames_renrx")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.57572365
+frame_progress = 0.41193965
 
 [node name="buyOption" type="Area2D" parent="." unique_id=1860158669]
 position = Vector2(168, -127)
