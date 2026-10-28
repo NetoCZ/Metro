@@ -3,9 +3,34 @@
 [ext_resource type="Texture2D" uid="uid://blgjjaadcv5mj" path="res://Assets/Battle zoner.webp" id="1_neyy0"]
 [ext_resource type="PackedScene" uid="uid://dnyf0pog4niyr" path="res://Scenes/Player/player.tscn" id="2_fsfas"]
 [ext_resource type="PackedScene" uid="uid://dn3eqswatjumi" path="res://Scenes/Enemy/Enemy.tscn" id="3_fsfas"]
+[ext_resource type="Texture2D" uid="uid://dxh2t5k0inkqo" path="res://Assets/bublina_interac.png" id="4_0udi0"]
+[ext_resource type="Script" uid="uid://b6653mo2td2oj" path="res://Scenes/karaProxyCheck.gd" id="4_t5oyf"]
+[ext_resource type="Texture2D" uid="uid://dm3vpqkbvy1nq" path="res://Assets/jirikaka-removebg-preview.png" id="5_ihmku"]
+[ext_resource type="Texture2D" uid="uid://ch6w01sffa041" path="res://Assets/jirikaka.webp" id="6_y5f17"]
+[ext_resource type="Script" uid="uid://cuxanorjm0p6b" path="res://Scenes/karaSentBackToHell.gd" id="8_y5f17"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0udi0"]
 size = Vector2(3486, 30.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b4qop"]
+size = Vector2(149.5, 267)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t5oyf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_ihmku")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_y5f17")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6cy5s"]
+size = Vector2(147.5, 266)
 
 [node name="Nextnext" type="Node2D" unique_id=787677190]
 
@@ -26,3 +51,30 @@ shape = SubResource("RectangleShape2D_0udi0")
 
 [node name="Enemy" parent="." unique_id=1183412405 instance=ExtResource("3_fsfas")]
 position = Vector2(772, 4)
+
+[node name="Kara" type="Area2D" parent="Enemy" unique_id=1772509377]
+script = ExtResource("4_t5oyf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy/Kara" unique_id=1020523580]
+position = Vector2(-592, -36)
+shape = SubResource("RectangleShape2D_b4qop")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy/Kara" unique_id=1637819360]
+position = Vector2(-591, -30.999992)
+scale = Vector2(0.11066352, 0.35736108)
+sprite_frames = SubResource("SpriteFrames_t5oyf")
+autoplay = "default"
+frame_progress = 0.49947265
+
+[node name="Popus" type="Sprite2D" parent="Enemy/Kara" unique_id=1700727363]
+position = Vector2(-457, -101)
+scale = Vector2(1.8650002, 2.1099997)
+texture = ExtResource("4_0udi0")
+
+[node name="Area2D" type="Area2D" parent="Enemy/Kara" unique_id=1201621589]
+script = ExtResource("8_y5f17")
+next_scene = "uid://b7gaq4pasrate"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy/Kara/Area2D" unique_id=1080795656]
+position = Vector2(-592.75, -37)
+shape = SubResource("RectangleShape2D_6cy5s")
