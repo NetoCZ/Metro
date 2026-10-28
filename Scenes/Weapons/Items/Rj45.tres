@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://bimlq2tgugawq"]
+
+[ext_resource type="Script" uid="uid://bovbt3wgcf5yu" path="res://Scenes/Weapons/WeaponData.gd" id="1_4n11y"]
+[ext_resource type="Texture2D" uid="uid://d4men3hwxcl2t" path="res://Assets/item_rj45.png" id="2_4q88u"]
+
+[resource]
+script = ExtResource("1_4n11y")
+weapon_name = "RJ-45"
+damage = 15
+attack_cooldown = 0.07
+attack_duration = 0.085
+weapon_texture = ExtResource("2_4q88u")
+metadata/_custom_type_script = "uid://bovbt3wgcf5yu"
