@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://vapg6ku75cyr" path="res://Assets/normal_obchodnik_0002.png" id="4_e5ji4"]
 [ext_resource type="Texture2D" uid="uid://dxh2t5k0inkqo" path="res://Assets/bublina_interac.png" id="5_e5ji4"]
 [ext_resource type="Script" uid="uid://4clny5677ppk" path="res://Scenes/proxcheck.gd" id="5_wndna"]
+[ext_resource type="Texture2D" uid="uid://c16rdlh03u2ii" path="res://Assets/buySprite.png" id="6_wndna"]
+[ext_resource type="Script" uid="uid://ca5515pmat1ck" path="res://Scenes/scriptLib/E_sceneChange.tscn.gd" id="8_2aaoe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tvscu"]
 size = Vector2(1101, 8.139187)
@@ -30,7 +32,14 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0stwt"]
 size = Vector2(18, 124.5)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_ckylj"]
+radius = 62.514
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ct2yw"]
+size = Vector2(110, 215)
+
 [node name="Shop" type="Node2D" unique_id=1731616093]
+position = Vector2(117, -9)
 
 [node name="Obchod" type="Sprite2D" parent="." unique_id=1945630043]
 position = Vector2(145, -113)
@@ -64,7 +73,7 @@ scale = Vector2(3.8152654, 4.0383058)
 sprite_frames = SubResource("SpriteFrames_renrx")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.9723778
+frame_progress = 0.57572365
 
 [node name="buyOption" type="Area2D" parent="." unique_id=1860158669]
 position = Vector2(168, -127)
@@ -76,4 +85,50 @@ shape = SubResource("RectangleShape2D_0stwt")
 
 [node name="Popup" type="Sprite2D" parent="buyOption" unique_id=613493896]
 position = Vector2(50, 110)
+texture = ExtResource("6_wndna")
+
+[node name="buyOption2" type="Area2D" parent="." unique_id=1151913606]
+position = Vector2(284, -126)
+script = ExtResource("5_wndna")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="buyOption2" unique_id=486499498]
+position = Vector2(-2.5, 159.75)
+shape = SubResource("RectangleShape2D_0stwt")
+
+[node name="Popup" type="Sprite2D" parent="buyOption2" unique_id=193845714]
+position = Vector2(50, 110)
+texture = ExtResource("6_wndna")
+
+[node name="buyOption3" type="Area2D" parent="." unique_id=1696633655]
+position = Vector2(393, -128)
+script = ExtResource("5_wndna")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="buyOption3" unique_id=440037296]
+position = Vector2(-2.5, 159.75)
+shape = SubResource("RectangleShape2D_0stwt")
+
+[node name="Popup" type="Sprite2D" parent="buyOption3" unique_id=429089125]
+position = Vector2(50, 110)
+texture = ExtResource("6_wndna")
+
+[node name="proxcheck" type="Area2D" parent="." unique_id=765324510]
+position = Vector2(-100, 0)
+script = ExtResource("5_wndna")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="proxcheck" unique_id=806766303]
+position = Vector2(103, -13)
+shape = SubResource("CircleShape2D_ckylj")
+
+[node name="Popup" type="Sprite2D" parent="proxcheck" unique_id=1310377937]
+position = Vector2(181, -78)
+scale = Vector2(1.46, 1.6)
 texture = ExtResource("5_e5ji4")
+
+[node name="backMain" type="Area2D" parent="." unique_id=166259503]
+position = Vector2(2, -510)
+script = ExtResource("8_2aaoe")
+next_scene = "uid://b7gaq4pasrate"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="backMain" unique_id=1701480821 groups=["player"]]
+position = Vector2(1, 488.5)
+shape = SubResource("RectangleShape2D_ct2yw")
