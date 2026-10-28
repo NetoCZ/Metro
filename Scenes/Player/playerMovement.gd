@@ -154,6 +154,7 @@ func take_damage(amount: int) -> void:
 
 	is_hit = true
 	animated_sprite.play("hit")
+	print("e")
 
 	var my_hit_time := Time.get_ticks_msec()
 	last_hit_time = my_hit_time
