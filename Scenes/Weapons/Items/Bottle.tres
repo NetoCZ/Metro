@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://034jg6203s7w"]
+
+[ext_resource type="Script" uid="uid://bovbt3wgcf5yu" path="res://Scenes/Weapons/WeaponData.gd" id="1_ukcjb"]
+[ext_resource type="Texture2D" uid="uid://k3h17uge34od" path="res://Assets/item_bottle.png" id="2_djhms"]
+
+[resource]
+script = ExtResource("1_ukcjb")
+damage = 4
+attack_cooldown = 0.2
+attack_duration = 0.1
+weapon_texture = ExtResource("2_djhms")
+hitbox_size = Vector2(20, 10)
+weapon_scale = Vector2(0.25, 0.25)
+metadata/_custom_type_script = "uid://bovbt3wgcf5yu"
