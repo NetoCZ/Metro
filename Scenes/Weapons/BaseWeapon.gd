@@ -81,11 +81,19 @@ func _on_cooldown_timer_timeout() -> void:
 
 
 func _on_hitbox_body_entered(body: Node2D) -> void:
+	if not is_attacking:
+		return
+
 	if body.is_in_group("player"):
 		return
 
+	if body in hit_targets:
+		return
+
 	if body.has_method("take_damage"):
-		body.take_damage(10)
+		hit_targets.append(body)
+		body.take_damage(damage)
+		print("Оружие наносит урон: ", damage)
 
 
 func set_facing_left(left: bool) -> void:
