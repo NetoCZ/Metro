@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bullkjyqbi4nn"]
 
-[ext_resource type="Texture2D" uid="uid://blgjjaadcv5mj" path="res://Assets/Battle zoner.webp" id="1_neyy0"]
+[ext_resource type="Texture2D" uid="uid://c1db8g7msn1p3" path="res://Assets/dungen.png" id="1_kq4sa"]
 [ext_resource type="PackedScene" uid="uid://dnyf0pog4niyr" path="res://Scenes/Player/player.tscn" id="2_fsfas"]
 [ext_resource type="PackedScene" uid="uid://dn3eqswatjumi" path="res://Scenes/Enemy/Enemy.tscn" id="3_fsfas"]
 [ext_resource type="Texture2D" uid="uid://dxh2t5k0inkqo" path="res://Assets/bublina_interac.png" id="4_0udi0"]
@@ -40,9 +40,9 @@ size = Vector2(147.5, 266)
 [node name="Nextnext" type="Node2D" unique_id=787677190]
 
 [node name="BattleZoner" type="Sprite2D" parent="." unique_id=1174333424]
-position = Vector2(51.000004, -173)
-scale = Vector2(1.0418794, 0.8722571)
-texture = ExtResource("1_neyy0")
+position = Vector2(182.99998, -64.00002)
+scale = Vector2(5, 5)
+texture = ExtResource("1_kq4sa")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1114423034]
 position = Vector2(-822, -213.24142)

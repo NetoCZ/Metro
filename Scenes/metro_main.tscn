@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://b7gaq4pasrate"]
 
+[ext_resource type="Texture2D" uid="uid://dak4f4bxfdbug" path="res://Assets/stanice0.png" id="1_1m2rs"]
 [ext_resource type="Texture2D" uid="uid://cv27rlbwrnsrx" path="res://Assets/FINALNIUVODNISTANICE.png" id="1_bd45o"]
 [ext_resource type="Texture2D" uid="uid://c7fi6itui6302" path="res://Assets/metroInside.png" id="2_1wixh"]
 [ext_resource type="PackedScene" uid="uid://dnyf0pog4niyr" path="res://Scenes/Player/player.tscn" id="3_3ubiy"]
@@ -53,14 +54,24 @@ size = Vector2(121, 278)
 [node name="metroMain" type="Node2D" unique_id=927188760]
 position = Vector2(191, -25)
 
+[node name="Finalniuvodnistanice3" type="Sprite2D" parent="." unique_id=174280776]
+position = Vector2(1987.9998, -190.00002)
+scale = Vector2(6.3974996, 5.9749994)
+texture = ExtResource("1_1m2rs")
+
+[node name="Finalniuvodnistanice2" type="Sprite2D" parent="." unique_id=825721111]
+position = Vector2(-1662.9998, -189.5)
+scale = Vector2(6.3974996, 5.9749994)
+texture = ExtResource("1_1m2rs")
+
 [node name="Finalniuvodnistanice" type="Sprite2D" parent="." unique_id=1325713520]
 position = Vector2(640.49994, -189.50002)
 scale = Vector2(6.3974996, 5.9749994)
 texture = ExtResource("1_bd45o")
 
 [node name="MetroInside" type="Sprite2D" parent="." unique_id=1564545549]
-position = Vector2(619, -19)
-scale = Vector2(1.8308792, 2.4021351)
+position = Vector2(603.3688, -27.120155)
+scale = Vector2(1.8328125, 2.2486346)
 texture = ExtResource("2_1wixh")
 
 [node name="Hitboxes" type="StaticBody2D" parent="." unique_id=1904785347]
