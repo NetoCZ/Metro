@@ -125,6 +125,7 @@ shape = SubResource("RectangleShape2D_6cy5s")
 
 [node name="Bell" type="AudioStreamPlayer" parent="karaShow/Kara/Area2D" unique_id=1317815721]
 stream = ExtResource("12_721ma")
+volume_db = 5.172
 
 [node name="delej" type="AudioStreamPlayer2D" parent="karaShow" unique_id=1095011063]
 stream = ExtResource("12_d3xkn")

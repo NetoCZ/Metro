@@ -5,8 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://c7fi6itui6302" path="res://Assets/metroInside.png" id="2_1wixh"]
 [ext_resource type="PackedScene" uid="uid://dnyf0pog4niyr" path="res://Scenes/Player/player.tscn" id="3_3ubiy"]
 [ext_resource type="Script" uid="uid://ca5515pmat1ck" path="res://Scenes/scriptLib/E_sceneChange.tscn.gd" id="3_ua22h"]
+[ext_resource type="Texture2D" uid="uid://ky4c88wuoa5" path="res://Assets/hub.webp" id="6_6qt00"]
 [ext_resource type="PackedScene" uid="uid://em7ovnjjleka" path="res://Scenes/Weapons/DroppedItems/Moop.tscn" id="6_18qhk"]
-[ext_resource type="Texture2D" uid="uid://ot3mxxnl5a8b" path="res://Assets/ORBULTIMATNI.png" id="6_ua22h"]
 [ext_resource type="Resource" uid="uid://2cgov2nn4baf" path="res://Scenes/Weapons/Items/Moop.tres" id="7_dgydp"]
 [ext_resource type="Script" uid="uid://tnaela6xt7vk" path="res://Scenes/Weapons/DroppedItems/checkMoop.gd" id="7_l06sm"]
 [ext_resource type="Script" uid="uid://4clny5677ppk" path="res://Scenes/proxcheck.gd" id="7_ua22h"]
@@ -113,9 +113,9 @@ next_scene = "uid://c3humjnevy1jw"
 shape = SubResource("CircleShape2D_tvscu")
 
 [node name="Sprite2D" type="Sprite2D" parent="ORB" unique_id=2120658651]
-position = Vector2(-5.722046e-06, -4.000001)
-scale = Vector2(0.1653846, 0.1782051)
-texture = ExtResource("6_ua22h")
+position = Vector2(-14.624, -28.649)
+scale = Vector2(0.9108175, 0.94847757)
+texture = ExtResource("6_6qt00")
 
 [node name="DroppedMoop" parent="." unique_id=782327210 instance=ExtResource("6_18qhk")]
 position = Vector2(484, 63)
@@ -157,7 +157,7 @@ position = Vector2(-16, 134)
 shape = SubResource("CircleShape2D_renrx")
 
 [node name="Popup" type="Sprite2D" parent="proxcheck2" unique_id=261035454]
-position = Vector2(34, 128)
+position = Vector2(45, 107)
 scale = Vector2(1.5, 1.6)
 texture = ExtResource("8_3jqe1")
 
