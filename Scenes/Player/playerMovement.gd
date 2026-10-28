@@ -82,7 +82,7 @@ func equip_weapon(data: WeaponData) -> void:
 	if base_weapon_scene == null:
 		return
 
-	if current_weapon != null:
+	if is_instance_valid(current_weapon):
 		current_weapon.queue_free()
 
 	var weapon := base_weapon_scene.instantiate() as BaseWeapon
@@ -93,11 +93,17 @@ func equip_weapon(data: WeaponData) -> void:
 	weapon_holder.add_child(weapon)
 	weapon.setup(data)
 	current_weapon = weapon
+	
+	GameState.saved_weapon = data
 
 func _ready() -> void:
 	add_to_group("playerTarget")
-	equip_weapon(starting_weapon)
 	current_hp = max_hp
+	if GameState.saved_weapon != null:
+		equip_weapon(GameState.saved_weapon)
+	else:
+		equip_weapon(starting_weapon)
+
 	hp_changed.emit(current_hp, max_hp)
 
 #Attack
