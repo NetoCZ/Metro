@@ -5,8 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://dn3eqswatjumi" path="res://Scenes/Enemy/Enemy.tscn" id="3_fsfas"]
 [ext_resource type="Texture2D" uid="uid://dxh2t5k0inkqo" path="res://Assets/bublina_interac.png" id="4_0udi0"]
 [ext_resource type="Script" uid="uid://b6653mo2td2oj" path="res://Scenes/karaProxyCheck.gd" id="4_t5oyf"]
-[ext_resource type="Texture2D" uid="uid://dm3vpqkbvy1nq" path="res://Assets/jirikaka-removebg-preview.png" id="5_ihmku"]
-[ext_resource type="Texture2D" uid="uid://ch6w01sffa041" path="res://Assets/jirikaka.webp" id="6_y5f17"]
+[ext_resource type="Texture2D" uid="uid://bd505j4ap03c1" path="res://Assets/J_KARA_1.png" id="5_kpfu5"]
+[ext_resource type="Texture2D" uid="uid://vk622vu7m7kp" path="res://Assets/J_KARA_2.png" id="6_kq4sa"]
+[ext_resource type="Texture2D" uid="uid://re6w173u3rms" path="res://Assets/J_KARA_3.png" id="7_w41r0"]
 [ext_resource type="Script" uid="uid://cuxanorjm0p6b" path="res://Scenes/karaSentBackToHell.gd" id="8_y5f17"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0udi0"]
@@ -19,10 +20,13 @@ size = Vector2(149.5, 267)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_ihmku")
+"texture": ExtResource("5_kpfu5")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_y5f17")
+"texture": ExtResource("6_kq4sa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_w41r0")
 }],
 "loop": 1,
 "name": &"default",
@@ -60,11 +64,11 @@ position = Vector2(-592, -36)
 shape = SubResource("RectangleShape2D_b4qop")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy/Kara" unique_id=1637819360]
-position = Vector2(-591, -30.999992)
-scale = Vector2(0.11066352, 0.35736108)
+position = Vector2(-597.292, -36.841)
+scale = Vector2(6.177666, 4.856581)
 sprite_frames = SubResource("SpriteFrames_t5oyf")
 autoplay = "default"
-frame_progress = 0.49947265
+frame_progress = 0.38343653
 
 [node name="Popus" type="Sprite2D" parent="Enemy/Kara" unique_id=1700727363]
 position = Vector2(-457, -101)
