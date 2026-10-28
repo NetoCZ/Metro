@@ -152,3 +152,5 @@ func _input(event: InputEvent) -> void:
 
 	if event.is_action_pressed("attack"):
 		attack()
+	if event.is_action_pressed("hurt"):
+		take_damage(10)
