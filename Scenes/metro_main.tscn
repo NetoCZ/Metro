@@ -35,6 +35,9 @@ radius = 58.21512
 [sub_resource type="CircleShape2D" id="CircleShape2D_renrx"]
 radius = 61.03278
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wdocy"]
+size = Vector2(47.14827, 16.844124)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_tvscu"]
 animations = [{
 "frames": [{
@@ -50,7 +53,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v4kdb"]
-size = Vector2(121, 278)
+size = Vector2(145, 222)
 
 [node name="metroMain" type="Node2D" unique_id=927188760]
 position = Vector2(191, -25)
@@ -99,7 +102,7 @@ next_scene = "uid://d38rpqad4iwdp"
 position = Vector2(1182.5001, 706)
 shape = SubResource("RectangleShape2D_yea2l")
 
-[node name="Player" parent="." unique_id=362517795 instance=ExtResource("3_3ubiy")]
+[node name="Player" parent="." unique_id=362517795 groups=["player"] instance=ExtResource("3_3ubiy")]
 
 [node name="ORB" type="Area2D" parent="." unique_id=52562613]
 position = Vector2(-340, 49)
@@ -162,9 +165,14 @@ texture = ExtResource("8_3jqe1")
 position = Vector2(455, -849)
 script = ExtResource("11_7mde6")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Questgiver" unique_id=727360454]
+position = Vector2(-6, 719.00006)
+scale = Vector2(3.945, 3.945)
+shape = SubResource("RectangleShape2D_wdocy")
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Questgiver" unique_id=674685434]
-position = Vector2(-10.249987, 859.4375)
-scale = Vector2(4.204546, 4.303571)
+position = Vector2(-10.25, 859.4375)
+scale = Vector2(4.2045465, 4.3035717)
 sprite_frames = SubResource("SpriteFrames_tvscu")
 autoplay = "default"
 frame_progress = 0.9732648
@@ -173,12 +181,13 @@ frame_progress = 0.9732648
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -25.686481
-offset_top = -51.221996
-offset_right = 58.696457
-offset_bottom = -14.645153
+offset_left = 1.1891804
+offset_top = -39.603733
+offset_right = 85.57211
+offset_bottom = -3.0268898
 grow_horizontal = 2
-scale = Vector2(0.38614175, 0.44469544)
+scale = Vector2(0.42292848, 0.46410298)
+text = "123"
 horizontal_alignment = 1
 
 [node name="questProx" type="Area2D" parent="Questgiver" unique_id=1582427340]
@@ -186,7 +195,7 @@ position = Vector2(-455, 849)
 script = ExtResource("7_ua22h")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Questgiver/questProx" unique_id=2059382955]
-position = Vector2(446, -14)
+position = Vector2(423.5, 14)
 shape = SubResource("RectangleShape2D_v4kdb")
 
 [node name="Popup" type="Sprite2D" parent="Questgiver/questProx" unique_id=412270069]
