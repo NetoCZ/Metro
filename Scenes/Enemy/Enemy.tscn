@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cyw14empi5r76" path="res://Scenes/Enemy/Assets/run_enemy_0004.png" id="7_jg6oh"]
 [ext_resource type="Texture2D" uid="uid://b841h4arclsqk" path="res://Scenes/Enemy/Assets/run_enemy_0005.png" id="8_huj2y"]
 [ext_resource type="Texture2D" uid="uid://ctiqs4qw78vtq" path="res://Scenes/Enemy/Assets/run_enemy_0006.png" id="9_js6tk"]
-[ext_resource type="AudioStream" uid="uid://bsvnhba7cdx2i" path="res://Scenes/delej-uz-ste-tady-meli-bejt-4-minuty-ty-magore-jiri-kara-made-with-voic_sqYdF6jG.mp3" id="10_3jkxs"]
+[ext_resource type="AudioStream" uid="uid://bsvnhba7cdx2i" path="res://Assets/delej-uz-ste-tady-meli-bejt-4-minuty-ty-magore-jiri-kara-made-with-voic_sqYdF6jG.mp3" id="10_3jkxs"]
 [ext_resource type="AudioStream" uid="uid://c8b1necv0kkat" path="res://Scenes/Enemy/Assets/slap-sound-effect-no-copyright.mp3" id="11_hn56f"]
 [ext_resource type="PackedScene" uid="uid://bj4qu52snn3mr" path="res://Scenes/RAM/ram.tscn" id="12_jg6oh"]
 
@@ -56,10 +56,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b4qop"]
-size = Vector2(95, 118)
+size = Vector2(144, 190)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rr723"]
-size = Vector2(93, 131)
+size = Vector2(141, 203)
 
 [node name="Enemy" type="CharacterBody2D" unique_id=1183412405]
 script = ExtResource("1_nvvbs")
@@ -69,31 +69,31 @@ metadata/scene_file_path = "res://scenes/Enemy/enemy.tscn"
 metadata/_tc_uuid = "2163653889164910944"
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=1956266780]
-position = Vector2(31, 41.25)
-scale = Vector2(3.2142856, 2.5566037)
+position = Vector2(58.500004, 71.25)
+scale = Vector2(5.1785717, 3.6886792)
 sprite_frames = SubResource("SpriteFrames_b4qop")
-animation = &"dead"
+animation = &"hit"
 autoplay = "run"
 metadata/_tc_uuid = "3470599458612676361"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1282501712]
-position = Vector2(37.5, 41)
+position = Vector2(62, 77)
 shape = SubResource("RectangleShape2D_b4qop")
 metadata/_tc_uuid = "1011172106797248639"
 
 [node name="WallCheck" type="RayCast2D" parent="." unique_id=506760530]
-target_position = Vector2(16, 0)
+target_position = Vector2(4, 3)
 metadata/_tc_uuid = "8972563468473646982"
 
 [node name="LedgeCheck" type="RayCast2D" parent="." unique_id=964921613]
-target_position = Vector2(0, 20)
+target_position = Vector2(86, 137)
 metadata/_tc_uuid = "2436970575004411889"
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=1328641123]
 metadata/_tc_uuid = "1253597086792237826"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1777497221]
-position = Vector2(36.5, 36.5)
+position = Vector2(60.5, 72.5)
 shape = SubResource("RectangleShape2D_rr723")
 metadata/_tc_uuid = "Hitbox/CollisionShape2D"
 

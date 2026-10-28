@@ -13,8 +13,8 @@ func _ready():
 
 
 func _update_ram(v):
-	label.text = "RAM: " + str(v)
+	label.text = str(v)
 
 
 func _update_hp(current, maximum):
-	hp_label.text = "HP: " + str(current) + " / " + str(maximum)
+	hp_label.text = str(current) + " / " + str(maximum)
