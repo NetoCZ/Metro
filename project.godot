@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Mero67"
-run/main_scene="res://Scenes/metro_main.tscn"
+run/main_scene="uid://b6w7e68ar5t6l"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
