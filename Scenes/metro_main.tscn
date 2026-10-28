@@ -4,7 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://c7fi6itui6302" path="res://Assets/metroInside.png" id="2_1wixh"]
 [ext_resource type="PackedScene" uid="uid://dnyf0pog4niyr" path="res://Scenes/Player/player.tscn" id="3_3ubiy"]
 [ext_resource type="Script" uid="uid://ca5515pmat1ck" path="res://Scenes/scriptLib/E_sceneChange.tscn.gd" id="3_ua22h"]
+[ext_resource type="PackedScene" uid="uid://em7ovnjjleka" path="res://Scenes/Weapons/DroppedItems/Moop.tscn" id="6_18qhk"]
 [ext_resource type="Texture2D" uid="uid://ot3mxxnl5a8b" path="res://Assets/ORBULTIMATNI.png" id="6_ua22h"]
+[ext_resource type="Resource" uid="uid://2cgov2nn4baf" path="res://Scenes/Weapons/Items/Moop.tres" id="7_dgydp"]
+[ext_resource type="Script" uid="uid://tnaela6xt7vk" path="res://Scenes/Weapons/DroppedItems/checkMoop.gd" id="7_l06sm"]
 [ext_resource type="Script" uid="uid://4clny5677ppk" path="res://Scenes/proxcheck.gd" id="7_ua22h"]
 [ext_resource type="Texture2D" uid="uid://dxh2t5k0inkqo" path="res://Assets/bublina_interac.png" id="8_3jqe1"]
 [ext_resource type="Texture2D" uid="uid://b8k1grji6n3vu" path="res://Assets/mull1.png" id="9_y5s03"]
@@ -98,6 +101,24 @@ position = Vector2(-5.722046e-06, -4.000001)
 scale = Vector2(0.1653846, 0.1782051)
 texture = ExtResource("6_ua22h")
 
+[node name="DroppedMoop" parent="." unique_id=782327210 instance=ExtResource("6_18qhk")]
+position = Vector2(484, 63)
+scale = Vector2(2.0569654, 1.9515327)
+weapon_data = ExtResource("7_dgydp")
+
+[node name="proxcheck3" type="Area2D" parent="." unique_id=857480725]
+position = Vector2(496, -61)
+script = ExtResource("7_l06sm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="proxcheck3" unique_id=309463081]
+position = Vector2(5, 119)
+shape = SubResource("CircleShape2D_renrx")
+
+[node name="Popup" type="Sprite2D" parent="proxcheck3" unique_id=105544246]
+position = Vector2(61, 113)
+scale = Vector2(1.46, 1.6)
+texture = ExtResource("8_3jqe1")
+
 [node name="proxcheck" type="Area2D" parent="." unique_id=238354281]
 position = Vector2(1246, -90)
 script = ExtResource("7_ua22h")
@@ -116,12 +137,12 @@ position = Vector2(-325, -86)
 script = ExtResource("7_ua22h")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="proxcheck2" unique_id=184102700]
-position = Vector2(-15, 136)
+position = Vector2(-16, 134)
 shape = SubResource("CircleShape2D_renrx")
 
 [node name="Popup" type="Sprite2D" parent="proxcheck2" unique_id=261035454]
 position = Vector2(34, 128)
-scale = Vector2(1.46, 1.6)
+scale = Vector2(1.5, 1.6)
 texture = ExtResource("8_3jqe1")
 
 [node name="Questgiver" type="Area2D" parent="." unique_id=1448186379]

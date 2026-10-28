@@ -4,7 +4,6 @@
 [ext_resource type="Script" uid="uid://b837hjvkk5guk" path="res://Scenes/Player/playerMovement.gd" id="1_uvnfx"]
 [ext_resource type="PackedScene" uid="uid://dmg7yfrfwf8de" path="res://Scenes/Weapons/BaseWeapon.tscn" id="2_gk6dx"]
 [ext_resource type="Texture2D" uid="uid://chx02whkmdi8t" path="res://Scenes/Player/assets/standing2.png" id="2_xpcdj"]
-[ext_resource type="Resource" uid="uid://2cgov2nn4baf" path="res://Scenes/Weapons/Items/Moop.tres" id="3_7g0yx"]
 [ext_resource type="Texture2D" uid="uid://e1cm5kx6817x" path="res://Scenes/Player/assets/run1.png" id="3_dd0ac"]
 [ext_resource type="Texture2D" uid="uid://cyagoak5scgmr" path="res://Scenes/Player/assets/run2.png" id="4_0u5uq"]
 [ext_resource type="Texture2D" uid="uid://d1vvl62o5gs8q" path="res://Scenes/Player/assets/mrtev_maincharacter.png" id="4_06tpx"]
@@ -95,7 +94,6 @@ position = Vector2(-2, 5)
 scale = Vector2(3.4415402, 3.5478175)
 script = ExtResource("1_uvnfx")
 base_weapon_scene = ExtResource("2_gk6dx")
-starting_weapon = ExtResource("3_7g0yx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=523690038 groups=["player", "playerTarget"]]
 shape = SubResource("CapsuleShape2D_wdocy")
@@ -110,7 +108,7 @@ scale = Vector2(1, 0.99999994)
 sprite_frames = SubResource("SpriteFrames_wdocy")
 animation = &"jump"
 autoplay = "idle"
-frame_progress = 0.731534
+frame_progress = 0.82139516
 
 [node name="WeaponHolder" type="Node2D" parent="CharacterBody2D" unique_id=280112700]
 position = Vector2(1, 1)

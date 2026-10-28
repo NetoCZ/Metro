@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://em7ovnjjleka"]
 
+[ext_resource type="Script" uid="uid://dbxr7mknrv1sb" path="res://Scenes/Weapons/DroppedItems/pickup.gd" id="1_2b5sn"]
 [ext_resource type="Texture2D" uid="uid://dnvdp2lfaboyu" path="res://Assets/item_stick.png" id="1_t3wp4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wdocy"]
 size = Vector2(24.558445, 88.26362)
 
-[node name="DroppedMoop" type="Area2D" unique_id=782327210]
+[node name="Moop" type="Area2D" unique_id=782327210]
+script = ExtResource("1_2b5sn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=143174078]
 position = Vector2(3.5, -15.944124)
