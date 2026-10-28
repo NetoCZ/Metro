@@ -39,9 +39,19 @@ size = Vector2(147.5, 266)
 
 [node name="Nextnext" type="Node2D" unique_id=787677190]
 
+[node name="BattleZoner2" type="Sprite2D" parent="." unique_id=947802086]
+position = Vector2(2066, -64.00002)
+scale = Vector2(5, 5)
+texture = ExtResource("1_kq4sa")
+
 [node name="BattleZoner" type="Sprite2D" parent="." unique_id=1174333424]
 position = Vector2(182.99998, -64.00002)
 scale = Vector2(5, 5)
+texture = ExtResource("1_kq4sa")
+
+[node name="BattleZoner3" type="Sprite2D" parent="." unique_id=1040951928]
+position = Vector2(-1747, -64.00002)
+scale = Vector2(4.9999995, 4.9999995)
 texture = ExtResource("1_kq4sa")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1114423034]
@@ -50,6 +60,16 @@ scale = Vector2(0.9537812, 0.47108102)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1485237112]
 position = Vector2(1439, 699)
+shape = SubResource("RectangleShape2D_0udi0")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=565886903]
+position = Vector2(-8.387634, -165.06412)
+scale = Vector2(0.03365664, 69.01378)
+shape = SubResource("RectangleShape2D_0udi0")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=106253447]
+position = Vector2(2093.7715, -137.46802)
+scale = Vector2(0.03365664, 69.01378)
 shape = SubResource("RectangleShape2D_0udi0")
 
 [node name="Player" parent="." unique_id=362517795 instance=ExtResource("2_fsfas")]
