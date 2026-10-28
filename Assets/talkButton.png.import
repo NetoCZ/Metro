@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2nwj1it2wsou"
-path="res://.godot/imported/enemy_run1.png-866f902ef776ee7351ebd943b65fb0d3.ctex"
+uid="uid://cybv1kioftaw5"
+path="res://.godot/imported/talkButton.png-35de681c673fef060c2673a34ccc086c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/Enemy/Assets/enemy_run1.png"
-dest_files=["res://.godot/imported/enemy_run1.png-866f902ef776ee7351ebd943b65fb0d3.ctex"]
+source_file="res://Assets/talkButton.png"
+dest_files=["res://.godot/imported/talkButton.png-35de681c673fef060c2673a34ccc086c.ctex"]
 
 [params]
 

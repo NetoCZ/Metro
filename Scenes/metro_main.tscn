@@ -4,12 +4,12 @@
 [ext_resource type="Texture2D" uid="uid://c7fi6itui6302" path="res://Assets/metroInside.png" id="2_1wixh"]
 [ext_resource type="PackedScene" uid="uid://dnyf0pog4niyr" path="res://Scenes/Player/player.tscn" id="3_3ubiy"]
 [ext_resource type="Script" uid="uid://ca5515pmat1ck" path="res://Scenes/scriptLib/E_sceneChange.tscn.gd" id="3_ua22h"]
-[ext_resource type="PackedScene" uid="uid://bjtma5cm5d3j1" path="res://Scenes/Player/playerUI.tscn" id="5_3jqe1"]
 [ext_resource type="Texture2D" uid="uid://ot3mxxnl5a8b" path="res://Assets/ORBULTIMATNI.png" id="6_ua22h"]
 [ext_resource type="Script" uid="uid://4clny5677ppk" path="res://Scenes/proxcheck.gd" id="7_ua22h"]
 [ext_resource type="Texture2D" uid="uid://dxh2t5k0inkqo" path="res://Assets/bublina_interac.png" id="8_3jqe1"]
 [ext_resource type="Texture2D" uid="uid://b8k1grji6n3vu" path="res://Assets/mull1.png" id="9_y5s03"]
 [ext_resource type="Texture2D" uid="uid://dadxha13xfyod" path="res://Assets/mull2.png" id="10_18qhk"]
+[ext_resource type="Texture2D" uid="uid://cybv1kioftaw5" path="res://Assets/talkButton.png" id="10_y5s03"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tvscu"]
 size = Vector2(2399.5, 11)
@@ -42,6 +42,9 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v4kdb"]
+size = Vector2(121, 278)
 
 [node name="metroMain" type="Node2D" unique_id=927188760]
 position = Vector2(191, -25)
@@ -81,9 +84,6 @@ position = Vector2(1182.5001, 706)
 shape = SubResource("RectangleShape2D_yea2l")
 
 [node name="Player" parent="." unique_id=362517795 instance=ExtResource("3_3ubiy")]
-
-[node name="PlayerUI" parent="." unique_id=955115499 instance=ExtResource("5_3jqe1")]
-player_path = NodePath("../Player")
 
 [node name="ORB" type="Area2D" parent="." unique_id=52562613]
 position = Vector2(-340, 49)
@@ -133,3 +133,16 @@ scale = Vector2(4.204546, 4.303571)
 sprite_frames = SubResource("SpriteFrames_tvscu")
 autoplay = "default"
 frame_progress = 0.9732648
+
+[node name="questProx" type="Area2D" parent="Questgiver" unique_id=1582427340]
+position = Vector2(-455, 849)
+script = ExtResource("7_ua22h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Questgiver/questProx" unique_id=2059382955]
+position = Vector2(446, -14)
+shape = SubResource("RectangleShape2D_v4kdb")
+
+[node name="Popup" type="Sprite2D" parent="Questgiver/questProx" unique_id=412270069]
+position = Vector2(554, -70.00001)
+scale = Vector2(1.63, 1.78)
+texture = ExtResource("10_y5s03")
