@@ -8,6 +8,7 @@ const ACCELERATION = 1500.0
 const FRICTION = 2500.0
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var damage = $damage
 
 #Weapon Inicalization
 @export var base_weapon_scene: PackedScene
@@ -137,6 +138,8 @@ func die() -> void:
 func take_damage(amount: int) -> void:
 	if is_dead:
 		return
+		
+	damage.play()
 
 	current_hp = max(current_hp - amount, 0)
 	hp_changed.emit(current_hp, max_hp)
