@@ -20,8 +20,7 @@ extends CharacterBody2D
 
 # --- ÚTOK ---
 @export var attack_damage: int = 10
-@export var attack_range_x: float = 80.0
-@export var attack_range_y: float = 150.0
+@export var attack_range_x: float = 150.0
 @export var attack_cooldown: float = 1.0
 
 var direction: int = 1
@@ -71,7 +70,6 @@ func take_damage(amount: int) -> void:
 
 
 func die() -> void:
-	print("dead")
 	is_dead = true
 	velocity = Vector2.ZERO
 	set_physics_process(false)
@@ -103,9 +101,8 @@ func try_attack(player: Node2D) -> void:
 		return
 
 	var dx: float = abs(player.global_position.x - global_position.x)
-	var dy: float = abs(player.global_position.y - global_position.y)
 
-	if dx > attack_range_x or dy > attack_range_y:
+	if dx > attack_range_x:
 		return
 
 	if player.has_method("take_damage"):

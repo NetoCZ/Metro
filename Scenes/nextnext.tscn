@@ -91,3 +91,4 @@ stream = ExtResource("10_kq4sa")
 
 [node name="Enemy2" parent="." unique_id=884738086 instance=ExtResource("3_fsfas")]
 position = Vector2(-602, 4)
+attack_damage = 5
