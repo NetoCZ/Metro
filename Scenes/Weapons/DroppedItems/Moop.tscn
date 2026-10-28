@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://em7ovnjjleka"]
+
+[ext_resource type="Texture2D" uid="uid://dnvdp2lfaboyu" path="res://Assets/item_stick.png" id="1_t3wp4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wdocy"]
+size = Vector2(24.558445, 88.26362)
+
+[node name="Moop" type="Node2D" unique_id=865202687]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=327325532]
+rotation = 2.4462793
+scale = Vector2(1.2592868, 1.2891908)
+texture = ExtResource("1_t3wp4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1743016899]
+position = Vector2(3.5, -15.944123)
+rotation = -3.1415925
+scale = Vector2(1.6694869, -0.89286214)
+shape = SubResource("RectangleShape2D_wdocy")
