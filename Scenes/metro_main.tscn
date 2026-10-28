@@ -87,6 +87,8 @@ position = Vector2(1182.5001, 706)
 shape = SubResource("RectangleShape2D_yea2l")
 
 [node name="Player" parent="." unique_id=362517795 instance=ExtResource("3_3ubiy")]
+restraint_left = -450
+restraint_right = 2100
 
 [node name="ORB" type="Area2D" parent="." unique_id=52562613]
 position = Vector2(-340, 49)
