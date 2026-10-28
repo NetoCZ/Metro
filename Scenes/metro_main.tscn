@@ -103,7 +103,7 @@ shape = SubResource("RectangleShape2D_yea2l")
 [node name="ORB" type="Area2D" parent="." unique_id=52562613]
 position = Vector2(-340, 49)
 script = ExtResource("3_ua22h")
-next_scene = "uid://cuqxsxvk7x371"
+next_scene = "uid://c3humjnevy1jw"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ORB" unique_id=713729586]
 shape = SubResource("CircleShape2D_tvscu")

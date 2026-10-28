@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://bullkjyqbi4nn"]
 
-[ext_resource type="Texture2D" uid="uid://c1db8g7msn1p3" path="res://Assets/dungen.png" id="1_kq4sa"]
 [ext_resource type="PackedScene" uid="uid://dnyf0pog4niyr" path="res://Scenes/Player/player.tscn" id="2_fsfas"]
 [ext_resource type="PackedScene" uid="uid://dn3eqswatjumi" path="res://Scenes/Enemy/Enemy.tscn" id="3_fsfas"]
 [ext_resource type="Texture2D" uid="uid://dxh2t5k0inkqo" path="res://Assets/bublina_interac.png" id="4_0udi0"]
@@ -12,6 +11,7 @@
 [ext_resource type="Script" uid="uid://cuxanorjm0p6b" path="res://Scenes/karaSentBackToHell.gd" id="8_y5f17"]
 [ext_resource type="AudioStream" uid="uid://nrqb56aiygct" path="res://Assets/freesound_community-cough-46034.mp3" id="10_kq4sa"]
 [ext_resource type="AudioStream" uid="uid://bsvnhba7cdx2i" path="res://Assets/delej-uz-ste-tady-meli-bejt-4-minuty-ty-magore-jiri-kara-made-with-voic_sqYdF6jG.mp3" id="12_d3xkn"]
+[ext_resource type="Texture2D" uid="uid://blgjjaadcv5mj" path="res://Assets/Battle zoner.webp" id="13_721ma"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0udi0"]
 size = Vector2(3486, 30.75)
@@ -44,20 +44,10 @@ size = Vector2(147.5, 266)
 
 [node name="Nextnext" type="Node2D" unique_id=787677190]
 
-[node name="BattleZoner2" type="Sprite2D" parent="." unique_id=947802086]
-position = Vector2(2066, -64.00002)
-scale = Vector2(5, 5)
-texture = ExtResource("1_kq4sa")
-
-[node name="BattleZoner" type="Sprite2D" parent="." unique_id=1174333424]
-position = Vector2(182.99998, -64.00002)
-scale = Vector2(5, 5)
-texture = ExtResource("1_kq4sa")
-
-[node name="BattleZoner3" type="Sprite2D" parent="." unique_id=1040951928]
-position = Vector2(-1747, -64.00002)
-scale = Vector2(4.9999995, 4.9999995)
-texture = ExtResource("1_kq4sa")
+[node name="BattleZoner4" type="Sprite2D" parent="." unique_id=1451309174]
+position = Vector2(186, -177.00002)
+scale = Vector2(1.2175, 1.1411709)
+texture = ExtResource("13_721ma")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1114423034]
 position = Vector2(-822, -213.24142)
@@ -90,7 +80,7 @@ position = Vector2(-602, 4)
 attack_damage = 5
 
 [node name="karaShow" type="Node2D" parent="." unique_id=1108665059 node_paths=PackedStringArray("enemy1", "enemy2")]
-position = Vector2(540, -15)
+position = Vector2(71, 34)
 script = ExtResource("5_w41r0")
 enemy1 = NodePath("../Enemy")
 enemy2 = NodePath("../Enemy2")
