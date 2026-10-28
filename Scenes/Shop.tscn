@@ -8,7 +8,10 @@
 [ext_resource type="Script" uid="uid://4clny5677ppk" path="res://Scenes/proxcheck.gd" id="5_wndna"]
 [ext_resource type="Script" uid="uid://cvlksrxvxgsax" path="res://Scenes/shopLogiic.gd" id="6_ct2yw"]
 [ext_resource type="Texture2D" uid="uid://c16rdlh03u2ii" path="res://Assets/buySprite.png" id="6_wndna"]
+[ext_resource type="Resource" uid="uid://d3w85t206lban" path="res://Scenes/Weapons/Items/Tube.tres" id="7_ccd4q"]
 [ext_resource type="Script" uid="uid://ca5515pmat1ck" path="res://Scenes/scriptLib/E_sceneChange.tscn.gd" id="8_2aaoe"]
+[ext_resource type="Resource" uid="uid://034jg6203s7w" path="res://Scenes/Weapons/Items/Bottle.tres" id="9_r8bg4"]
+[ext_resource type="Script" uid="uid://co1ftdw5m5ulr" path="res://Scenes/shopHeal.gd" id="10_m1c0q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tvscu"]
 size = Vector2(1101, 8.139187)
@@ -84,6 +87,8 @@ script = ExtResource("5_wndna")
 position = Vector2(-2.5, 159.75)
 shape = SubResource("RectangleShape2D_0stwt")
 script = ExtResource("6_ct2yw")
+weapon_data = ExtResource("7_ccd4q")
+cena = 5
 
 [node name="Popup" type="Sprite2D" parent="buyOption" unique_id=613493896]
 position = Vector2(50, 110)
@@ -96,6 +101,9 @@ script = ExtResource("5_wndna")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="buyOption2" unique_id=486499498]
 position = Vector2(-2.5, 159.75)
 shape = SubResource("RectangleShape2D_0stwt")
+script = ExtResource("6_ct2yw")
+weapon_data = ExtResource("9_r8bg4")
+cena = 3
 
 [node name="Popup" type="Sprite2D" parent="buyOption2" unique_id=193845714]
 position = Vector2(50, 110)
@@ -108,6 +116,8 @@ script = ExtResource("5_wndna")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="buyOption3" unique_id=440037296]
 position = Vector2(-2.5, 159.75)
 shape = SubResource("RectangleShape2D_0stwt")
+script = ExtResource("10_m1c0q")
+cena = 2
 
 [node name="Popup" type="Sprite2D" parent="buyOption3" unique_id=429089125]
 position = Vector2(50, 110)

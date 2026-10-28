@@ -73,7 +73,7 @@ scale = Vector2(0.9999998, 0.9999998)
 shape = SubResource("RectangleShape2D_tvscu")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=853315947]
-position = Vector2(1816.9784, 344.40237)
+position = Vector2(2084.3354, 284.96463)
 scale = Vector2(0.9999998, 0.9999998)
 shape = SubResource("RectangleShape2D_tvscu")
 

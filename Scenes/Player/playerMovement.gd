@@ -77,14 +77,13 @@ func _physics_process(delta: float) -> void:
 
 #Enquip (Not Done)
 func equip_weapon(data: WeaponData) -> void:
-	if data == null:
+	if data == null or base_weapon_scene == null:
 		return
 
-	if base_weapon_scene == null:
-		return
-
+	# Удаляем старое оружие
 	if is_instance_valid(current_weapon):
 		current_weapon.queue_free()
+		current_weapon = null
 
 	var weapon := base_weapon_scene.instantiate() as BaseWeapon
 
@@ -92,8 +91,8 @@ func equip_weapon(data: WeaponData) -> void:
 		return
 
 	weapon_holder.add_child(weapon)
-	weapon.setup(data)
 	current_weapon = weapon
+	weapon.setup(data)
 	
 	GameState.saved_weapon = data
 
@@ -127,7 +126,6 @@ func attack() -> void:
 
 	current_weapon.play_swing()
 	current_weapon.attack()
-
 func die() -> void:
 	is_dead = true
 	is_hit = false
