@@ -1,4 +1,6 @@
-extends CharacterBody2D
+extends CharacterBody2D 
+
+@onready var kara = $Kara
 
 @export var speed: float = 40.0
 @export var chase_speed: float = 250.0
@@ -30,6 +32,7 @@ func _ready() -> void:
 	health = max_health
 	motion_mode = CharacterBody2D.MOTION_MODE_FLOATING
 	sprite.play("run")
+	kara.hide()
 
 
 func take_damage(amount: int) -> void:
@@ -40,6 +43,7 @@ func take_damage(amount: int) -> void:
 
 	if health <= 0:
 		die()
+		kara.show()
 		return
 
 	is_hit = true
@@ -57,6 +61,7 @@ func take_damage(amount: int) -> void:
 
 
 func die() -> void:
+	print("dead")
 	is_dead = true
 	velocity = Vector2.ZERO
 	set_physics_process(false)
@@ -68,6 +73,8 @@ func die() -> void:
 	if hitbox:
 		hitbox.set_deferred("monitoring", false)
 		hitbox.set_deferred("monitorable", false)
+	
+		
 
 
 func try_attack(player: Node2D) -> void:

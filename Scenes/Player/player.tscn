@@ -11,9 +11,11 @@
 [ext_resource type="Texture2D" uid="uid://btxqwtskwx2w4" path="res://Scenes/Player/assets/hit_maincharacter.png" id="4_oikmp"]
 [ext_resource type="Texture2D" uid="uid://idrh2wrpnnf0" path="res://Scenes/Player/assets/run3.png" id="5_jlvik"]
 [ext_resource type="Texture2D" uid="uid://dy4aw2hh0ttat" path="res://Scenes/Player/assets/run4.png" id="6_gk6dx"]
+[ext_resource type="Texture2D" uid="uid://dmtkt4xovwp2m" path="res://Scenes/Player/assets/jumping1.png" id="8_r5xpd"]
 [ext_resource type="Texture2D" uid="uid://dn7aklfr247xk" path="res://Scenes/Player/assets/run5.png" id="9_jhyir"]
+[ext_resource type="Texture2D" uid="uid://epoljmq5l1be" path="res://Scenes/Player/assets/jumping2.png" id="9_ks1b7"]
 [ext_resource type="Texture2D" uid="uid://dm1ek5bj63hsm" path="res://Scenes/Player/assets/run6.png" id="10_74mp2"]
-[ext_resource type="PackedScene" uid="uid://bjtma5cm5d3j1" path="res://Scenes/Player/playerUI.tscn" id="12_oikmp"]
+[ext_resource type="Texture2D" uid="uid://cr6aw6kc5jcc8" path="res://Scenes/Player/assets/jumping3.png" id="10_hnuln"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wdocy"]
 radius = 14.0
@@ -46,6 +48,20 @@ animations = [{
 }],
 "loop": 1,
 "name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_r5xpd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ks1b7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_hnuln")
+}],
+"loop": 1,
+"name": &"jump",
 "speed": 5.0
 }, {
 "frames": [{
@@ -92,12 +108,9 @@ position_smoothing_enabled = true
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=557623127]
 scale = Vector2(1, 0.99999994)
 sprite_frames = SubResource("SpriteFrames_wdocy")
-animation = &"idle"
+animation = &"jump"
 autoplay = "idle"
+frame_progress = 0.731534
 
 [node name="WeaponHolder" type="Node2D" parent="CharacterBody2D" unique_id=280112700]
 position = Vector2(1, 1)
-
-[node name="PlayerUI" parent="." unique_id=955115499 instance=ExtResource("12_oikmp")]
-scale = Vector2(1.08, 1.08)
-transform = Transform2D(1.08, 0, 0, 1.08, 0, 0)
