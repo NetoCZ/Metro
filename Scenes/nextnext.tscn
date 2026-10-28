@@ -47,7 +47,7 @@ size = Vector2(591, 266)
 [node name="Nextnext" type="Node2D" unique_id=787677190]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=959610906]
-position = Vector2(178, -156)
+position = Vector2(169, -166)
 
 [node name="BgVenku" type="Sprite2D" parent="." unique_id=432666819]
 z_index = -2
