@@ -54,7 +54,6 @@ func take_damage(amount: int) -> void:
 		return
 
 	health -= amount
-	print("Получен урон: ", amount, " | Осталось HP: ", health)
 	
 	if health <= 0:
 		die()
