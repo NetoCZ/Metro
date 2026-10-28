@@ -20,9 +20,9 @@ texture = ExtResource("2_theht")
 
 [node name="Label" type="Label" parent="." unique_id=811897816]
 layout_mode = 0
-offset_left = 1554.0
-offset_top = 969.0
-offset_right = 1986.0
-offset_bottom = 1126.0
+offset_left = 1462.0
+offset_top = 965.0
+offset_right = 1894.0
+offset_bottom = 1122.0
 theme_override_font_sizes/font_size = 27
 text = "Stiskněte ENTER pro pokračování"
