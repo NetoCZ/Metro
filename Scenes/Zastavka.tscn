@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cn4qav8vq65gi" path="res://Assets/lahvos.webp" id="8_unrny"]
 [ext_resource type="Script" uid="uid://by7amjys6pcn" path="res://Scenes/Bezdak_zona.gd" id="10_7rsvt"]
 [ext_resource type="AudioStream" uid="uid://nrqb56aiygct" path="res://Assets/freesound_community-cough-46034.mp3" id="10_dfw68"]
-[ext_resource type="AudioStream" uid="uid://c8b1necv0kkat" path="res://Scenes/Enemy/Assets/slap-sound-effect-no-copyright.mp3" id="11_sklv0"]
+[ext_resource type="AudioStream" uid="uid://b42xcqtxroq20" path="res://Assets/goofy-ahh-weird-sounds-meme-mp3.mp3" id="11_dfw68"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tvscu"]
 size = Vector2(3486, 30.75)
@@ -102,6 +102,7 @@ texture = ExtResource("8_unrny")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1413871670]
 stream = ExtResource("10_dfw68")
+volume_db = -12.403
 autoplay = true
 
 [node name="BezdakZona" type="Area2D" parent="." unique_id=683484868]
@@ -112,4 +113,5 @@ position = Vector2(1676.5, 633)
 shape = SubResource("RectangleShape2D_b4qop")
 
 [node name="bezdak" type="AudioStreamPlayer" parent="BezdakZona" unique_id=862283387]
-stream = ExtResource("11_sklv0")
+stream = ExtResource("11_dfw68")
+volume_db = 4.917

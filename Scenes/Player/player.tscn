@@ -118,6 +118,7 @@ position = Vector2(1, 1)
 
 [node name="damage" type="AudioStreamPlayer2D" parent="CharacterBody2D" unique_id=1170445444]
 stream = ExtResource("16_r5xpd")
+volume_db = 8.157
 
 [node name="kroky" type="AudioStreamPlayer2D" parent="CharacterBody2D" unique_id=400314580]
 position = Vector2(0.58113515, -1.4093171)
