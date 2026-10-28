@@ -61,7 +61,7 @@ shape = SubResource("RectangleShape2D_0stwt")
 position = Vector2(1979, -492)
 shape = SubResource("RectangleShape2D_0stwt")
 
-[node name="Player" parent="." unique_id=362517795 instance=ExtResource("2_w7nrg")]
+[node name="Player" parent="." unique_id=362517795 groups=["player"] instance=ExtResource("2_w7nrg")]
 
 [node name="NamestiRepublikyNoMetro2" type="Sprite2D" parent="." unique_id=1130381095]
 position = Vector2(2041.0001, 550)
