@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://dm1ek5bj63hsm" path="res://Scenes/Player/assets/run6.png" id="10_74mp2"]
 [ext_resource type="Texture2D" uid="uid://cr6aw6kc5jcc8" path="res://Scenes/Player/assets/jumping3.png" id="10_hnuln"]
 [ext_resource type="AudioStream" uid="uid://bm24devykudbu" path="res://Scenes/Enemy/Assets/classic_hurt.mp3" id="16_r5xpd"]
+[ext_resource type="AudioStream" uid="uid://bqi7grcgh4epf" path="res://Assets/kroky.mp3" id="17_ks1b7"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wdocy"]
 radius = 14.0
@@ -85,7 +86,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"run",
-"speed": 5.0
+"speed": 9.0
 }]
 
 [node name="Player" type="Node" unique_id=362517795 groups=["player"]]
@@ -107,12 +108,18 @@ position_smoothing_enabled = true
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=557623127]
 scale = Vector2(1, 0.99999994)
 sprite_frames = SubResource("SpriteFrames_wdocy")
-animation = &"jump"
+animation = &"run"
 autoplay = "idle"
-frame_progress = 0.60171986
+frame = 1
+frame_progress = 0.6132708
 
 [node name="WeaponHolder" type="Node2D" parent="CharacterBody2D" unique_id=280112700]
 position = Vector2(1, 1)
 
 [node name="damage" type="AudioStreamPlayer2D" parent="CharacterBody2D" unique_id=1170445444]
 stream = ExtResource("16_r5xpd")
+
+[node name="kroky" type="AudioStreamPlayer2D" parent="CharacterBody2D" unique_id=400314580]
+position = Vector2(0.58113515, -1.4093171)
+scale = Vector2(0.29056758, 0.28186342)
+stream = ExtResource("17_ks1b7")
