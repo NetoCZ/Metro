@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://ch0edeqi5o4vm"]
+
+[ext_resource type="Script" uid="uid://ccwxwi1mopmpv" path="res://Scenes/Jogurt/Jogurt.gd" id="1_s8302"]
+[ext_resource type="Texture2D" uid="uid://c1bahdfwwexns" path="res://Scenes/Jogurt/UgurtHeal.png" id="2_3mwas"]
+[ext_resource type="AudioStream" uid="uid://bx4suf7evd0kr" path="res://Scenes/Jogurt/ugurtyyyy_55R4OF1z.mp3" id="3_3mwas"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b4qop"]
+size = Vector2(24.5, 33.75)
+
+[node name="Jogurt" type="Area2D" unique_id=1176843348]
+script = ExtResource("1_s8302")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1889523665]
+position = Vector2(45.499996, 30.000008)
+scale = Vector2(0.062000006, 0.06399995)
+texture = ExtResource("2_3mwas")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1301535604]
+position = Vector2(44.75, 31.125)
+shape = SubResource("RectangleShape2D_b4qop")
+
+[node name="jogurt" type="AudioStreamPlayer" parent="." unique_id=564725980]
+stream = ExtResource("3_3mwas")
+volume_db = -6.679

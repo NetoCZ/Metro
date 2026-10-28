@@ -13,6 +13,7 @@
 [ext_resource type="Script" uid="uid://ca5515pmat1ck" path="res://Scenes/scriptLib/E_sceneChange.tscn.gd" id="8_2aaoe"]
 [ext_resource type="Resource" uid="uid://034jg6203s7w" path="res://Scenes/Weapons/Items/Bottle.tres" id="9_r8bg4"]
 [ext_resource type="Script" uid="uid://co1ftdw5m5ulr" path="res://Scenes/shopHeal.gd" id="10_m1c0q"]
+[ext_resource type="PackedScene" uid="uid://ch0edeqi5o4vm" path="res://Scenes/Jogurt/Jogurt.tscn" id="14_dael7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tvscu"]
 size = Vector2(1101, 8.139187)
@@ -152,3 +153,6 @@ next_scene = "uid://b7gaq4pasrate"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="backMain" unique_id=1701480821 groups=["player"]]
 position = Vector2(1, 488.5)
 shape = SubResource("RectangleShape2D_ct2yw")
+
+[node name="Jogurt" parent="." unique_id=1176843348 instance=ExtResource("14_dael7")]
+position = Vector2(-317, 58)

@@ -174,3 +174,11 @@ func _input(event: InputEvent) -> void:
 		attack()
 	if event.is_action_pressed("hurt"):
 		take_damage(10)
+
+func heal(amount: int) -> void:
+	if is_dead:
+		return
+	current_hp = min(current_hp + amount, max_hp)
+	hp_changed.emit(current_hp, max_hp)
+	GameState.set_hp(current_hp, max_hp)
+	
