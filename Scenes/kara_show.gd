@@ -15,5 +15,5 @@ func _ready() -> void:
 func _process(_delta):
 	if not is_instance_valid(enemy1) and not is_instance_valid(enemy2):
 		kara.show()
-		
+		delej.play()
 		set_process(false)

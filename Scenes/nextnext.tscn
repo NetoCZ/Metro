@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://re6w173u3rms" path="res://Assets/J_KARA_3.png" id="7_w41r0"]
 [ext_resource type="Script" uid="uid://cuxanorjm0p6b" path="res://Scenes/karaSentBackToHell.gd" id="8_y5f17"]
 [ext_resource type="AudioStream" uid="uid://nrqb56aiygct" path="res://Assets/freesound_community-cough-46034.mp3" id="10_kq4sa"]
+[ext_resource type="AudioStream" uid="uid://bsvnhba7cdx2i" path="res://Scenes/delej-uz-ste-tady-meli-bejt-4-minuty-ty-magore-jiri-kara-made-with-voic_sqYdF6jG.mp3" id="12_d3xkn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0udi0"]
 size = Vector2(3486, 30.75)
@@ -122,3 +123,6 @@ next_scene = "uid://b7gaq4pasrate"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="karaShow/Kara/Area2D" unique_id=1080795656]
 position = Vector2(-4.0686035, 96.31813)
 shape = SubResource("RectangleShape2D_6cy5s")
+
+[node name="delej" type="AudioStreamPlayer" parent="karaShow" unique_id=289089035]
+stream = ExtResource("12_d3xkn")
