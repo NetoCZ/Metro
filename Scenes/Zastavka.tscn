@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dxh2t5k0inkqo" path="res://Assets/bublina_interac.png" id="6_vmmyc"]
 [ext_resource type="Script" uid="uid://ca5515pmat1ck" path="res://Scenes/scriptLib/E_sceneChange.tscn.gd" id="7_vmmyc"]
 [ext_resource type="Texture2D" uid="uid://cn4qav8vq65gi" path="res://Assets/lahvos.webp" id="8_unrny"]
+[ext_resource type="AudioStream" uid="uid://nrqb56aiygct" path="res://Assets/freesound_community-cough-46034.mp3" id="10_dfw68"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tvscu"]
 size = Vector2(3486, 30.75)
@@ -93,3 +94,7 @@ shape = SubResource("CircleShape2D_4aany")
 [node name="Lahvos" type="Sprite2D" parent="." unique_id=1817709622]
 position = Vector2(1800, 696)
 texture = ExtResource("8_unrny")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1413871670]
+stream = ExtResource("10_dfw68")
+autoplay = true
