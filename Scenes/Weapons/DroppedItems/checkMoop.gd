@@ -6,7 +6,6 @@ func _ready() -> void:
 	popup.hide()
 	body_entered.connect(_on_body_entered)
 	body_exited.connect(_on_body_exited)
-	moop_spawned = true
 
 
 func _on_body_entered(body: Node2D) -> void:
